@@ -404,7 +404,7 @@ const SecondOpinionPage = () => {
                 ← Back to Home
               </motion.button>
             </Link>
-            <Link to="/case-studies/trace" onClick={() => window.scrollTo(0, 0)}>
+            <Link to="/case-studies/hemispheres" onClick={() => window.scrollTo(0, 0)}>
               <motion.button
                 className="px-8 py-4 bg-gray-900 text-white font-bold rounded-lg border border-gray-300 hover:bg-gray-800 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}

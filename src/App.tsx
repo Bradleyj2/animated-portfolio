@@ -3,7 +3,7 @@ import HomePage from './components/HomePage'
 import AboutPage from './components/AboutPage'
 import ResumePage from './components/ResumePage'
 import ContactPage from './components/ContactPage'
-import TracePage from './components/case-studies/TracePage'
+
 import HemispheresPage from './components/case-studies/HemispheresPage'
 import ServiceBlueprintPage from './components/case-studies/ServiceBlueprintPage'
 import ViuHubPage from './components/case-studies/ViuHubPage'
@@ -33,7 +33,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/resume" element={<ResumePage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/case-studies/trace" element={<TracePage />} />
+
         <Route path="/case-studies/hemispheres" element={<HemispheresPage />} />
         <Route path="/case-studies/service-blueprint" element={<ServiceBlueprintPage />} />
         <Route path="/case-studies/omnichannel-strategy" element={<OmnichannelStrategyPage />} />
