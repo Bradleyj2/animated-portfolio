@@ -509,7 +509,7 @@ const HomePage = () => {
               {/* Profile Image */}
               <div className="absolute inset-4 flex items-center justify-center">
                 <img 
-                  src="/profile1.png" 
+                  src="/animated-portfolio/profile1.png" 
                   alt="Mera Bradley" 
                   className="w-full h-full object-cover rounded-full border-2 border-white shadow-md"
                 />

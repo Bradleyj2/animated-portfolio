@@ -57,7 +57,7 @@ const HemispheresPage = () => {
               <div className="mb-8">
                 <div className="relative group">
                   <img 
-                    src="/hemispheres10.png" 
+                    src="/animated-portfolio/hemispheres10.png" 
                     alt="Two avatars on opposite cliffs" 
                     className="w-full h-auto rounded-lg"
                   />
@@ -85,7 +85,7 @@ const HemispheresPage = () => {
                 <div className="flex-1">
                   <div className="relative group">
                     <img 
-                      src="/hemispheres2.png" 
+                      src="/animated-portfolio/hemispheres2.png" 
                       alt="Split-screen concept art showing Logic and Intuition interacting with different puzzles." 
                       className="w-full h-auto rounded-lg"
                     />
@@ -179,7 +179,7 @@ const HemispheresPage = () => {
               <div className="mt-8">
                 <div className="w-full">
                   <img 
-                    src="/hemispheres1.png" 
+                    src="/animated-portfolio/hemispheres1.png" 
                     alt="Dual Avatar Integration Mechanics" 
                     className="w-full h-auto rounded-lg"
                   />
@@ -227,7 +227,7 @@ const HemispheresPage = () => {
                 <div className="flex-1">
                   <div className="relative group">
                     <img 
-                      src="/hemispheres.png" 
+                      src="/animated-portfolio/hemispheres.png" 
                       alt="Environment concept art collage" 
                       className="w-full h-auto rounded-lg"
                     />
@@ -276,7 +276,7 @@ const HemispheresPage = () => {
                 <div className="flex-1">
                   <div className="relative group">
                     <img 
-                      src="/hemispheres5.png" 
+                      src="/animated-portfolio/hemispheres5.png" 
                       alt="Three boss designs" 
                       className="w-full h-auto rounded-lg"
                     />
@@ -368,7 +368,7 @@ const HemispheresPage = () => {
               <div className="mb-8">
                 <div className="relative group">
                   <img 
-                    src="/hemispheres9.png" 
+                    src="/animated-portfolio/hemispheres9.png" 
                     alt="Final image of avatars standing together" 
                     className="w-full h-auto rounded-lg"
                   />
