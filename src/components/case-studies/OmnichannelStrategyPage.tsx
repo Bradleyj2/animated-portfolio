@@ -75,7 +75,7 @@ const OmnichannelStrategyPage = () => {
               
               <div className="mt-8">
                 <img 
-                  src="/omni1.png" 
+                                      src="/animated-portfolio/omni1.png" 
                   alt="Customer frustration with disconnected channels" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -184,7 +184,7 @@ const OmnichannelStrategyPage = () => {
               
               <div className="mt-8">
                 <img 
-                  src="/omni4.png" 
+                                      src="/animated-portfolio/omni4.png" 
                   alt="Research and discovery process" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -246,7 +246,7 @@ const OmnichannelStrategyPage = () => {
               
               <div className="mt-8">
                 <img 
-                  src="/omni3.png" 
+                                      src="/animated-portfolio/omni3.png" 
                   alt="Service blueprint connecting all touchpoints" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
