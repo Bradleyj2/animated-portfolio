@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-space text-white font-sans;
+    overflow-x: hidden;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-variation-settings: normal;
+  }
+  
+  * {
+    @apply border-gray-300;
+  }
+}
+
+@layer components {
+  .hologram-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-hologram-blue via-hologram-pink to-hologram-blue;
+    background-size: 200% 200%;
+    animation: hologram 4s ease-in-out infinite;
+  }
+  
+  .terminal-text {
+    @apply font-terminal text-terminal-green;
+  }
+  
+  .glow-border {
+    @apply border border-neon-blue shadow-[0_0_10px_rgba(0,255,255,0.5)];
+  }
+  
+  .scan-line {
+    @apply absolute w-full h-1 bg-gradient-to-r from-transparent via-neon-blue to-transparent opacity-50;
+    animation: scan 2s linear infinite;
+  }
+  
+  .particle {
+    @apply absolute w-1 h-1 bg-neon-blue rounded-full opacity-60;
+    animation: particle 20s linear infinite;
+  }
+  
+  .flicker {
+    animation: flicker 0.15s infinite linear;
+  }
+  
+  .typewriter {
+    @apply overflow-hidden whitespace-nowrap border-r-2 border-neon-blue;
+    animation: type 3s steps(40) 1s 1 normal both, blink 1s infinite;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .glow-shadow {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  
+  .hologram-shadow {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  }
+} 
