@@ -79,7 +79,7 @@ const SecondOpinionPage = () => {
               </div>
               <div>
                 <img 
-                                      src="/animated-portfolio/secondop1.png" 
+                                      src="/secondop1.png" 
                   alt="Woman overwhelmed by medication bottles" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -112,7 +112,7 @@ const SecondOpinionPage = () => {
             
             <div className="mt-8">
               <img 
-                                    src="/animated-portfolio/secondop2.png" 
+                                    src="/secondop2.png" 
                 alt="Branching decision tree graphic" 
                 className="w-full h-auto rounded-lg mb-2"
               />
@@ -215,7 +215,7 @@ const SecondOpinionPage = () => {
             
             <div className="mt-8">
               <img 
-                                    src="/animated-portfolio/secondop6.png" 
+                                    src="/secondop6.png" 
                 alt="Multi-panel UI mockup: Caregiving community app" 
                 className="w-full h-auto rounded-lg mb-2"
               />
@@ -258,7 +258,7 @@ const SecondOpinionPage = () => {
               </div>
               <div>
                 <img 
-                                      src="/animated-portfolio/secondop7.png" 
+                                      src="/secondop7.png" 
                   alt="Hand-drawn wireframe sketch of mobile health app interface" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -314,7 +314,7 @@ const SecondOpinionPage = () => {
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <img 
-                                      src="/animated-portfolio/secondop8.png" 
+                                      src="/secondop8.png" 
                   alt="Hand-drawn wireframe sketch of mobile health app interface" 
                   className="w-full h-96 object-cover rounded-lg mb-2"
                 />
@@ -322,7 +322,7 @@ const SecondOpinionPage = () => {
               </div>
               <div>
                 <img 
-                                      src="/animated-portfolio/secondop9.png" 
+                                      src="/secondop9.png" 
                   alt="After: Clean UI mockup with expanded panels and icon-guided navigation" 
                   className="w-full h-96 object-cover rounded-lg mb-2"
                 />

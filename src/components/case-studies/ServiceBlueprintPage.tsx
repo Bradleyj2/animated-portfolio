@@ -56,7 +56,7 @@ const ServiceBlueprintPage = () => {
             >
               <div className="relative group">
                 <img
-                                      src="/animated-portfolio/sb1.png"
+                                      src="/sb1.png"
                   alt="Service Blueprint Templates"
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -86,7 +86,7 @@ const ServiceBlueprintPage = () => {
                 <div className="flex-1">
                   <div className="relative group">
                     <img
-                      src="/animated-portfolio/sb2.png"
+                      src="/sb2.png"
                       alt="Workshop discovery moment"
                       className="w-full h-auto rounded-lg mb-2"
                     />
@@ -122,7 +122,7 @@ const ServiceBlueprintPage = () => {
                 <div className="flex-1">
                   <div className="relative group">
                     <img
-                      src="/animated-portfolio/sb3.png"
+                      src="/sb3.png"
                       alt="Screenshot of 3 different blueprint formats"
                       className="w-full h-auto rounded-lg mb-2"
                     />
@@ -163,7 +163,7 @@ const ServiceBlueprintPage = () => {
             >
               <div className="relative group">
                 <img
-                                      src="/animated-portfolio/sb4.png"
+                                      src="/sb4.png"
                   alt="Side-by-side preview of three formats"
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -210,7 +210,7 @@ const ServiceBlueprintPage = () => {
                 <div className="flex-1">
                   <div className="relative group">
                     <img
-                      src="/animated-portfolio/sb5.png"
+                      src="/sb5.png"
                       alt="Screenshot of Miro component library"
                       className="w-full h-auto rounded-lg mb-2"
                     />
@@ -247,7 +247,7 @@ const ServiceBlueprintPage = () => {
               
               <div className="relative group">
                 <img
-                                      src="/animated-portfolio/sb6.png"
+                                      src="/sb6.png"
                   alt="Strategic implementation and adoption metrics"
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -280,7 +280,7 @@ const ServiceBlueprintPage = () => {
                 <div className="flex-1">
                   <div className="relative group">
                     <img
-                      src="/animated-portfolio/sb7.png"
+                      src="/sb7.png"
                       alt="Cross-team workshop with stakeholders"
                       className="w-full h-auto rounded-lg mb-2"
                     />

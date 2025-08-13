@@ -57,7 +57,7 @@ const ViuHubPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img 
-                                  src="/animated-portfolio/viubyhub1.png" 
+                                  src="/viubyhub1.png" 
               alt="Insurance platform interface" 
               className="w-full h-auto rounded-lg mb-2"
             />
@@ -84,7 +84,7 @@ const ViuHubPage = () => {
               
               <div className="flex-1">
                 <img 
-                                      src="/animated-portfolio/viubyhub2.png" 
+                                      src="/viubyhub2.png" 
                   alt="User overwhelmed by insurance complexity" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -158,7 +158,7 @@ const ViuHubPage = () => {
             
             <div className="mt-8">
               <img 
-                                    src="/animated-portfolio/viubyhub3.png" 
+                                    src="/viubyhub3.png" 
                 alt="Design system components and user flows" 
                 className="w-full h-auto rounded-lg mb-2"
               />
@@ -224,7 +224,7 @@ const ViuHubPage = () => {
               
               <div className="flex-1">
                 <img 
-                                      src="/animated-portfolio/viubyhub5.png" 
+                                      src="/viubyhub5.png" 
                   alt="Impact metrics and achievements" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
@@ -274,7 +274,7 @@ const ViuHubPage = () => {
               
               <div className="flex-1">
                 <img 
-                                      src="/animated-portfolio/viubyhub4.png" 
+                                      src="/viubyhub4.png" 
                   alt="Project timeline and growth phases" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
