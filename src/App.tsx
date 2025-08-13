@@ -27,19 +27,23 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/resume" element={<ResumePage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/case-studies/trace" element={<TracePage />} />
-        <Route path="/case-studies/hemispheres" element={<HemispheresPage />} />
-        <Route path="/case-studies/service-blueprint" element={<ServiceBlueprintPage />} />
-        <Route path="/case-studies/omnichannel-strategy" element={<OmnichannelStrategyPage />} />
-        <Route path="/case-studies/viu-hub" element={<ViuHubPage />} />
-        <Route path="/case-studies/second-opinion" element={<SecondOpinionPage />} />
-      </Routes>
+    <div className="App min-h-screen bg-dark-space text-white p-8">
+      <h1 className="text-4xl font-bold text-neon-blue mb-4">Portfolio Test</h1>
+      <p className="text-lg">If you can see this, React is working!</p>
+      <div className="mt-8">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/resume" element={<ResumePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/case-studies/trace" element={<TracePage />} />
+          <Route path="/case-studies/hemispheres" element={<HemispheresPage />} />
+          <Route path="/case-studies/service-blueprint" element={<ServiceBlueprintPage />} />
+          <Route path="/case-studies/omnichannel-strategy" element={<OmnichannelStrategyPage />} />
+          <Route path="/case-studies/viu-hub" element={<ViuHubPage />} />
+          <Route path="/case-studies/second-opinion" element={<SecondOpinionPage />} />
+        </Routes>
+      </div>
       
       {showEasterEgg && <EasterEggConsole onClose={() => setShowEasterEgg(false)} />}
     </div>
