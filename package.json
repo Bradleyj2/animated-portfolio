@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A sci-fi 2D cartoon game style portfolio website",
   "main": "index.html",
-  "homepage": "https://Bradleyj2.github.io/animated-portfolio",
+  "homepage": "https://meraabradley.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
