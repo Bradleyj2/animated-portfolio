@@ -37,7 +37,7 @@ const ViuHubPage = () => {
                 <span className="font-semibold">By Mera Bradley</span> • Strategic Design Leader
               </div>
               <div className="text-sm text-gray-500">
-                March 2022 — January 2024
+                March 2022 to January 2024
               </div>
             </div>
           </motion.div>
@@ -77,10 +77,10 @@ const ViuHubPage = () => {
                     Sarah, like millions of others, faced a fundamental "trust gap" in digital insurance services. Not just confusion about jargon, but a deeper crisis of confidence in making high-stakes financial decisions through digital interfaces.
                   </p>
                   <p className="leading-relaxed mb-6">
-                    <strong>The core issue:</strong> Insurance customers experienced overwhelming choices, hidden terms, lack of transparency, and zero guidance—creating cognitive barriers that prevented confident decision-making. The industry had created digital systems that prioritized operational efficiency over user trust and clarity.
+                    <strong>The core issue:</strong> Insurance customers experienced overwhelming choices, hidden terms, lack of transparency, and zero guidance. This created cognitive barriers that prevented confident decision-making. The industry had created digital systems that prioritized operational efficiency over user trust and clarity.
                   </p>
                   <p className="leading-relaxed">
-                    This project aimed to design for clarity, trustworthiness, and accessibility—creating systems that reduce cognitive load and build confidence in complex decisions.
+                    This project aimed to design for clarity, trustworthiness, and accessibility, creating systems that reduce cognitive load and build confidence in complex decisions.
                   </p>
                 </div>
               </div>
@@ -113,9 +113,9 @@ const ViuHubPage = () => {
               <p className="font-semibold text-gray-900">
                 How do you re-architect digital trust in high-stakes financial systems?
               </p>
-              <p>
-                This wasn't about incremental improvements—it was about fundamentally restructuring how trust, transparency, and usability intersect in complex insurance systems. We needed to align cross-functional teams around a shared vision of user-centered trust design.
-              </p>
+                              <p>
+                  This wasn't about incremental improvements. It was about fundamentally restructuring how trust, transparency, and usability intersect in complex insurance systems. We needed to align cross-functional teams around a shared vision of user-centered trust design.
+                </p>
               <p className="font-semibold text-gray-900">
                 Our mission: Transform the insurance experience from anxiety-inducing to confidence-building through strategic design leadership.
               </p>
@@ -139,7 +139,7 @@ const ViuHubPage = () => {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Research Operations & Trust Mapping</h3>
                   <div className="prose prose-lg">
                     <p className="leading-relaxed mb-4">
-                      I structured comprehensive studies with customers and stakeholders, mapping every emotional touchpoint of the insurance journey. We discovered that people didn't just need information—they needed reassurance and clarity at moments of decision.
+                      I structured comprehensive studies with customers and stakeholders, mapping every emotional touchpoint of the insurance journey. We discovered that people didn't just need information. They needed reassurance and clarity at moments of decision.
                     </p>
                     <p className="leading-relaxed">
                       This research revealed critical trust pain points in the insurance journey, forming the foundation for our strategic approach.
@@ -365,19 +365,19 @@ const ViuHubPage = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-gray-900 mr-2">•</span>
-                  <span className="font-semibold">Start with empathy, not features</span> — Understanding user emotions was more valuable than any technical specification
+                  <span className="font-semibold">Start with empathy, not features.</span> Understanding user emotions was more valuable than any technical specification.
                 </li>
                 <li className="flex items-start">
                   <span className="text-gray-900 mr-2">•</span>
-                  <span className="font-semibold">Iterate relentlessly</span> — Our biggest wins came from continuous refinement based on real user feedback
+                  <span className="font-semibold">Iterate relentlessly.</span> Our biggest wins came from continuous refinement based on real user feedback.
                 </li>
                 <li className="flex items-start">
                   <span className="text-gray-900 mr-2">•</span>
-                  <span className="font-semibold">Design systems as growth enablers</span> — Investing in consistency and documentation paid dividends as we scaled
+                  <span className="font-semibold">Design systems as growth enablers.</span> Investing in consistency and documentation paid dividends as we scaled.
                 </li>
                 <li className="flex items-start">
                   <span className="text-gray-900 mr-2">•</span>
-                  <span className="font-semibold">Collaboration over perfection</span> — Working closely with developers and stakeholders created solutions that actually shipped
+                  <span className="font-semibold">Collaboration over perfection.</span> Working closely with developers and stakeholders created solutions that actually shipped.
                 </li>
               </ul>
             </div>
@@ -418,7 +418,7 @@ const ViuHubPage = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4 font-serif">Why This Matters</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p className="text-lg">
-                  This project represents a masterclass in strategic design leadership—demonstrating how to bridge human psychology, technology, and system trust in high-stakes environments.
+                  This project represents a masterclass in strategic design leadership, demonstrating how to bridge human psychology, technology, and system trust in high-stakes environments.
                 </p>
                 <p>
                   The skills developed here—research operations, systems mapping, cross-functional alignment, and trust system operationalization—are fundamental to creating interfaces that build user confidence and ensure safe, effective adoption in any complex domain.
