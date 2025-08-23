@@ -355,31 +355,32 @@ const ViuHubPage = () => {
 
           {/* Key Lessons */}
           <motion.section
-            className="mb-24 mt-16"
+            className="mb-24"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.6 }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Lessons: What Made the Difference</h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-gray-900 mr-2">•</span>
-                  <span className="font-semibold">Start with empathy, not features.</span> Understanding user emotions was more valuable than any technical specification.
-                </li>
-                <li className="flex items-start">
-                  <span className="text-gray-900 mr-2">•</span>
-                  <span className="font-semibold">Iterate relentlessly.</span> Our biggest wins came from continuous refinement based on real user feedback.
-                </li>
-                <li className="flex items-start">
-                  <span className="text-gray-900 mr-2">•</span>
-                  <span className="font-semibold">Design systems as growth enablers.</span> Investing in consistency and documentation paid dividends as we scaled.
-                </li>
-                <li className="flex items-start">
-                  <span className="text-gray-900 mr-2">•</span>
-                  <span className="font-semibold">Collaboration over perfection.</span> Working closely with developers and stakeholders created solutions that actually shipped.
-                </li>
-              </ul>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 font-serif">Key Lessons: What Made the Difference</h2>
+            <div className="space-y-8 text-gray-700 leading-relaxed">
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Start with empathy, not features</h3>
+                <p>Understanding user emotions was more valuable than any technical specification. This principle guided every decision and ensured our solutions truly served user needs.</p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Iterate relentlessly</h3>
+                <p>Our biggest wins came from continuous refinement based on real user feedback. The iterative process allowed us to evolve solutions that genuinely worked for users.</p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Design systems as growth enablers</h3>
+                <p>Investing in consistency and documentation paid dividends as we scaled. A well-structured design system became the foundation for sustainable growth and quality.</p>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Collaboration over perfection</h3>
+                <p>Working closely with developers and stakeholders created solutions that actually shipped. Perfect solutions that never launch serve no one.</p>
+              </div>
             </div>
           </motion.section>
 
