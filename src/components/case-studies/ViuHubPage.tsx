@@ -17,7 +17,7 @@ const ViuHubPage = () => {
             transition={{ duration: 0.8 }}
           >
             {/* Category Label */}
-            <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
+            <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 mt-16">
               Strategic Design Leadership
             </div>
             
