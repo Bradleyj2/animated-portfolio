@@ -7,83 +7,102 @@ const SecondOpinionPage = () => {
     <div className="min-h-screen bg-white text-gray-900">
       <Navigation />
       
-      <div className="pt-[20%] pb-16 px-[15%]">
+      <div className="max-w-4xl mx-auto px-8 py-16 pt-32">
         <div className="w-full">
-          {/* Title Section */}
+          {/* Magazine-Style Header */}
           <motion.div
-            className="flex flex-col lg:flex-row gap-12 mb-24"
+            className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Left Column - Title */}
-            <div className="w-[800px] flex-shrink-0">
-              <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 mb-6 font-sans">
-                CASE STUDY – Second Opinion
-              </h1>
+            {/* Category Label */}
+            <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 mt-16">
+              Healthcare & User Research
             </div>
             
-            {/* Spacer */}
-            <div className="flex-1"></div>
+            {/* Main Headline */}
+            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight font-serif">
+              Second Opinion: When User Research Changes Everything
+            </h1>
             
-            {/* Right Column - Information */}
-            <div className="w-[182px] flex-shrink-0">
-              <div className="text-sm text-gray-500 mb-4">005</div>
-              <div className="text-lg font-bold text-gray-900 mb-4">INFORMATION</div>
-              <div className="space-y-2 text-sm text-gray-700">
-                <div className="font-semibold">ROLE</div>
-                <div>Product Designer</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">INDUSTRY</div>
-                <div>Healthcare</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">PROJECT TYPE</div>
-                <div>Mobile app (Android & iOS)</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">DATE</div>
-                <div>November 2021 - December 2021</div>
+            {/* Subtitle */}
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed font-serif italic">
+              How expanding research scope led to a medication management app that truly served its users
+            </p>
+            
+            {/* Author and Date */}
+            <div className="flex items-center justify-between border-t border-gray-200 pt-6">
+              <div className="text-sm text-gray-500">
+                <span className="font-semibold">By Mera Bradley</span> • Product Designer
+              </div>
+              <div className="text-sm text-gray-500">
+                November 2021 — December 2021
               </div>
             </div>
           </motion.div>
 
-          {/* The Challenge */}
-          <motion.section
-            className="mb-24"
+          {/* Hero Image - Magazine Style */}
+          <motion.div
+            className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">The Challenge That Reshaped the Project</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p>
-                  One week into what seemed like a straightforward medication management app project, 
-                  our team hit a wall.
-                </p>
-                <p>
-                  The client's initial research focused on tech-savvy caregivers, but our instincts 
-                  told us something was missing.
-                </p>
-                <p>
-                  During our first round of user interviews, Maria, a Spanish-speaking woman caring for her 
-                  husband, broke down as she described how she couldn't understand his medication 
-                  labels. She feared making a mistake that could harm him.
-                </p>
-                <p className="font-semibold text-gray-900">
-                  This wasn't the user our research had prepared us for.
-                </p>
-                <p>
-                  We decided to pause development and expand our research scope, despite tight 
-                  deadlines and stakeholder pressure.
-                </p>
+            <div className="relative">
+              <img 
+                src="/secondop1.png" 
+                alt="Woman overwhelmed by medication bottles" 
+                className="w-full h-auto rounded-lg"
+              />
+              <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded">
+                <p className="text-sm text-gray-700 font-medium">Maria's Story</p>
               </div>
-              <div>
-                <img 
-                                      src="/secondop1.png" 
-                  alt="Woman overwhelmed by medication bottles" 
-                  className="w-full h-auto rounded-lg mb-2"
-                />
-                <p className="text-sm text-gray-500 italic text-left">Figure 1: Maria looking overwhelmed by numerous medication bottles on a counter.</p>
+            </div>
+            <p className="text-sm text-gray-500 mt-3 text-center">Maria looking overwhelmed by numerous medication bottles on a counter</p>
+          </motion.div>
+
+          {/* The Challenge - Magazine Style */}
+          <motion.section
+            className="mb-24"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div className="lg:col-span-2">
+                <h2 className="text-4xl font-bold text-gray-900 mb-8 font-serif">The Challenge That Reshaped the Project</h2>
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-lg leading-relaxed mb-6">
+                    One week into what seemed like a straightforward medication management app project, our team hit a wall.
+                  </p>
+                  <p className="leading-relaxed mb-6">
+                    The client's initial research focused on tech-savvy caregivers, but our instincts told us something was missing.
+                  </p>
+                  <p className="leading-relaxed mb-6">
+                    During our first round of user interviews, Maria, a Spanish-speaking woman caring for her husband, broke down as she described how she couldn't understand his medication labels. She feared making a mistake that could harm him.
+                  </p>
+                  <p className="font-semibold text-gray-900 mb-6">
+                    This wasn't the user our research had prepared us for.
+                  </p>
+                  <p className="leading-relaxed">
+                    We decided to pause development and expand our research scope, despite tight deadlines and stakeholder pressure.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="lg:col-span-1">
+                <div className="sticky top-8">
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h4 className="font-bold text-gray-900 mb-3">The Reality</h4>
+                    <p className="text-sm text-gray-600 mb-4">Maria's story revealed a critical gap in our understanding of the user base.</p>
+                    <div className="text-xs text-gray-500">
+                      <p><strong>Challenge:</strong> Language barriers</p>
+                      <p><strong>Fear:</strong> Medication errors</p>
+                      <p><strong>Need:</strong> Clear, accessible information</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.section>
