@@ -323,7 +323,7 @@ const ViuHubPage = () => {
                   alt="Project timeline and growth phases" 
                   className="w-full h-auto rounded-lg mb-2"
                 />
-                <p className="text-sm text-gray-500 italic text-left">Figure 4: Project growth phases showing the evolution from MVP to scaled platform.</p>
+                <p className="text-sm text-gray-500 mt-3 text-center italic">Figure 4: Project growth phases showing the evolution from MVP to scaled platform</p>
               </div>
             </div>
           </motion.section>
