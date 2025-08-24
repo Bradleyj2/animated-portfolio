@@ -352,7 +352,7 @@ const HemispheresPage = () => {
                   <span className="font-bold">The Empathy Engine:</span> The game functions as a psychological mirror, a healing simulator, and a story generator rooted in personal truth. Hemispheres prioritizes emotional learning loops over traditional power fantasies.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  <span className="font-bold">Lessons for Interactive Storytelling:</span> Hemispheres teaches us that mechanics can embody metaphor, abstract emotions can be made tangible, integration {'>'} victory, symbolic systems invite deeper engagement, and emotional progression is meaningful progression.
+                  <span className="font-bold">Lessons for Interactive Storytelling:</span> Hemispheres teaches us that mechanics can embody metaphor, abstract emotions can be made tangible, integration over victory, symbolic systems invite deeper engagement, and emotional progression is meaningful progression.
                 </p>
               </div>
             </motion.div>

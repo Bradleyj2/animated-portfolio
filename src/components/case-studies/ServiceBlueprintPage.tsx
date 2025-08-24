@@ -7,41 +7,37 @@ const ServiceBlueprintPage = () => {
     <div className="min-h-screen bg-white text-gray-900">
       <Navigation />
       
-      <div className="pt-[20%] pb-16 px-[15%]">
+      <div className="max-w-4xl mx-auto px-8 py-16 pt-32">
         <div className="w-full">
-          {/* Title Section */}
+          {/* Magazine-Style Header */}
           <motion.div
-            className="flex flex-col lg:flex-row gap-12 mb-40"
+            className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Left Column - Title */}
-            <div className="w-[800px] flex-shrink-0">
-              <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 mb-6 font-sans">
-                CASE STUDY - Service Design Blueprint Kit
-              </h1>
+            {/* Category Label */}
+            <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 mt-16">
+              Service Design & Organizational Systems
             </div>
             
-            {/* Spacer */}
-            <div className="flex-1"></div>
+            {/* Main Headline */}
+            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight font-serif">
+              Service Design Blueprint Kit: Unifying Organizational Communication
+            </h1>
             
-            {/* Right Column - Information */}
-            <div className="w-[182px] flex-shrink-0">
-              <div className="text-sm text-gray-500 mb-4">002</div>
-              <div className="text-lg font-bold text-gray-900 mb-4">INFORMATION</div>
-              <div className="space-y-2 text-sm text-gray-700">
-                <div className="font-semibold">ROLE</div>
-                <div>Service Designer</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">INDUSTRY</div>
-                <div>Utility</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">PROJECT TYPE</div>
-                <div>Internal Company Template</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">DATE</div>
-                <div>March 2025 - July 2025</div>
+            {/* Subtitle */}
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed font-serif italic">
+              How a simple template standardization transformed cross-team collaboration and service design consistency
+            </p>
+            
+            {/* Author and Date */}
+            <div className="flex items-center justify-between border-t border-gray-200 pt-6">
+              <div className="text-sm text-gray-500">
+                <span className="font-semibold">By Mera Bradley</span> • Service Designer
+              </div>
+              <div className="text-sm text-gray-500">
+                March 2025 — July 2025
               </div>
             </div>
           </motion.div>
