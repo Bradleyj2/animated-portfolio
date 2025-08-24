@@ -7,98 +7,96 @@ const HemispheresPage = () => {
     <div className="min-h-screen bg-white text-gray-900">
       <Navigation />
       
-      <div className="pt-[20%] pb-16 px-[15%]">
+      <div className="max-w-4xl mx-auto px-8 py-16 pt-32">
         <div className="w-full">
-          {/* Title Section */}
+          {/* Magazine-Style Header */}
           <motion.div
-            className="flex flex-col lg:flex-row gap-12 mb-16"
+            className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Left Column - Title */}
-            <div className="w-[800px] flex-shrink-0">
-              <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 mb-6 font-sans">
-                GAME DESIGN DOCUMENT – Hemispheres
-              </h1>
+            {/* Category Label */}
+            <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 mt-16">
+              Game Design & Interactive Storytelling
             </div>
             
-            {/* Spacer */}
-            <div className="flex-1"></div>
+            {/* Main Headline */}
+            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight font-serif">
+              Hemispheres: Transforming Internal Struggle into Interactive Experience
+            </h1>
             
-            {/* Right Column - Information */}
-            <div className="w-[182px] flex-shrink-0">
-              <div className="text-sm text-gray-500 mb-4">001</div>
-              <div className="text-lg font-bold text-gray-900 mb-4">INFORMATION</div>
-              <div className="space-y-2 text-sm text-gray-700">
-                <div className="font-semibold">ROLE</div>
-                <div>Product Designer</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">INDUSTRY</div>
-                <div>Gaming</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">PROJECT TYPE</div>
-                <div>Game Design Document</div>
-                <hr className="border-gray-300 my-2" />
-                <div className="font-semibold">DATE</div>
-                <div>June 2025-August 2025</div>
+            {/* Subtitle */}
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed font-serif italic">
+              How environmental narrative and dual perspective can transform psychological conflict into playable storytelling
+            </p>
+            
+            {/* Author and Date */}
+            <div className="flex items-center justify-between border-t border-gray-200 pt-6">
+              <div className="text-sm text-gray-500">
+                <span className="font-semibold">By Mera Bradley</span> • Product Designer
+              </div>
+              <div className="text-sm text-gray-500">
+                June 2025 — August 2025
               </div>
             </div>
           </motion.div>
 
-          {/* Main Content */}
-          <div className="space-y-16 mt-32">
-            {/* Section 1 */}
-                        <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="mb-8">
-                <div className="relative group">
-                  <img 
-                    src="/hemispheres10.png" 
-                    alt="Two avatars on opposite cliffs" 
-                    className="w-full h-auto rounded-lg"
-                  />
-                  
-                  {/* Hover note */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-xs text-left">Note: This image is AI-generated and are intended solely as visual reference.</p>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-500 italic text-left mt-2">Figure 1: Two avatars on opposite cliffs - Logic and Intuition overlooking fragmented mindscape.</p>
+          {/* Hero Image - Magazine Style */}
+          <motion.div
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="relative">
+              <img 
+                src="/hemispheres10.png" 
+                alt="Two avatars on opposite cliffs" 
+                className="w-full h-auto rounded-lg"
+              />
+              <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded">
+                <p className="text-sm text-gray-700 font-medium">Logic and Intuition Avatars</p>
               </div>
+            </div>
+            <p className="text-sm text-gray-500 mt-3 text-center">Two avatars on opposite cliffs - Logic and Intuition overlooking fragmented mindscape</p>
+          </motion.div>
 
-              
-              <div className="flex flex-col lg:flex-row gap-8 items-start mt-16">
-                <div className="flex-1 prose prose-lg max-w-none">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Executive Summary</h2>
-                  <p className="text-gray-700 leading-relaxed mb-6">
+          {/* Executive Summary - Magazine Style */}
+          <motion.section
+            className="mb-24"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div className="lg:col-span-2">
+                <h2 className="text-4xl font-bold text-gray-900 mb-8 font-serif">Executive Summary</h2>
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-lg leading-relaxed mb-6">
                     Hemispheres is a storytelling case study that explores how environmental narrative and dual perspective can transform internal struggle into interactive experience. The project challenges traditional narrative approaches by embodying psychological states through interactive environments and dual-avatar mechanics.
                   </p>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="leading-relaxed">
                     By making internal conflict externally playable, Hemispheres creates a new model for emotional storytelling in games that prioritizes empathy and introspection over traditional power fantasies.
                   </p>
                 </div>
-                
-                <div className="flex-1">
-                  <div className="relative group">
-                    <img 
-                      src="/hemispheres2.png" 
-                      alt="Split-screen concept art showing Logic and Intuition interacting with different puzzles." 
-                      className="w-full h-auto rounded-lg"
-                    />
-                    
-                    {/* Hover note */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-xs text-left">Note: This image is AI-generated and are intended solely as visual reference.</p>
-                    </div>
+              </div>
+              
+              <div className="lg:col-span-1">
+                <div className="sticky top-8">
+                  <img 
+                    src="/hemispheres2.png" 
+                    alt="Split-screen concept art showing Logic and Intuition interacting with different puzzles." 
+                    className="w-full h-auto rounded-lg mb-4"
+                  />
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900 mb-2">The Concept</h4>
+                    <p className="text-sm text-gray-600">Split-screen concept art showing Logic and Intuition interacting with different puzzles.</p>
                   </div>
-                  <p className="text-sm text-gray-500 italic text-left mt-2">Figure 2: Split-screen concept art showing Logic and Intuition interacting with different puzzles.</p>
                 </div>
               </div>
-            </motion.div>
+                         </div>
+           </motion.section>
 
             {/* Section 2 */}
             <motion.div
