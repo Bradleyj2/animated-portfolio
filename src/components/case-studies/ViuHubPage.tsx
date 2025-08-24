@@ -59,7 +59,7 @@ const ViuHubPage = () => {
                 <p className="text-sm text-gray-700 font-medium">VIU by HUB Platform Interface</p>
               </div>
             </div>
-            <p className="text-sm text-gray-500 mt-3 text-center">Trust signals and transparent information architecture create confidence in high-stakes financial decisions</p>
+            <p className="text-sm text-gray-500 mt-3 text-center italic">Figure 1: VIU by HUB platform interface showing trust signals and transparent information architecture</p>
           </motion.div>
 
           {/* The Problem - Magazine Style */}
@@ -96,6 +96,7 @@ const ViuHubPage = () => {
                     <h4 className="font-bold text-gray-900 mb-2">The Reality</h4>
                     <p className="text-sm text-gray-600">Users felt overwhelmed by complex insurance processes, leading to abandoned purchases and lost trust.</p>
                   </div>
+                  <p className="text-sm text-gray-500 mt-3 text-center italic">Figure 2: User overwhelmed by insurance complexity and decision paralysis</p>
                 </div>
               </div>
             </div>
@@ -173,7 +174,7 @@ const ViuHubPage = () => {
                     alt="Systems mapping and journey analysis" 
                     className="w-full h-auto rounded-lg"
                   />
-                  <p className="text-sm text-gray-500 mt-3 text-center">Journey mapping and trust signal audits identified critical breakdown points</p>
+                  <p className="text-sm text-gray-500 mt-3 text-center italic">Figure 3: Systems mapping and journey analysis revealing trust breakdown points</p>
                 </div>
               </div>
 
@@ -272,7 +273,7 @@ const ViuHubPage = () => {
                   alt="Impact metrics and achievements" 
                   className="w-full h-auto rounded-lg"
                 />
-                <p className="text-sm text-gray-500 mt-3 text-center">The redesigned platform achieved measurable improvements in user trust and engagement</p>
+                <p className="text-sm text-gray-500 mt-3 text-center italic">Figure 4: Impact metrics and achievements showcasing the success of the VIU by HUB platform</p>
               </div>
             </div>
           </motion.section>
