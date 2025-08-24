@@ -42,58 +42,64 @@ const ServiceBlueprintPage = () => {
             </div>
           </motion.div>
 
-          {/* Main Content */}
-          <div className="space-y-16">
-            {/* Section 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="relative group">
-                <img
-                                      src="/sb1.png"
-                  alt="Service Blueprint Templates"
-                  className="w-full h-auto rounded-lg mb-2"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white p-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Note: These animated images are derived from live artifacts, with sensitive data removed for security.
-                </div>
+          {/* Hero Image - Magazine Style */}
+          <motion.div
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="relative">
+              <img
+                src="/sb1.png"
+                alt="Service Blueprint Templates"
+                className="w-full h-auto rounded-lg"
+              />
+              <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded">
+                <p className="text-sm text-gray-700 font-medium">Service Blueprint Templates</p>
               </div>
-              <p className="text-sm text-gray-500 italic text-left mb-16">Figure 1: Creation of a service design blueprint kit that can be used organization wide, across teams.</p>
+            </div>
+            <p className="text-sm text-gray-500 mt-3 text-center">Creation of a service design blueprint kit that can be used organization wide, across teams</p>
+          </motion.div>
 
-              
-              <div className="flex flex-col lg:flex-row gap-8 items-start">
-                {/* Left Column - Text */}
-                <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">The Discovery That Changed Everything</h2>
-                  <p className="text-gray-700 leading-relaxed mb-6">
+          {/* The Problem - Magazine Style */}
+          <motion.section
+            className="mb-24"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div className="lg:col-span-2">
+                <h2 className="text-4xl font-bold text-gray-900 mb-8 font-serif">The Discovery That Changed Everything</h2>
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-lg leading-relaxed mb-6">
                     It started with a simple question during a cross-team workshop: "Which service blueprint template should we use for this project?" What followed was an uncomfortable silence, then a flurry of conflicting suggestions.
                   </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <span className="font-bold">The shocking reality:</span> In the span of 30 minutes, I counted four different service blueprint templates being referenced within one pod—and that's just one pod within the entire company. 
+                  <p className="leading-relaxed mb-6">
+                    <strong>The shocking reality:</strong> In the span of 30 minutes, I counted four different service blueprint templates being referenced within one pod—and that's just one pod within the entire company.
                   </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    <span className="font-bold">My hypothesis:</span> This wasn't just a template problem. It was a communication breakdown that was fragmenting how we understood and designed our services.
+                  <p className="leading-relaxed">
+                    <strong>My hypothesis:</strong> This wasn't just a template problem. It was a communication breakdown that was fragmenting how we understood and designed our services.
                   </p>
-                </div>
-
-                {/* Right Column - Image */}
-                <div className="flex-1">
-                  <div className="relative group">
-                    <img
-                      src="/sb2.png"
-                      alt="Workshop discovery moment"
-                      className="w-full h-auto rounded-lg mb-2"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white p-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      Note: These animated images are derived from live artifacts, with sensitive data removed for security.
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-500 italic text-left">Figure 2: Four different service blueprint formats showing structural inconsistencies and terminology variations.</p>
                 </div>
               </div>
-            </motion.div>
+              
+              <div className="lg:col-span-1">
+                <div className="sticky top-8">
+                  <img
+                    src="/sb2.png"
+                    alt="Workshop discovery moment"
+                    className="w-full h-auto rounded-lg mb-4"
+                  />
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-bold text-gray-900 mb-2">The Reality</h4>
+                    <p className="text-sm text-gray-600">Four different service blueprint formats showing structural inconsistencies and terminology variations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
 
             {/* Section 2 */}
             <motion.div
