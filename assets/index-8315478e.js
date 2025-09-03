@@ -87,7 +87,7 @@ JOURNEYS`,subcopy:i="",ctaHref:s,ctaLabel:o}){return a.jsxs("section",{className
         relative w-full
         mx-auto max-w-screen-2xl
         px-6 md:px-10 lg:px-12 xl:px-16
-        min-h-[85vh] md:min-h-[82vh]
+        min-h-[95vh] md:min-h-[90vh]
         grid grid-cols-1 lg:grid-cols-12 gap-10 items-center
       `,"aria-label":"Hero",children:[a.jsx("div",{className:"lg:col-span-8",children:a.jsx("div",{className:"relative w-full aspect-[16/10] md:aspect-[16/9] rounded-3xl overflow-hidden bg-neutral-900",children:a.jsx("img",{src:e,alt:t,className:"absolute inset-0 h-full w-full object-cover",loading:"eager"})})}),a.jsxs("div",{className:"lg:col-span-4",children:[a.jsx("div",{className:"text-sm md:text-base text-neutral-400 font-medium leading-none tracking-wide mb-4",children:n}),a.jsx("h1",{className:`
             text-white font-sans font-extrabold tracking-tight
