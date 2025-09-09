@@ -29,9 +29,23 @@
           );
         }
       }(window.location))
+      
+      // Additional fallback for direct navigation
+      window.addEventListener('DOMContentLoaded', function() {
+        // Check if we're on a case study page and handle any routing issues
+        if (window.location.pathname.includes('/case-studies/')) {
+          // Ensure the React app is loaded before proceeding
+          setTimeout(function() {
+            if (document.getElementById('root').children.length === 0) {
+              // If React app hasn't loaded, redirect to home
+              window.location.href = '/';
+            }
+          }, 1000);
+        }
+      });
     </script>
-    <script type="module" crossorigin src="/assets/index-f43d0ae9.js"></script>
-    <link rel="stylesheet" href="/assets/index-c150cda2.css">
+    <script type="module" crossorigin src="/assets/index-2c324690.js"></script>
+    <link rel="stylesheet" href="/assets/index-c185e8d4.css">
   </head>
   <body>
     <div id="root"></div>
