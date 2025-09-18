@@ -153,7 +153,7 @@ Error generating stack: `+s.message+`
             font-brand-strong text-white tracking-tight leading-tight
             text-[1.625rem] md:text-2xl group-hover:text-white
             transition-colors duration-300
-          `,children:t}),n&&a.jsx("p",{className:"mt-2 text-neutral-300 group-hover:text-white text-base leading-relaxed transition-colors duration-300",children:n})]})]})}function HS({label:e="SOME OF MY LATEST WORK"}){return a.jsx("div",{className:"w-full mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-12 xl:px-16 my-2 md:my-4",children:a.jsxs("div",{className:"relative flex items-center justify-center",children:[a.jsx("hr",{className:"w-full border-t border-white/20"}),a.jsx("span",{className:`
+          `,children:t}),n&&a.jsx("p",{className:"mt-2 text-neutral-300 group-hover:text-white text-base leading-relaxed transition-colors duration-300",children:n})]})]})}function HS({label:e="SOME OF MY LATEST WORK"}){return a.jsx("div",{className:"w-full mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-12 xl:px-16 my-2 md:my-4 mb-8 md:mb-12",children:a.jsxs("div",{className:"relative flex items-center justify-center",children:[a.jsx("hr",{className:"w-full border-t border-white/20"}),a.jsx("span",{className:`
             absolute px-1 md:px-2 py-0.5
             bg-black text-white/90 text-xs md:text-sm tracking-widest
             uppercase font-semibold
