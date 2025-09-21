@@ -36,10 +36,23 @@
           );
         }
       }(window.location))
+      
+      // Debug script to check if React loads
+      window.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, checking React app...');
+        setTimeout(function() {
+          var root = document.getElementById('root');
+          if (root && root.children.length === 0) {
+            console.log('React app not loaded, redirecting to home...');
+            window.location.href = '/';
+          }
+        }, 2000);
+      });
     </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" crossorigin src="/assets/index-491fdb89.js"></script>
+    <link rel="stylesheet" href="/assets/index-6c77383d.css">
   </body>
 </html>
