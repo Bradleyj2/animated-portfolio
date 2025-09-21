@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript">
+      // Force correct URL without trailing slash
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, null, window.location.pathname.slice(0, -1));
+      }
+      
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
@@ -24,8 +29,10 @@
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
+          // Remove trailing slash from pathname before adding decoded path
+          var pathname = l.pathname.replace(/\/$/, '');
           window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+              pathname + decoded + l.hash
           );
         }
       }(window.location))
