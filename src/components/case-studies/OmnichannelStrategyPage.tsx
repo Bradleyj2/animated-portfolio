@@ -1,464 +1,267 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import Navigation from '../Navigation'
+import PageMeta from '../PageMeta'
+import CaseStudyLayout from '../CaseStudyLayout'
 
 const OmnichannelStrategyPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    // Force white background for case study page, overriding any scroll-based theme
+    document.documentElement.style.setProperty('background-color', '#ffffff', 'important')
+    document.body.style.setProperty('background-color', '#ffffff', 'important')
+    document.documentElement.style.setProperty('--scroll-bg-color', '#ffffff')
+    
+    return () => {
+      // Cleanup: reset to default when leaving page
+      document.documentElement.style.removeProperty('background-color')
+      document.body.style.removeProperty('background-color')
+      document.documentElement.style.removeProperty('--scroll-bg-color')
+    }
+  }, [])
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <>
+      <PageMeta
+        title="Connecting Self Service and Live Support — Mera Bradley"
+        description="Led the early redesign and mapping of customer support across touchpoints, eliminating context breaks between digital and human channels."
+        ogImage="/og/omnichannel.png"
+      />
       <Navigation />
-      
-      <div className="max-w-4xl mx-auto px-8 py-16 pt-32">
+      <CaseStudyLayout
+        previousCase={{
+          title: "Hemispheres",
+          path: "/case-studies/hemispheres"
+        }}
+        nextCase={{
+          title: "VIU by HUB",
+          path: "/case-studies/viu-hub"
+        }}
+      >
         <div className="w-full">
-          {/* Magazine-Style Header */}
+          {/* Magazine-Style Header - Full Width */}
           <motion.div
-            className="mb-16"
+            className="mb-20 -mx-6 md:-mx-6 lg:-mx-[98px] xl:-mx-[98px] px-6 md:px-6 lg:px-[98px] xl:px-[98px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             {/* Category Label */}
-            <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 mt-16">
-              Service Design & Customer Experience
+            <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
+              Case study —
             </div>
             
             {/* Main Headline */}
-            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight font-serif">
-              Omnichannel Strategy: Bridging Digital and Human Touchpoints
+            <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
+              Connecting Self Service and Live Support
             </h1>
             
             {/* Subtitle */}
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed font-serif italic">
-              How seamless handoffs and instant context transformed customer service in the utility industry
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-full">
+              Led the early redesign and mapping of customer support across touchpoints, eliminating context breaks between digital and human channels.
             </p>
             
             {/* Author and Date */}
             <div className="flex items-center justify-between border-t border-gray-200 pt-6">
               <div className="text-sm text-gray-500">
-                <span className="font-semibold">By Mera Bradley</span> • Service Designer
+                <span className="font-semibold">Mera Bradley</span> • Strategy & Design Lead
               </div>
               <div className="text-sm text-gray-500">
-                September 2024 — December 2024
+                Enterprise Initiative, 2025
               </div>
             </div>
           </motion.div>
 
-          {/* Hero Image - Magazine Style */}
+          {/* Intro paragraph - right aligned above image */}
           <motion.div
-            className="mb-16"
+            className="mb-8 flex justify-end"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
+            <p className="text-lg leading-relaxed text-gray-700 max-w-[66.67%] text-right">
+              A major utility company came to us with a problem. Their customers would start solving issues online, hit a wall, call for help, and then... start completely over. The agent had no idea what the customer had already tried, what information they'd entered, or where they got stuck. It was like watching someone retell their entire story to a new person every time they switched channels.
+            </p>
+          </motion.div>
+
+          {/* Image Section */}
+          <motion.div
+            className="mb-12 -mx-6 md:-mx-6 lg:-mx-[98px] xl:-mx-[98px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="relative">
-              <img 
-                src="/omni1.png" 
-                alt="Customer frustration with disconnected channels" 
-                className="w-full h-auto rounded-lg"
+            <div className="relative w-full">
+              <img
+                src="/omni1.png"
+                alt="Omnichannel strategy framework overview"
+                className="w-full h-auto"
               />
-              <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-4 py-2 rounded">
-                <p className="text-sm text-gray-700 font-medium">Jennifer's Story</p>
-              </div>
             </div>
-            <p className="text-sm text-gray-500 mt-3 text-center">Customer frustration with disconnected channels showing digital and human service gaps</p>
+            <p className="text-sm text-gray-500 italic text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
+              The omnichannel strategy unifies customer experiences across all touchpoints
+            </p>
           </motion.div>
 
-          {/* The Problem - Magazine Style */}
+          {/* Narrative Section */}
           <motion.section
-            className="mb-24"
+            className="mb-20"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              <div className="lg:col-span-2">
-                <h2 className="text-4xl font-bold text-gray-900 mb-8 font-serif">The Problem: When Digital Meets Human, Context Gets Lost</h2>
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-lg leading-relaxed mb-6">
-                    Meet Jennifer, a utility customer trying to report a power outage through the company's mobile app. After filling out forms and uploading photos, she gets frustrated and calls customer service. The agent, Mark, starts from scratch, asking Jennifer to repeat everything she just submitted online.
-                  </p>
-                  <p className="font-semibold text-gray-900 mb-4">
-                    The disconnect was costing everyone:
-                  </p>
-                  <ul className="space-y-2 ml-6 mb-6">
-                    <li>• Customers: Frustrated by repetitive processes</li>
-                    <li>• Agents: Longer call times without context</li>
-                    <li>• Company: Reduced efficiency and satisfaction scores</li>
-                  </ul>
-                  <p className="leading-relaxed">
-                    This major utility company was losing the battle against fragmented customer experiences, with digital self-service and live agents operating in complete silos.
-                  </p>
-                </div>
+            <p className="text-lg leading-relaxed text-gray-700 mb-4">
+              The company wanted to reduce call handle times. But the real problem wasn't the calls themselves, it was the broken handoff between digital and human touchpoints. Customers were frustrated. Agents were frustrated. Everyone was wasting time repeating information that should have been captured the first time.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-700">
+              I decided we needed to design a smarter way to connect these experiences. A strategy that would make every channel feel like one continuous conversation, not a series of disconnected interactions.
+            </p>
+          </motion.section>
+
+
+          {/* Image Section 2 */}
+          <motion.div
+            className="mb-20 -mx-6 md:-mx-6 lg:-mx-[98px] xl:-mx-[98px]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <div className="relative w-full">
+              <img
+                src="/omni.png"
+                alt="Omnichannel strategy kickoff and planning session"
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-gray-500 italic text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
+              Strategy kickoff session: mapping out the problem space
+            </p>
+          </motion.div>
+
+          {/* Narrative Section 3 */}
+          <motion.section
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div className="flex items-center justify-center lg:justify-start">
+                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">Talking to the people who live it.</h2>
               </div>
-              
-              <div className="lg:col-span-1">
-                <div className="sticky top-8">
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h4 className="font-bold text-gray-900 mb-3">The Challenge</h4>
-                    <p className="text-sm text-gray-600 mb-4">Fragmented customer experiences across digital and human touchpoints.</p>
-                    <div className="text-xs text-gray-500">
-                      <p><strong>Customer Pain:</strong> Repetitive processes</p>
-                      <p><strong>Agent Pain:</strong> No context</p>
-                      <p><strong>Business Pain:</strong> Reduced efficiency</p>
-                    </div>
-                  </div>
+              <div className="flex items-center">
+                <p className="text-lg leading-relaxed text-gray-700">
+                  We interviewed 18 customer service representatives. They told me about the frustration of asking customers to repeat information they'd already entered online. They described the awkward pauses while customers tried to remember what they'd typed. They shared how much time was wasted on information gathering instead of problem solving. The insights were clear: we needed to design a system that captured context and made it instantly available.
+                </p>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Image Section 3 */}
+          <motion.div
+            className="mb-20 -mx-6 md:-mx-6 lg:-mx-[98px] xl:-mx-[98px]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <div className="relative w-full">
+              <img
+                src="/omni4.png"
+                alt="User interview analysis and customer insights visualization"
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-gray-500 italic text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
+              Insights from 18 CSR interviews showed the real pain points behind the data
+            </p>
+          </motion.div>
+
+          {/* Narrative Section 4 */}
+          <motion.section
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div className="flex items-center justify-center lg:justify-start">
+                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">Mapping the invisible handoff.</h2>
+              </div>
+              <div className="flex items-center">
+                <div>
+                  <p className="text-lg leading-relaxed text-gray-700 mb-4">
+                    We created journey maps for both customers and agents. The customer journey showed frustration points where context was lost. The agent journey revealed inefficiencies where information gathering took priority over problem solving.
+                  </p>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    Then, we designed a unified service blueprint that showed how data could flow seamlessly between channels, making every interaction feel connected, not disconnected.
+                  </p>
                 </div>
               </div>
             </div>
           </motion.section>
 
-                          {/* The Vision */}
-              <motion.section
-                className="mb-24 mt-16"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">The Vision: Seamless Handoffs, Instant Context</h2>
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p className="font-semibold text-gray-900">
-                  What if every customer interaction picked up exactly where the previous one left off?
-                </p>
-                <p>
-                  Our mission was ambitious yet clear: create an omnichannel experience where customer data flows seamlessly from digital touchpoints to live agents, reducing call handle times while dramatically improving service quality.
-                </p>
-                <p className="font-semibold text-gray-900">
-                  The goal wasn't just integration—it was transformation.
-                </p>
-              </div>
-            </motion.section>
+          {/* Image Section 4 */}
+          <motion.div
+            className="mb-20 -mx-6 md:-mx-6 lg:-mx-[98px] xl:-mx-[98px]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.6 }}
+          >
+            <div className="relative w-full">
+              <img
+                src="/omni2.png"
+                alt="Customer and CSR journey mapping visualization"
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-gray-500 italic text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
+              Two journey maps and one unified service blueprint, connecting the experiences
+            </p>
+          </motion.div>
 
-                          {/* The Discovery Journey */}
-              <motion.section
-                className="mb-24 mt-16"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">The Discovery Journey: Building Understanding Before Solutions</h2>
-              <div className="space-y-8 text-gray-700 leading-relaxed">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Phase 1: Alignment Through Shared Vision</h3>
-                  <p>
-                    Our kickoff wasn't just another meeting—it was a collaborative exploration. We brought together cross-functional teams to experience real omnichannel scenarios, sparking creative ideas and building collective ownership of the solution.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Phase 2: Deep Research, Real Insights</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Competitive Intelligence</h4>
-                      <p>
-                        We analyzed industry leaders to understand what worked, what didn't, and where opportunities existed. The landscape revealed clear gaps in true omnichannel integration.
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Customer Voice Analysis</h4>
-                      <p>
-                        Mining existing customer interview databases, we validated behaviors and identified critical expectations during service transitions. The message was clear: customers wanted continuity, not repetition.
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Agent Reality Check</h4>
-                      <p>
-                        18 interviews across 4 CSR teams revealed the human side of the challenge:
-                      </p>
-                      <ul className="space-y-2 ml-6 mt-2">
-                        <li className="flex items-start">
-                          <span className="text-gray-900 mr-2">•</span>
-                          Technology friction points
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-gray-900 mr-2">•</span>
-                          Communication gaps
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-gray-900 mr-2">•</span>
-                          Workflow inefficiencies
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-gray-900 mr-2">•</span>
-                          The desire to truly help customers
-                        </li>
-                      </ul>
-                      <p className="mt-2">
-                        From these insights, we crafted a comprehensive CSR persona representing shared experiences and needs.
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">Journey Mapping Reality</h4>
-                      <p>
-                        We didn't just theorize—we experienced. Using CSR training software and creating test accounts, we walked through both sides of the service equation:
-                      </p>
-                      <ul className="space-y-2 ml-6 mt-2">
-                        <li>• Customer journey: Every click, form, and frustration point</li>
-                        <li>• CSR workflow: Every screen, process, and bottleneck</li>
-                      </ul>
-                      <p className="mt-2">
-                        This dual perspective revealed the exact moments where experiences broke down.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-8">
-                <img 
-                                      src="/omni4.png" 
-                  alt="Research and discovery process" 
-                  className="w-full h-auto rounded-lg mb-2"
-                />
-                <p className="text-sm text-gray-500 italic text-left">Figure 2: Research and discovery process showing customer and agent journey mapping.</p>
-              </div>
-            </motion.section>
+          {/* Narrative Section 5 */}
+          <motion.section
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.8 }}
+          >
+            <p className="text-lg leading-relaxed text-gray-700 mb-4">
+              The strategy I designed wasn't just about connecting channels, but designing a system where context travels with the customer. Where agents see what customers tried online. Where data flows seamlessly between touchpoints. Where every interaction builds on the last one, instead of starting from scratch.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-700">
+              The result? A framework that reduces call handle times, improves customer satisfaction, and makes both customers and agents feel like they're part of one continuous conversation. Because that's what omnichannel should really mean, not just multiple channels, but one unified experience.
+            </p>
+          </motion.section>
 
-            {/* The Solution */}
-            <motion.section
-              className="mb-16 mt-16"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">The Solution: Service Blueprint as North Star</h2>
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Connecting Every Dot</h3>
-                  <p>
-                    Our service blueprint became more than a document. It was a transformation guide that mapped:
-                  </p>
-                  <ul className="space-y-2 ml-6 mt-2">
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Customer actions across all touchpoints
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      CSR workflows and decision points
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Behind-the-scenes processes that make seamless service possible
-                    </li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">From Abstract to Actionable</h3>
-                  <p>
-                    The blueprint transformed scattered insights into a unified strategy, providing:
-                  </p>
-                  <ul className="space-y-2 ml-6 mt-2">
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Clear improvement areas with prioritized impact
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Alignment across all stakeholder groups
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      A roadmap for seamless omnichannel implementation
-                    </li>
-                  </ul>
-                </div>
+          {/* Stats Section */}
+          <motion.section
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2.0 }}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-12">THE RESULT</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+              <div>
+                <div className="text-5xl font-bold text-gray-900 mb-2">18</div>
+                <div className="text-lg text-gray-600">CSR interviews conducted</div>
               </div>
-              
-              <div className="mt-8">
-                <img 
-                                      src="/omni3.png" 
-                  alt="Service blueprint connecting all touchpoints" 
-                  className="w-full h-auto rounded-lg mb-2"
-                />
-                <p className="text-sm text-gray-500 italic text-left">Figure 3: Service blueprint connecting all touchpoints showing unified customer journey.</p>
+              <div>
+                <div className="text-5xl font-bold text-gray-900 mb-2">2</div>
+                <div className="text-lg text-gray-600">Journey maps created</div>
               </div>
-            </motion.section>
+              <div>
+                <div className="text-5xl font-bold text-gray-900 mb-2">1</div>
+                <div className="text-lg text-gray-600">Unified service blueprint</div>
+              </div>
+            </div>
+          </motion.section>
 
-                          {/* The Impact */}
-              <motion.section
-                className="mb-24 mt-16"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-              >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">The Impact: Designing for Tomorrow's Service</h2>
-              <div className="space-y-8 text-gray-700 leading-relaxed">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Immediate Wins</h3>
-                  <ul className="space-y-2 ml-6">
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Unified stakeholder vision across previously siloed teams
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Clear roadmap with defined milestones and resource allocation
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Risk mitigation strategy addressing security and change management concerns
-                    </li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Future-State Benefits</h3>
-                  <p className="mb-3">
-                    The blueprint positioned the utility company to achieve:
-                  </p>
-                  <ul className="space-y-2 ml-6">
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Reduced call handle times through instant context transfer
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Improved customer satisfaction via eliminated repetition
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Enhanced agent efficiency with complete customer histories
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-900 mr-2">•</span>
-                      Scalable framework for continuous service evolution
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </motion.section>
-
-                          {/* Key Insights */}
-              <motion.section
-                className="mb-24 mt-16"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Insights: What Made the Difference</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-gray-900 mr-2">•</span>
-                    <span className="font-semibold">Human-Centered Approach</span> — Success came from understanding both sides of the service equation—customer frustrations and agent challenges informed every decision.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-900 mr-2">•</span>
-                    <span className="font-semibold">Research Before Design</span> — 18 CSR interviews and comprehensive journey mapping prevented assumptions and ensured solutions addressed real problems.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-900 mr-2">•</span>
-                    <span className="font-semibold">Collaborative Discovery</span> — Cross-functional alignment from day one eliminated future roadblocks and built shared ownership of outcomes.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-900 mr-2">•</span>
-                    <span className="font-semibold">Blueprint as Strategy</span> — The service blueprint wasn't just documentation—it became the strategic foundation for implementation decisions.
-                  </li>
-                </ul>
-              </div>
-            </motion.section>
-
-                          {/* The Transformation */}
-              <motion.section
-                className="mb-24"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.4 }}
-              >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">The Transformation: From Silos to Seamless</h2>
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-red-50 rounded-lg p-6 border border-red-200">
-                    <h3 className="text-lg font-bold text-red-900 mb-3">Before</h3>
-                    <p>Customers repeated information across channels while agents worked without context, leading to longer calls and frustrated experiences.</p>
-                  </div>
-                  <div className="bg-green-50 rounded-lg p-6 border border-green-200">
-                    <h3 className="text-lg font-bold text-green-900 mb-3">After</h3>
-                    <p>A clear pathway to omnichannel excellence where every interaction builds on the last, creating efficiency for agents and satisfaction for customers.</p>
-                  </div>
-                </div>
-              </div>
-            </motion.section>
-
-                          {/* Moving Forward */}
-              <motion.section
-                className="mb-24"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.6 }}
-              >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Moving Forward: Ready for Implementation</h2>
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p>
-                  The discovery phase achieved its ultimate goal: transforming an abstract vision into a concrete, actionable strategy.
-                </p>
-                <p className="font-semibold text-gray-900">
-                  With the service blueprint as our foundation, the utility company now has:
-                </p>
-                <ul className="space-y-2 ml-6">
-                  <li className="flex items-start">
-                    <span className="text-gray-900 mr-2">•</span>
-                    A clear understanding of current state challenges
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-900 mr-2">•</span>
-                    A detailed roadmap for omnichannel transformation
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-900 mr-2">•</span>
-                    Stakeholder alignment across all teams
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-900 mr-2">•</span>
-                    Risk mitigation strategies for smooth implementation
-                  </li>
-                </ul>
-                <p>
-                  The vision is no longer a dream—it's ready to become reality.
-                </p>
-                <p>
-                  This project proved that successful omnichannel strategy isn't about technology alone. It's about understanding human needs, mapping real workflows, and designing experiences that work beautifully for everyone involved.
-                </p>
-                <p className="font-semibold text-gray-900">
-                  Next stop: Implementation that transforms customer service from fragmented to flawless.
-                </p>
-              </div>
-            </motion.section>
-
-            {/* Footer CTAs */}
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center pt-16"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
-            >
-              <Link to="/home">
-                <motion.button
-                  className="px-8 py-4 bg-transparent text-gray-700 font-bold rounded-lg border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  ← Back to Home
-                </motion.button>
-              </Link>
-              <Link to="/case-studies/hemispheres" onClick={() => window.scrollTo(0, 0)}>
-                <motion.button
-                  className="px-8 py-4 bg-gray-900 text-white font-bold rounded-lg border border-gray-300 hover:bg-gray-800 transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View Next Case Study →
-                </motion.button>
-              </Link>
-            </motion.div>
-          </div>
         </div>
-      </div>
-    </div>
-  )
-}
+      </CaseStudyLayout>
+    </>
+  );
+};
 
-export default OmnichannelStrategyPage 
+export default OmnichannelStrategyPage;
