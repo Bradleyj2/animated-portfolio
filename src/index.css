@@ -2,64 +2,1273 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-dark-space text-white font-sans;
-    overflow-x: hidden;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    font-variation-settings: normal;
+@import "./styles/archive.css";
+
+/* Archive of Worlds - Netflix × Rockstar × Cyberpunk/Steampunk Cartoon Mystery Style */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Archive of Worlds Color Palette - WCAG AAA Compliant */
+  --archive-bg: #0a0a0a;
+  --parchment-dark: #1a1a1a;
+  --metal-texture: #2a2a2a;
+  --neon-lavender: #d4a5ff; /* Brighter for better contrast */
+  --neon-green: #7fff00; /* Brighter for better contrast */
+  --cinematic-gold: #ffd700;
+  --steampunk-brass: #cd7f32;
+  --cyberpunk-blue: #00ffff;
+  --mystery-purple: #b366ff; /* Brighter for better contrast */
+  --glow-white: #ffffff;
+  --text-primary: #ffffff; /* Pure white for maximum contrast */
+  --text-secondary: #e0e0e0; /* Light gray for good contrast */
+  --text-accent: #ffd700;
+  --text-muted: #b0b0b0; /* Medium gray for secondary text */
+}
+
+/* CaseStudyCard styling - clean minimal design */
+.case-study-card-text {
+  background-color: transparent !important;
+}
+
+.case-study-card-overlay {
+  background-color: rgba(0, 0, 0, 0) !important;
+  transition: background-color 300ms ease, opacity 300ms ease !important;
+}
+
+
+/* Disable hover effects on profile1.png specifically */
+img[src="/profile1.png"] {
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+img[src="/profile1.png"]:hover {
+  transform: none !important;
+  scale: 1 !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Disable image hover effects in case studies */
+[data-case-study="true"] img:hover,
+.case-study img:hover {
+  transform: none !important;
+  scale: 1 !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Force gray background on emotional approach pills */
+.bg-gray-200 {
+  background-color: #e5e7eb !important;
+}
+
+/* Ensure pill styling works */
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
+/* Override case study transparent background for pills specifically */
+[data-case-study="true"] div[style*="backgroundColor"] {
+  background-color: #e5e7eb !important;
+}
+
+/* Force gray background ONLY on emotional approach pills */
+[data-case-study="true"] .grid.grid-cols-2 div,
+[data-case-study="true"] .grid.grid-cols-3 div {
+  background-color: #e5e7eb !important;
+}
+
+/* Force white background on all other text sections in case studies */
+[data-case-study="true"] div:not(.grid div):not([style*="backgroundColor"]) {
+  background-color: #ffffff !important;
+}
+
+/* Prevent category names from wrapping - uppercase labels must stay on one line */
+.uppercase,
+[class*="uppercase"],
+div[class*="font-bold"][class*="uppercase"],
+div[class*="uppercase"][class*="tracking-wider"],
+div[class*="text-sm"][class*="font-bold"][class*="uppercase"][class*="tracking-wider"] {
+  white-space: nowrap !important;
+}
+
+/* Remove any gray backgrounds from text content */
+[data-case-study="true"] p,
+[data-case-study="true"] h1,
+[data-case-study="true"] h2,
+[data-case-study="true"] h3,
+[data-case-study="true"] h4,
+[data-case-study="true"] ul,
+[data-case-study="true"] li {
+  background-color: transparent !important;
+}
+
+/* Ensure list bullets are visible in case study TL;DR sections */
+ul.list-disc {
+  list-style-type: disc !important;
+}
+
+ul.list-disc.list-inside {
+  list-style-position: inside !important;
+  padding-left: 0 !important;
+}
+
+ul.list-disc li {
+  display: list-item !important;
+  list-style-type: disc !important;
+  margin-left: 0 !important;
+}
+
+/* Mobile and tablet scroll restrictions - vertical only */
+@media (max-width: 1024px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
   }
   
   * {
-    @apply border-gray-300;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure specific components don't cause horizontal scroll */
+  .homepage-main,
+  .case-studies-section,
+  [data-case-study="true"] {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Prevent images from causing horizontal scroll */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
 
-@layer components {
-  .hologram-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-hologram-blue via-hologram-pink to-hologram-blue;
-    background-size: 200% 200%;
-    animation: hologram 4s ease-in-out infinite;
-  }
-  
-  .terminal-text {
-    @apply font-terminal text-terminal-green;
-  }
-  
-  .glow-border {
-    @apply border border-neon-blue shadow-[0_0_10px_rgba(0,255,255,0.5)];
-  }
-  
-  .scan-line {
-    @apply absolute w-full h-1 bg-gradient-to-r from-transparent via-neon-blue to-transparent opacity-50;
-    animation: scan 2s linear infinite;
-  }
-  
-  .particle {
-    @apply absolute w-1 h-1 bg-neon-blue rounded-full opacity-60;
-    animation: particle 20s linear infinite;
-  }
-  
-  .flicker {
-    animation: flicker 0.15s infinite linear;
-  }
-  
-  .typewriter {
-    @apply overflow-hidden whitespace-nowrap border-r-2 border-neon-blue;
-    animation: type 3s steps(40) 1s 1 normal both, blink 1s infinite;
+/* Ensure no purple borders/rings remain from older styles */
+.tile, .tile * {
+  /* remove any custom border colors you added previously */
+  border-color: transparent !important;
+}
+
+/* Remove any previous purple borders/rings from hero wrappers */
+.hero, .hero * { 
+  border-color: transparent !important; 
+}
+
+/* BRAND variable font helper classes */
+.font-brand { 
+  font-family: "Brand", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; 
+}
+
+/* Strong display for titles – adjust to your Brand axis names if needed */
+.font-brand-strong {
+  font-family: "Brand", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-variation-settings: "wght" 750, "opsz" 32;
+  font-weight: 750; /* fallback */
+}
+
+/* Optional: smooth headline rendering */
+h1, .headline { 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--archive-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Max width of 2/3 screen width and left align for all text blocks */
+p,
+.text-content,
+.text-block {
+  max-width: 66.67%;
+  text-align: left;
+}
+
+/* Apply to text with leading-relaxed class */
+[class*="leading-relaxed"] {
+  max-width: 66.67%;
+  text-align: left;
+}
+
+/* Don't apply to headings */
+h1, h2, h3, h4, h5, h6 {
+  max-width: none !important;
+  text-align: left;
+}
+
+/* Center text in coming soon sections */
+.text-center h3,
+.text-center p {
+  text-align: center !important;
+}
+
+/* Full width for subtitles in case study headers */
+[class*="-mx-6"] p.text-xl.leading-relaxed,
+[class*="-mx-[98px]"] p.text-xl.leading-relaxed {
+  max-width: 100% !important;
+}
+
+/* Don't apply to stats/numbers */
+.text-5xl,
+.text-4xl,
+.text-3xl {
+  max-width: none !important;
+}
+
+/* Don't apply to paragraphs in TL;DR sections (dark background boxes) */
+div[class*="bg-\[#0a0a0a\]"] p,
+div[class*="bg-black"] p {
+  max-width: none;
+}
+
+/* Ensure paragraphs in two-column narrative sections use full width of their column */
+.grid.grid-cols-1.lg\:grid-cols-2 > div p {
+  max-width: 100%;
+  text-align: left;
+}
+
+/* Light mode styles */
+html.light-mode body {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Homepage light mode */
+html.light-mode .homepage-main {
+  background-color: #ffffff !important;
+}
+
+html.light-mode .homepage-main section {
+  background-color: #ffffff !important;
+}
+
+html.light-mode .homepage-main .text-white {
+  color: #000000 !important;
+}
+
+html.light-mode .homepage-main .text-gray-300,
+html.light-mode .homepage-main .text-gray-400 {
+  color: #666666 !important;
+}
+
+/* Remove all black/gray backgrounds from homepage in light mode */
+html.light-mode .homepage-main .bg-gray-800,
+html.light-mode .homepage-main .bg-gray-700,
+html.light-mode .homepage-main .bg-black {
+  background-color: #f5f5f5 !important;
+}
+
+html.light-mode .homepage-main .bg-gray-800 .text-gray-400,
+html.light-mode .homepage-main .bg-gray-700 .text-gray-300,
+html.light-mode .homepage-main .bg-gray-800,
+html.light-mode .homepage-main .bg-gray-700 {
+  color: #666666 !important;
+}
+
+/* Ensure all text in coming soon section is dark in light mode */
+html.light-mode .homepage-main .bg-gray-800 .text-gray-400,
+html.light-mode .homepage-main .bg-gray-700 .text-gray-300,
+html.light-mode .homepage-main .bg-gray-700 span {
+  color: #666666 !important;
+}
+
+/* Remove any remaining black backgrounds */
+html.light-mode .homepage-main [class*="bg-black"],
+html.light-mode .homepage-main [class*="bg-gray-800"],
+html.light-mode .homepage-main [class*="bg-gray-700"] {
+  background-color: #f5f5f5 !important;
+}
+
+html.light-mode .case-studies-section {
+  background-color: #ffffff !important;
+}
+
+html.light-mode .case-studies-section[style*="background"] {
+  background-color: #ffffff !important;
+}
+
+html.light-mode .case-studies-section.bg-black {
+  background-color: #ffffff !important;
+}
+
+html.light-mode .case-studies-section .text-white {
+  color: #000000 !important;
+}
+
+html.light-mode .case-studies-section .text-neutral-400 {
+  color: #666666 !important;
+}
+
+/* CaseStudyCard context/metrics/impact in light mode */
+html.light-mode .case-studies-section .text-neutral-300,
+html.light-mode .case-studies-section .text-neutral-500,
+html.light-mode .case-studies-section .text-neutral-400,
+html.light-mode .case-studies-section .text-neutral-200 {
+  color: #333333 !important;
+}
+
+html.light-mode .case-studies-section .border-neutral-800 {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Override any inline styles on case-studies-section in light mode */
+html.light-mode .case-studies-section[style] {
+  background-color: #ffffff !important;
+}
+
+/* Force all black backgrounds in homepage to white in light mode */
+html.light-mode .homepage-main .bg-black,
+html.light-mode .homepage-main [style*="background-color: #000000"],
+html.light-mode .homepage-main [style*="background-color:#000000"],
+html.light-mode .homepage-main [style*="backgroundColor: '#000000'"],
+html.light-mode .homepage-main [style*="backgroundColor: '#000'"] {
+  background-color: #ffffff !important;
+}
+
+/* DividerLabel light mode */
+html.light-mode .homepage-main span.bg-black,
+html.light-mode span.bg-black,
+html.light-mode .homepage-main .bg-black,
+html.light-mode .divider-label-text {
+  background-color: #ffffff !important;
+}
+
+html.light-mode .homepage-main span.text-white\/90,
+html.light-mode span.text-white\/90,
+html.light-mode .divider-label-text {
+  color: #000000 !important;
+}
+
+html.light-mode .homepage-main .border-white\/20,
+html.light-mode .border-white\/20,
+html.light-mode .divider-line {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* DividerLabel container background in light mode */
+html.light-mode .homepage-main .divider-label-container,
+html.light-mode .divider-label-container {
+  background-color: #ffffff !important;
+}
+
+/* Ensure the entire area around DividerLabel is white in light mode */
+html.light-mode .homepage-main > * {
+  background-color: #ffffff !important;
+}
+
+html.light-mode .homepage-main div[class*="max-w-screen"] {
+  background-color: #ffffff !important;
+}
+
+/* Ensure DividerLabel container and all its children are white in light mode */
+html.light-mode .homepage-main div[class*="w-full"][class*="mx-auto"] {
+  background-color: #ffffff !important;
+}
+
+html.light-mode .homepage-main div[class*="flex"][class*="items-center"][class*="justify-center"] {
+  background-color: #ffffff !important;
+}
+
+/* Navigation light mode */
+html.light-mode nav.navigation-solid-black,
+html.light-mode nav.bg-black {
+  background-color: #ffffff !important;
+  border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light-mode nav .text-white {
+  color: #000000 !important;
+}
+
+html.light-mode nav .text-white\/80 {
+  color: #4a4a4a !important;
+}
+
+html.light-mode nav .hover\:bg-black\/20:hover {
+  background-color: transparent !important;
+}
+
+/* Navigation items (WORK and ABOUT) dark gray in light mode */
+html.light-mode nav a[href="/"] span,
+html.light-mode nav a[href="/about"] span,
+html.light-mode nav a[href="/"] .text-white\/80,
+html.light-mode nav a[href="/about"] .text-white\/80,
+html.light-mode nav a[href="/"] div span,
+html.light-mode nav a[href="/about"] div span {
+  color: #4a4a4a !important;
+}
+
+html.light-mode nav a[href="/"]:hover span,
+html.light-mode nav a[href="/about"]:hover span,
+html.light-mode nav a[href="/"]:hover div span,
+html.light-mode nav a[href="/about"]:hover div span {
+  color: #000000 !important;
+}
+
+/* Mobile navigation items dark gray in light mode */
+html.light-mode nav .lg\\:hidden a[href="/"] span,
+html.light-mode nav .lg\\:hidden a[href="/about"] span,
+html.light-mode nav .lg\\:hidden a[href="/"] .text-white\/80,
+html.light-mode nav .lg\\:hidden a[href="/about"] .text-white\/80 {
+  color: #4a4a4a !important;
+}
+
+html.light-mode nav .lg\\:hidden a[href="/"]:hover span,
+html.light-mode nav .lg\\:hidden a[href="/about"]:hover span {
+  color: #000000 !important;
+}
+
+/* About Page Light Mode */
+html.light-mode main.about-page {
+  background-color: #ffffff !important;
+}
+
+html.light-mode main.about-page h2,
+html.light-mode main.about-page .text-white {
+  color: #000000 !important;
+}
+
+/* Override text-white for contact link hover - must come after the general rule */
+html.light-mode main.about-page a.text-white[href="/contact"]:hover {
+  color: #9333ea !important;
+}
+
+html.light-mode main.about-page .text-gray-400 {
+  color: #666666 !important;
+}
+
+/* About Page Links Light Mode */
+html.light-mode main.about-page a.text-white:not(:hover) {
+  color: #000000 !important;
+}
+
+html.light-mode main.about-page a.text-white[href="/contact"]:hover,
+html.light-mode main.about-page a.hover\\:text-purple-400:hover,
+html.light-mode main.about-page a[href="/contact"]:hover,
+html.light-mode main.about-page a[href="/contact"]:hover * {
+  color: #9333ea !important;
+}
+
+html.light-mode main.about-page a.hover\\:text-gray-300:hover {
+  color: #4a4a4a !important;
+}
+
+/* Ensure purple hover works in both dark and light mode */
+main.about-page a[href="/contact"]:hover,
+main.about-page a.hover\\:text-purple-400:hover,
+main.about-page a.text-white[href="/contact"]:hover,
+main.about-page a.text-lg[href="/contact"]:hover {
+  color: #9333ea !important;
+}
+
+/* About Page Statistics Cards Light Mode */
+html.light-mode main.about-page .bg-black {
+  background-color: #ffffff !important;
+  border-color: #e5e5e5 !important;
+}
+
+html.light-mode main.about-page .bg-black .text-white {
+  color: #000000 !important;
+}
+
+html.light-mode main.about-page .bg-black .text-gray-400 {
+  color: #666666 !important;
+}
+
+html.light-mode main.about-page .border-gray-800 {
+  border-color: #e5e5e5 !important;
+}
+
+/* About Page Clients Section Light Mode */
+html.light-mode main.about-page .border-gray-700 {
+  border-color: #e5e5e5 !important;
+}
+
+/* Search icon dark in light mode - nav icon always dark when nav is light (including .dynamic-color) */
+html.light-mode nav .search-icon,
+html.light-mode nav button .search-icon {
+  color: #000000 !important;
+}
+
+html.light-mode nav button:hover .search-icon {
+  color: #000000 !important;
+}
+
+/* Fallback for search icon outside nav in light mode */
+html.light-mode .search-icon:not(.dynamic-color),
+html.light-mode button .search-icon:not(.dynamic-color) {
+  color: #4a4a4a !important;
+}
+
+html.light-mode button:hover .search-icon:not(.dynamic-color) {
+  color: #000000 !important;
+}
+
+/* Search dropdown outline in light mode */
+html.light-mode .search-dropdown {
+  background-color: #ffffff !important;
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Search dropdown text colors in light mode */
+html.light-mode .search-dropdown input,
+html.light-mode .search-dropdown .text-white {
+  color: #000000 !important;
+}
+
+html.light-mode .search-dropdown input::placeholder,
+html.light-mode .search-dropdown .placeholder\:text-gray-400 {
+  color: #666666 !important;
+}
+
+html.light-mode .search-dropdown .text-gray-400,
+html.light-mode .search-dropdown .text-gray-500 {
+  color: #666666 !important;
+}
+
+html.light-mode .search-dropdown .border-white,
+html.light-mode .search-dropdown .border-t.border-white {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+html.light-mode .search-dropdown .border-gray-700,
+html.light-mode .search-dropdown .border-b.border-gray-700 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light-mode .search-dropdown .hover\:bg-gray-800:hover,
+html.light-mode .search-dropdown .bg-gray-800 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light-mode .search-dropdown button.text-gray-400,
+html.light-mode .search-dropdown button.hover\:text-white:hover {
+  color: #666666 !important;
+}
+
+html.light-mode .search-dropdown button.hover\:text-white:hover {
+  color: #000000 !important;
+}
+
+html.light-mode .search-dropdown .text-purple-300\/70 {
+  color: #666666 !important;
+}
+
+html.light-mode .search-dropdown .border-purple-400\/20 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light-mode nav button span {
+  background-color: #000000 !important;
+}
+
+/* Keep CONTACT ME button text white in light mode */
+html.light-mode nav a[href="/contact"] button,
+html.light-mode nav a[href="/contact"] button *,
+html.light-mode body:has(.homepage-main) nav a[href="/contact"] button,
+html.light-mode body:has(.homepage-main) nav a[href="/contact"] button * {
+  color: #ffffff !important;
+}
+
+/* Footer light mode */
+html.light-mode footer {
+  background-color: #ffffff !important;
+  border-top-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light-mode footer .text-white {
+  color: #000000 !important;
+}
+
+html.light-mode footer .text-white\/40 {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Archive of Worlds Typography System */
+.archive-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.mission-header {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.dossier-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Cinematic Background System */
+.archive-bg {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(212, 165, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(127, 255, 0, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, var(--archive-bg) 0%, var(--parchment-dark) 100%);
+  position: relative;
+}
+
+.archive-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+.neon-border {
+  box-shadow: 
+    inset 0 0 10px rgba(212, 165, 255, 0.3),
+    0 0 20px rgba(212, 165, 255, 0.2);
+}
+
+.neon-button {
+  background: linear-gradient(45deg, var(--neon-lavender), var(--mystery-purple));
+  border: 2px solid var(--neon-lavender);
+  box-shadow: 
+    0 0 10px rgba(212, 165, 255, 0.5),
+    inset 0 0 10px rgba(212, 165, 255, 0.2);
+  transition: all 0.3s ease;
+  color: var(--archive-bg) !important; /* Dark text on light background for contrast */
+  font-weight: 600;
+}
+
+.neon-button:hover {
+  box-shadow: 
+    0 0 20px rgba(212, 165, 255, 0.8),
+    inset 0 0 20px rgba(212, 165, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Steampunk Metal Textures */
+.steampunk-metal {
+  background: 
+    linear-gradient(45deg, var(--metal-texture) 0%, var(--steampunk-brass) 50%, var(--metal-texture) 100%);
+  border: 2px solid var(--steampunk-brass);
+  box-shadow: 
+    inset 0 0 20px rgba(205, 127, 50, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Cinematic Transitions */
+.cinematic-fade {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cinematic-slide {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Mission Dossier Styling */
+.mission-dossier {
+  background: 
+    linear-gradient(135deg, var(--parchment-dark) 0%, var(--metal-texture) 100%);
+  border: 2px solid var(--neon-lavender);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(212, 165, 255, 0.1);
+  position: relative;
+}
+
+.mission-dossier::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4a5ff' fill-opacity='0.05'%3E%3Cpath d='M20 0L24.49 15.51L40 20L24.49 24.49L20 40L15.51 24.49L0 20L15.51 15.51L20 0Z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Archive Grid Styling */
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.archive-item {
+  background: 
+    linear-gradient(135deg, var(--parchment-dark) 0%, var(--metal-texture) 100%);
+  border: 2px solid var(--neon-lavender);
+  border-radius: 12px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(212, 165, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.archive-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(212, 165, 255, 0.3);
+  border-color: var(--neon-green);
+}
+
+.archive-item:hover::before {
+  opacity: 1;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  background: 
+    linear-gradient(135deg, var(--archive-bg) 0%, var(--metal-texture) 100%);
+  border: 3px solid var(--cyberpunk-blue);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.3),
+    inset 0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+.contact-screen {
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 255, 255, 0.1) 100%);
+  border: 2px solid var(--cyberpunk-blue);
+  box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Form Input Styling */
+.form-input {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--cyberpunk-blue);
+  color: var(--text-primary);
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.form-input:focus {
+  border-color: var(--neon-green);
+  box-shadow: 
+    inset 0 0 10px rgba(127, 255, 0, 0.2),
+    0 0 15px rgba(127, 255, 0, 0.3);
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Accessibility Focus Styles */
+.focus-visible {
+  outline: 3px solid var(--neon-green);
+  outline-offset: 2px;
+  box-shadow: 0 0 20px rgba(127, 255, 0, 0.5);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-@layer utilities {
-  .text-shadow {
-    text-shadow: 0 0 10px currentColor;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .archive-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
   }
   
-  .glow-shadow {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  .archive-item {
+    padding: 1.5rem;
+  }
+}
+
+/* Custom scrollbar styling to match black background */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #000000;
+}
+
+/* Ensure entire page background is consistently black */
+/* Allow scroll-based transition on homepage */
+/* Force white background for case study pages */
+html:has([data-case-study="true"]),
+body:has([data-case-study="true"]) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+html:not(:has(.homepage-main)):not(:has([data-case-study="true"])), 
+body:not(:has(.homepage-main)):not(:has([data-case-study="true"])) {
+  background: #000000 !important;
+}
+
+html:has(.homepage-main):not(:has([data-case-study="true"])),
+body:has(.homepage-main):not(:has([data-case-study="true"])) {
+  /* Allow JavaScript to control background via inline styles */
+  background-color: var(--scroll-bg-color, #000000);
+  transition: background-color 0.1s ease-out;
+}
+
+html, body {
+  color: #ffffff;
+  min-height: 100vh !important;
+  width: 100vw !important;
+}
+
+/* Remove any potential gradient backgrounds that might create two-tone effect */
+.archive-bg {
+  background: #000000 !important;
+}
+
+/* Ensure all main containers have consistent black background */
+.min-h-screen, .bg-black {
+  background: #000000 !important;
+}
+
+/* Remove any potential border or shadow effects that might create visual separation */
+body::after, body::before {
+  display: none !important;
+}
+
+/* Force white background for case study pages */
+.case-study-page {
+  background: #ffffff !important;
+}
+
+.case-study-page html,
+.case-study-page body {
+  background: #ffffff !important;
+}
+
+/* Override global background for case studies */
+[class*="case-studies"] {
+  background: #ffffff !important;
+}
+
+[class*="case-studies"] html,
+[class*="case-studies"] body {
+  background: #ffffff !important;
+}
+
+/* Force white background for all case study routes */
+[data-case-study="true"] {
+  background: #ffffff !important;
+}
+
+[data-case-study="true"] html,
+[data-case-study="true"] body {
+  background: #ffffff !important;
+}
+
+/* Override any black background on case study pages */
+body[class*="case-study"],
+html[class*="case-study"] {
+  background: #ffffff !important;
+}
+
+/* Force white background for case study layout specifically */
+[data-case-study="true"] {
+  background: #ffffff !important;
+}
+
+[data-case-study="true"] * {
+  background-color: transparent !important;
+}
+
+[data-case-study="true"] .min-h-screen {
+  background: #ffffff !important;
+}
+
+/* Override any global black background rules for case studies */
+body:has([data-case-study="true"]) {
+  background: #ffffff !important;
+}
+
+html:has([data-case-study="true"]) {
+  background: #ffffff !important;
+}
+
+/* Force white background for contact page */
+.contact-page {
+  background: #ffffff !important;
+}
+
+.contact-page html,
+.contact-page body {
+  background: #ffffff !important;
+}
+
+/* Force white background for work page */
+body:has([data-work-page="true"]),
+html:has([data-work-page="true"]) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+[data-work-page="true"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+[data-work-page="true"] .min-h-screen {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Override any scroll-based background color changes on work page */
+[data-work-page="true"],
+[data-work-page="true"] * {
+  background-color: transparent !important;
+}
+
+[data-work-page="true"] .min-h-screen,
+[data-work-page="true"] .bg-white {
+  background-color: #ffffff !important;
+}
+
+/* Ensure html and body stay white when work page is present */
+html:has([data-work-page="true"]),
+body:has([data-work-page="true"]) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Force black background for homepage tiles section - allow scroll transition */
+.case-studies-section {
+  background-color: var(--scroll-bg-color, #000000) !important;
+  transition: background-color 0.1s ease-out;
+}
+
+/* Ensure case study card text matches image width exactly */
+.case-studies-section [class*="flex"][class*="flex-col"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.case-studies-section [class*="flex"][class*="flex-col"] > div[class*="flex"][class*="flex-col"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure text container matches image width in columns layout */
+.case-studies-section [class*="columns"] > div > div[class*="flex"][class*="flex-col"] {
+  width: 100% !important;
+}
+
+.case-studies-section [class*="columns"] > div > div[class*="flex"][class*="flex-col"] > div[class*="flex"][class*="flex-col"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.case-studies-section * {
+  background-color: transparent !important;
+}
+
+/* Ensure homepage main container transitions with scroll */
+.homepage-main {
+  background-color: var(--scroll-bg-color, #000000) !important;
+  transition: background-color 0.1s ease-out;
+}
+
+/* Override any potential white backgrounds on homepage */
+body:has(.case-studies-section) {
+  background: #000000 !important;
+}
+
+html:has(.case-studies-section) {
+  background: #000000 !important;
+}
+
+/* Force full viewport black background for homepage */
+body:has(.homepage-main) {
+  background: #000000 !important;
+  min-height: 100vh !important;
+}
+
+html:has(.homepage-main) {
+  background: #000000 !important;
+  min-height: 100vh !important;
+}
+
+/* Ensure no white backgrounds anywhere on homepage (dark mode only) */
+html:not(.light-mode) .homepage-main,
+html:not(.light-mode) .homepage-main *,
+html:not(.light-mode) .homepage-main > * {
+  background: #000000 !important;
+}
+
+/* Light mode overrides for homepage black backgrounds */
+html.light-mode .case-studies-section {
+  background: #ffffff !important;
+}
+
+html.light-mode .homepage-main {
+  background: #ffffff !important;
+}
+
+html.light-mode body:has(.case-studies-section) {
+  background: #ffffff !important;
+}
+
+html.light-mode html:has(.case-studies-section) {
+  background: #ffffff !important;
+}
+
+html.light-mode body:has(.homepage-main) {
+  background: #ffffff !important;
+}
+
+html.light-mode html:has(.homepage-main) {
+  background: #ffffff !important;
+}
+
+html.light-mode .homepage-main,
+html.light-mode .homepage-main *,
+html.light-mode .homepage-main > *,
+html.light-mode .homepage-main section,
+html.light-mode .homepage-main div,
+html.light-mode .homepage-main main,
+html.light-mode .homepage-main article {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+html.light-mode .homepage-main section {
+  background: #ffffff !important;
+}
+
+/* Override any default browser backgrounds */
+body {
+  background: #000000 !important;
+}
+
+html {
+  background: #000000 !important;
+}
+
+/* Force black background on all elements when homepage is active (dark mode only) */
+html:not(.light-mode) body:has(.homepage-main) * {
+  background-color: transparent !important;
+}
+
+/* Force white background on all elements when homepage is active in light mode */
+html.light-mode body:has(.homepage-main),
+html.light-mode body:has(.homepage-main) *,
+html.light-mode body:has(.homepage-main) > *,
+html.light-mode html:has(.homepage-main),
+html.light-mode html:has(.homepage-main) * {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* Ensure navigation background is solid black */
+nav.navigation-solid-black,
+nav.bg-black {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+}
+
+/* Ensure mobile menu overlay is also solid black */
+nav .lg\\:hidden.absolute.bg-black {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  opacity: 1 !important;
+}
+
+/* Exception for navigation hover states on homepage */
+body:has(.homepage-main) nav .hover\:bg-black\/20:hover {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ensure MERA text is visible on all pages */
+nav span.text-white {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure CONTACT ME button styling on homepage - only for CONTACT ME button */
+body:has(.homepage-main) nav a[href="/contact"] button {
+  background-color: #9333ea !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* Search icon follows nav text color (white at top, black when scrolled to light nav) */
+body:has(.homepage-main) nav button[aria-label*="search"],
+body:has(.homepage-main) nav button[aria-label*="archive"],
+body:has(.homepage-main) nav button[aria-label*="search"] svg,
+body:has(.homepage-main) nav button[aria-label*="archive"] svg {
+  background-color: transparent !important;
+  color: var(--nav-search-icon-color, #ffffff) !important;
+  border: none !important;
+}
+
+/* Prevent search button from getting purple background */
+body:has(.homepage-main) nav .relative button {
+  background-color: transparent !important;
+}
+
+/* Ensure M logo has white circle background */
+nav .w-12.h-12.rounded-full {
+  background-color: #ffffff !important;
+  border-radius: 50% !important;
+}
+
+/* Ensure M text is black inside white circle */
+nav .w-12.h-12.rounded-full span {
+  color: #000000 !important;
+}
+
+body:has(.homepage-main) .homepage-main {
+  background: #000000 !important;
+}
+
+/* Force hamburger menu lines to be white and visible */
+nav button span {
+  background-color: #ffffff !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure hamburger menu button is visible */
+nav .lg\\:hidden button {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+nav .lg\\:hidden button span {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Force white color for hamburger menu lines */
+nav .lg\\:hidden button span[style*="backgroundColor"] {
+  background-color: #ffffff !important;
+}
+
+/* More aggressive overrides for hamburger menu */
+nav button[onclick*="toggleMobileMenu"] span,
+nav button[onclick*="toggleMobileMenu"] span *,
+nav .lg\\:hidden button span,
+nav .lg\\:hidden button span * {
+  background-color: #ffffff !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Force all hamburger menu elements to be white */
+nav .lg\\:hidden button * {
+  background-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Override any potential black or transparent backgrounds */
+nav .lg\\:hidden button span[style*="backgroundColor"],
+nav .lg\\:hidden button span[style*="background-color"] {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* Remove black space between image and text on mobile case study cards */
+@media (max-width: 768px) {
+  .case-study-card-text {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1.5rem !important;
   }
   
-  .hologram-shadow {
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  /* Ensure no gap between image and text block */
+  .group .relative + div {
+    margin-top: 0 !important;
+  }
+  
+  /* Remove any potential spacing issues */
+  .group .relative + div {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
   }
 } 
