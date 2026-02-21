@@ -150,7 +150,7 @@ Error generating stack: `+s.message+`
           mb-3
           w-full
           min-w-0
-        `,children:c.jsx("div",{className:`relative w-full min-w-0 ${u} overflow-hidden`,children:c.jsx("img",{src:i,alt:s,className:"w-full h-full object-cover",loading:"lazy"})})}),c.jsxs("div",{className:`flex flex-col mt-0 w-full min-w-0 max-w-full ${v?"md:max-w-[500px]":""}`,children:[n&&c.jsx("p",{className:`text-sm md:text-base mb-1.5 font-bold transition-colors duration-500 ${x||v||n.includes(`
+        `,children:c.jsx("div",{className:`relative w-full min-w-0 ${u} overflow-hidden`,children:c.jsx("img",{src:i,alt:s,className:"w-full h-full object-cover",loading:"lazy"})})}),c.jsxs("div",{className:"flex flex-col mt-0 w-full min-w-0",children:[n&&c.jsx("p",{className:`text-sm md:text-base mb-1.5 font-bold transition-colors duration-500 ${x||v||n.includes(`
 `)?"":"whitespace-nowrap"}`,style:{color:"var(--scroll-text-color, #ffffff)"},children:n.includes(`
 `)?n.split(`
 `).map((y,h,m)=>c.jsxs(Re.Fragment,{children:[y,h<m.length-1&&c.jsx("br",{})]},h)):n}),r&&c.jsx("p",{className:"text-xs md:text-sm mb-1.5 leading-relaxed transition-colors duration-300",style:{color:"var(--scroll-text-color-light, #d1d5db)"},children:r.split(`
