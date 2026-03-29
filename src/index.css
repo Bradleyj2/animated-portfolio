@@ -6,7 +6,7 @@
 
 /* Archive of Worlds - Netflix × Rockstar × Cyberpunk/Steampunk Cartoon Mystery Style */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Archive of Worlds Color Palette - WCAG AAA Compliant */
@@ -26,9 +26,14 @@
   --text-muted: #b0b0b0; /* Medium gray for secondary text */
 }
 
-/* CaseStudyCard styling - clean minimal design */
+/* Case study pages – body font (friendly, open sans) */
+[data-case-study="true"] {
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* CaseStudyCard — text panel uses panel background from component */
 .case-study-card-text {
-  background-color: transparent !important;
+  background-color: #f9f9f9;
 }
 
 .case-study-card-overlay {
@@ -211,6 +216,39 @@ p,
   text-align: left;
 }
 
+/* Homepage case study cards: text inherits full width of image container; remove any max-width */
+.case-study-card-text,
+.case-study-card-text *,
+.case-study-card-text p,
+.case-study-card-text [class*="leading-relaxed"] {
+  max-width: none !important;
+}
+.case-study-card-text,
+.case-study-card-text p,
+.case-study-card-text div {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+.case-study-card-text {
+  min-width: 0;
+}
+/* Force card text to match image width: override any other max-width (higher specificity) */
+.case-studies-section .case-study-card-text,
+.case-studies-section .case-study-card-text *,
+.homepage-main .case-study-card-text,
+.homepage-main .case-study-card-text * {
+  max-width: none !important;
+}
+.case-studies-section .case-study-card-text,
+.case-studies-section .case-study-card-text p,
+.case-studies-section .case-study-card-text div,
+.homepage-main .case-study-card-text,
+.homepage-main .case-study-card-text p,
+.homepage-main .case-study-card-text div {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
 /* Don't apply to headings */
 h1, h2, h3, h4, h5, h6 {
   max-width: none !important;
@@ -246,6 +284,28 @@ div[class*="bg-black"] p {
 .grid.grid-cols-1.lg\:grid-cols-2 > div p {
   max-width: 100%;
   text-align: left;
+}
+
+/* About page: body text uses full width of its 2/3 container (override global 66.67% on p) */
+main.about-page .about-me-body,
+main.about-page .about-me-body p,
+main.about-page .about-me-body [class*="leading-relaxed"] {
+  max-width: 100% !important;
+}
+
+/* Contact page: intro paragraph width so text fits in 3 lines total */
+.contact-intro-text {
+  width: 800px !important;
+  max-width: 100% !important;
+}
+
+/* VIU by Hub: "Building a system" narrative body - match "Why this mattered" text width (80ch) */
+.viu-hub-narrative-body,
+.viu-hub-narrative-body p,
+.viu-hub-narrative-body ul,
+.viu-hub-narrative-body li,
+.viu-hub-narrative-body [class*="leading-relaxed"] {
+  max-width: 80ch !important;
 }
 
 /* Light mode styles */
@@ -395,6 +455,21 @@ html.light-mode nav.navigation-solid-black,
 html.light-mode nav.bg-black {
   background-color: #ffffff !important;
   border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Logo: black circle + white M when scrolled or on light pages (overrides all other rules) */
+nav .nav-logo-scrolled,
+nav .nav-logo-scrolled.nav-logo-circle {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+nav .nav-logo-scrolled .nav-logo-m,
+nav .nav-logo-scrolled span.nav-logo-m {
+  color: #ffffff !important;
+}
+html.light-mode nav .nav-logo-scrolled .nav-logo-m,
+html.light-mode nav .nav-logo-scrolled span.nav-logo-m {
+  color: #ffffff !important;
 }
 
 html.light-mode nav .text-white {
@@ -1037,6 +1112,12 @@ body:has([data-work-page="true"]) {
   background-color: transparent !important;
 }
 
+/* Homepage case study tiles: restore panel + shell (overrides transparent rule above) */
+.case-studies-section .home-case-card,
+.case-studies-section .home-case-card .case-study-card-text {
+  background-color: #f9f9f9 !important;
+}
+
 /* Ensure homepage main container transitions with scroll */
 .homepage-main {
   background-color: var(--scroll-bg-color, #000000) !important;
@@ -1124,6 +1205,24 @@ html:not(.light-mode) body:has(.homepage-main) * {
   background-color: transparent !important;
 }
 
+/* Footer must stay visible on homepage: solid black bar (override transparent rule above) */
+body:has(.homepage-main) footer,
+.homepage-main footer {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  min-height: 3rem !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+body:has(.homepage-main) footer *,
+.homepage-main footer * {
+  background-color: transparent !important;
+}
+
 /* Force white background on all elements when homepage is active in light mode */
 html.light-mode body:has(.homepage-main),
 html.light-mode body:has(.homepage-main) *,
@@ -1132,6 +1231,42 @@ html.light-mode html:has(.homepage-main),
 html.light-mode html:has(.homepage-main) * {
   background-color: #ffffff !important;
   background: #ffffff !important;
+}
+
+/* Homepage footer: always a visible black bar (override light-mode white wash) */
+html.light-mode body:has(.homepage-main) footer,
+html.light-mode .homepage-main footer {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+html.light-mode body:has(.homepage-main) footer *,
+html.light-mode .homepage-main footer * {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+html.light-mode body:has(.homepage-main) footer .text-white\/40,
+html.light-mode .homepage-main footer .text-white\/40 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Homepage footer: white background to match page (override black footer rules above) */
+.homepage-footer-light,
+body:has(.homepage-main) .homepage-footer-light,
+.homepage-main .homepage-footer-light {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+.homepage-footer-light a,
+.homepage-footer-light span:not(.text-neutral-500) {
+  color: #171717 !important;
+}
+.homepage-footer-light .text-neutral-500 {
+  color: #737373 !important;
+}
+.homepage-footer-light svg {
+  color: #171717 !important;
 }
 
 /* Ensure navigation background is solid black */
@@ -1143,11 +1278,214 @@ nav.bg-black {
   backdrop-filter: none !important;
 }
 
+/* Unified nav: same look on ALL pages - solid black bar, white logo/links/search, purple pill, thin light border */
+nav.nav-unified,
+nav.nav-unified.navigation-solid-black {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+nav.nav-unified .w-12.h-12.rounded-full,
+nav.nav-unified .nav-logo-circle {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+nav.nav-unified .nav-logo-circle .nav-logo-m,
+nav.nav-unified .nav-logo-circle span {
+  color: #000000 !important;
+}
+nav.nav-unified a[href="/"] div,
+nav.nav-unified a[href="/"] span,
+nav.nav-unified a[href="/about"] div,
+nav.nav-unified a[href="/about"] span,
+nav.nav-unified a[href="/"] div span,
+nav.nav-unified a[href="/about"] div span,
+nav.nav-unified a[href="/"]:hover div,
+nav.nav-unified a[href="/"]:hover span,
+nav.nav-unified a[href="/about"]:hover div,
+nav.nav-unified a[href="/about"]:hover span,
+nav.nav-unified a[href="/"]:hover div span,
+nav.nav-unified a[href="/about"]:hover div span {
+  color: #ffffff !important;
+}
+nav.nav-unified .search-icon,
+nav.nav-unified button[aria-label*="search"],
+nav.nav-unified button[aria-label*="archive"],
+nav.nav-unified button[aria-label*="search"] svg,
+nav.nav-unified button[aria-label*="archive"] svg {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+nav.nav-unified a[href="/contact"] button {
+  background-color: #9333ea !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+/* Unified nav: active link thin white underline */
+nav.nav-unified a[href="/"] div[class*="border-b"],
+nav.nav-unified a[href="/about"] div[class*="border-b"] {
+  border-bottom-color: #ffffff !important;
+}
+/* Keep unified nav black with white elements in light mode */
+html.light-mode nav.nav-unified,
+html.light-mode nav.nav-unified.navigation-solid-black {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+}
+html.light-mode nav.nav-unified a[href="/"] span,
+html.light-mode nav.nav-unified a[href="/about"] span,
+html.light-mode nav.nav-unified a[href="/"] div span,
+html.light-mode nav.nav-unified a[href="/about"] div span {
+  color: #ffffff !important;
+}
+html.light-mode nav.nav-unified .search-icon,
+html.light-mode nav.nav-unified button[aria-label*="search"] svg,
+html.light-mode nav.nav-unified button[aria-label*="archive"] svg {
+  color: #ffffff !important;
+}
+html.light-mode nav.nav-unified .nav-mobile-block button span {
+  background-color: #ffffff !important;
+}
+
 /* Ensure mobile menu overlay is also solid black */
 nav .lg\\:hidden.absolute.bg-black {
   background-color: #000000 !important;
   background: #000000 !important;
   opacity: 1 !important;
+}
+
+/* Homepage nav: always solid black background + subtle light gray bottom border */
+body:has(.homepage-main) nav,
+body:has(.homepage-main) nav.navigation-solid-black {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Desktop nav: always visible on ALL pages (homepage, case studies, about, contact); hidden only below 768px */
+nav .nav-desktop {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Homepage nav: show desktop tabs + search from 768px up (so they’re visible on tablet) */
+@media (max-width: 767px) {
+  nav .nav-desktop {
+    display: none !important;
+  }
+  nav .nav-mobile-block {
+    display: flex !important;
+  }
+}
+@media (min-width: 768px) {
+  nav .nav-mobile-block {
+    display: none !important;
+  }
+}
+
+/* Force desktop tabs visible on case study pages (override any conflicting rules) */
+body:has([data-case-study="true"]) nav .nav-desktop {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Homepage nav: ensure bar and desktop block are visible */
+.nav-homepage,
+.nav-homepage .nav-desktop {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Homepage nav: logo always white circle + black M (match reference) */
+.nav-homepage .w-12.h-12.rounded-full,
+.nav-homepage .nav-logo-circle {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+.nav-homepage .w-12.h-12.rounded-full span,
+.nav-homepage .nav-logo-circle .nav-logo-m,
+.nav-homepage .nav-logo-circle span {
+  color: #000000 !important;
+}
+
+/* Homepage nav: DOCS, WORK, USER, ABOUT white the entire time */
+.nav-homepage a[href="/"] div,
+.nav-homepage a[href="/about"] div,
+.nav-homepage a[href="/"] span,
+.nav-homepage a[href="/about"] span,
+.nav-homepage a[href="/"] div span,
+.nav-homepage a[href="/about"] div span,
+.nav-homepage a[href="/"]:hover div,
+.nav-homepage a[href="/about"]:hover div,
+.nav-homepage a[href="/"]:hover span,
+.nav-homepage a[href="/about"]:hover span,
+.nav-homepage a[href="/"]:hover div span,
+.nav-homepage a[href="/about"]:hover div span {
+  color: #ffffff !important;
+}
+
+/* Homepage nav: search icon white and visible */
+.nav-homepage .search-icon,
+.nav-homepage button[aria-label*="search"],
+.nav-homepage button[aria-label*="archive"],
+.nav-homepage button[aria-label*="search"] svg,
+.nav-homepage button[aria-label*="archive"] svg {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html.light-mode body:has(.homepage-main) nav,
+html.light-mode body:has(.homepage-main) nav.navigation-solid-black {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Homepage nav: keep tabs and search icon white when scrolled (override light-mode dark text) */
+body:has(.homepage-main) nav a[href="/"] span,
+body:has(.homepage-main) nav a[href="/about"] span,
+body:has(.homepage-main) nav a[href="/"] div span,
+body:has(.homepage-main) nav a[href="/about"] div span {
+  color: #ffffff !important;
+}
+body:has(.homepage-main) nav a[href="/"]:hover span,
+body:has(.homepage-main) nav a[href="/about"]:hover span,
+body:has(.homepage-main) nav a[href="/"]:hover div span,
+body:has(.homepage-main) nav a[href="/about"]:hover div span {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+html.light-mode body:has(.homepage-main) nav a[href="/"] span,
+html.light-mode body:has(.homepage-main) nav a[href="/about"] span,
+html.light-mode body:has(.homepage-main) nav a[href="/"] div span,
+html.light-mode body:has(.homepage-main) nav a[href="/about"] div span {
+  color: #ffffff !important;
+}
+html.light-mode body:has(.homepage-main) nav a[href="/"]:hover span,
+html.light-mode body:has(.homepage-main) nav a[href="/about"]:hover span,
+html.light-mode body:has(.homepage-main) nav a[href="/"]:hover div span,
+html.light-mode body:has(.homepage-main) nav a[href="/about"]:hover div span {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+body:has(.homepage-main) nav .search-icon,
+body:has(.homepage-main) nav button .search-icon,
+body:has(.homepage-main) nav button[aria-label*="search"] svg,
+body:has(.homepage-main) nav button[aria-label*="archive"] svg,
+html.light-mode body:has(.homepage-main) nav .search-icon,
+html.light-mode body:has(.homepage-main) nav button .search-icon,
+html.light-mode body:has(.homepage-main) nav button[aria-label*="search"] svg,
+html.light-mode body:has(.homepage-main) nav button[aria-label*="archive"] svg {
+  color: #ffffff !important;
+}
+body:has(.homepage-main) nav .lg\:hidden a[href="/"] span,
+body:has(.homepage-main) nav .lg\:hidden a[href="/about"] span,
+html.light-mode body:has(.homepage-main) nav .lg\:hidden a[href="/"] span,
+html.light-mode body:has(.homepage-main) nav .lg\:hidden a[href="/about"] span {
+  color: #ffffff !important;
 }
 
 /* Exception for navigation hover states on homepage */
@@ -1162,11 +1500,13 @@ nav span.text-white {
   visibility: visible !important;
 }
 
-/* Ensure CONTACT ME button styling on homepage - only for CONTACT ME button */
-body:has(.homepage-main) nav a[href="/contact"] button {
+/* Ensure CONTACT ME button styling on homepage - purple, white text, pill shape */
+body:has(.homepage-main) nav a[href="/contact"] button,
+.nav-homepage a[href="/contact"] button {
   background-color: #9333ea !important;
   color: #ffffff !important;
   border: none !important;
+  border-radius: 9999px !important;
   font-weight: bold !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;

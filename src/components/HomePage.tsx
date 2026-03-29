@@ -1,14 +1,22 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Navigation from './Navigation'
 import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
 import PageMeta from './PageMeta'
 
 const HomePage = () => {
+  const location = useLocation()
   const [isLightMode, setIsLightMode] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+
+  useEffect(() => {
+    if (location.hash === '#work') {
+      const el = document.getElementById('work')
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [location.hash])
 
   useEffect(() => {
     // Scroll-based dark to light transition
@@ -26,8 +34,8 @@ const HomePage = () => {
       // Interpolate between dark and light
       const bgColor = `rgb(${Math.round(progress * 255)}, ${Math.round(progress * 255)}, ${Math.round(progress * 255)})`
       const textColor = `rgb(${Math.round(255 - progress * 255)}, ${Math.round(255 - progress * 255)}, ${Math.round(255 - progress * 255)})`
-      const textColorLight = `rgb(${Math.round(200 - progress * 150)}, ${Math.round(200 - progress * 150)}, ${Math.round(200 - progress * 150)})`
-      const textColorLighter = `rgb(${Math.round(180 - progress * 140)}, ${Math.round(180 - progress * 140)}, ${Math.round(180 - progress * 140)})`
+      const textColorLight = `rgb(${Math.round(200 - progress * 85)}, ${Math.round(200 - progress * 85)}, ${Math.round(200 - progress * 85)})`
+      const textColorLighter = `rgb(${Math.round(180 - progress * 50)}, ${Math.round(180 - progress * 50)}, ${Math.round(180 - progress * 50)})`
       
       // Apply to body and root with !important via setProperty
       document.body.style.setProperty('background-color', bgColor, 'important')
@@ -64,9 +72,9 @@ const HomePage = () => {
     {
       id: 'viu-hub',
       title: 'VIU BY HUB',
-      subtitle: 'Rebuilding Digital Insurance',
+      subtitle: 'Rebuilding Digital Insurance by driving 25% revenue growth after launch.',
       tagline: 'How do you transform digital trust in the insurance industry?',
-      description: 'Directed a full design transformation aligning product, systems, and experience, simplifying\ncritical financial decisions and driving 25% revenue growth after launch.',
+      description: '',
       category: 'Strategic Design Leadership',
       image: '/viubyhub1.png',
       path: '/case-studies/viu-hub',
@@ -75,7 +83,10 @@ const HomePage = () => {
       stamp: 'CLASSIFIED',
       coordinates: 'X-91.7, Y-67.2',
       companyName: 'VIU by Hub',
-      projectType: 'Finance',
+      projectType: 'Finance + Design Ops',
+      cardHeading: 'VIU by Hub / Digital Insurance',
+      role: 'Design Lead & Design Operations',
+      year: '2022–2024',
       fullWidth: true
     },
     {
@@ -83,7 +94,7 @@ const HomePage = () => {
       title: 'HEMISPHERES',
       subtitle: 'When Thought Becomes Data: Mapping Mind and Decision',
       tagline: 'How do you balance two avatars controlled by one player?',
-      description: 'Created a neuroadaptive storytelling system into real-time narrative outcomes, laying the groundwork for therapeutic and adaptive experiences.',
+      description: '',
       category: 'Game Design & Interactive Storytelling',
       image: '/hemispheres10.png',
       path: '/case-studies/hemispheres',
@@ -97,9 +108,9 @@ const HomePage = () => {
     {
       id: 'service-blueprint',
       title: 'SERVICE BLUEPRINT',
-      subtitle: 'Turning Complexity into Clarity: Scaling Service Design',
+      subtitle: 'Turning Complexity into Clarity: Scaling Service Design across 8 departments and eliminating 93% of redundant templates.',
       tagline: 'How do you unify fragmented organizational processes?',
-      description: 'Unified blueprinting practices across 8 departments, establishing a shared design language that improved collaboration and eliminated 93% of redundant templates.',
+      description: '',
       category: 'Service Design & Organizational Systems',
       image: '/sb1.png',
       path: '/case-studies/service-blueprint',
@@ -108,14 +119,17 @@ const HomePage = () => {
       stamp: 'TOP SECRET',
       coordinates: 'X-23.1, Y-45.9',
       companyName: 'Service Blueprint',
-      projectType: 'Design Ops'
+      projectType: 'Design Ops',
+      cardHeading: 'Service Blueprint / Org-wide service templates',
+      role: 'Service Design Lead',
+      year: '2024'
     },
     {
       id: 'omnichannel',
       title: 'OMNICHANNEL STRATEGY',
-      subtitle: 'Connecting Self Service and Live Support',
+      subtitle: 'Connecting Self Service and Live Support in 1 unified service\nblueprint.',
       tagline: 'How do you bridge digital and human service experiences?',
-      description: 'Led the early redesign and mapping of customer support across touchpoints, eliminating context breaks between digital and human channels.',
+      description: '',
       category: 'Service Design & Customer Experience',
       image: '/thumbnail3.png',
       path: '/case-studies/omnichannel-strategy',
@@ -124,14 +138,17 @@ const HomePage = () => {
       stamp: 'MISSION FILE',
       coordinates: 'X-78.4, Y-33.6',
       companyName: 'Omnichannel Strategy',
-      projectType: 'Design Ops'
+      projectType: 'Design Ops',
+      cardHeading: 'Omnichannel Strategy / Unified service',
+      role: 'Experience Design Lead',
+      year: '2025'
     },
     {
       id: 'second-opinion',
       title: 'SECOND OPINION',
-      subtitle: 'When Information Overwhelms Care: Rebuilding Trust in the Home',
+      subtitle: 'When Information Overwhelms Care: Rebuilding Trust in the Home\nof 18+ test users.',
       tagline: 'When user research changes everything',
-      description: 'Researched and prototyped a caregiver platform simplifying critical decisions and establishing trust centered patterns through study with 18+ users.',
+      description: '',
       category: 'Healthcare & User Research',
       image: '/secondop1.png',
       path: '/case-studies/second-opinion',
@@ -140,7 +157,10 @@ const HomePage = () => {
       stamp: 'RESTRICTED',
       coordinates: 'X-34.8, Y-89.1',
       companyName: 'Second Opinion',
-      projectType: 'Healthcare'
+      projectType: 'Healthcare',
+      cardHeading: 'Second Opinion / Healthcare experience',
+      role: 'UX Researcher & Designer',
+      year: '2021'
     }
   ]
 
@@ -219,15 +239,13 @@ const HomePage = () => {
                   color: `rgb(${Math.round(200 - scrollProgress * 150)}, ${Math.round(200 - scrollProgress * 150)}, ${Math.round(200 - scrollProgress * 150)})`
                 }}
               >
-                I architect behavioral UX systems that increase revenue and reshape decision making. Experiments in memory, trust, and play are preserved here. Enter a <Link 
-                  to="/work" 
-                  className="hover:text-purple-400 transition-colors"
-                  style={{
-                    color: `rgb(${Math.round(200 - scrollProgress * 150)}, ${Math.round(200 - scrollProgress * 150)}, ${Math.round(200 - scrollProgress * 150)})`
-                  }}
+                I design behavioral UX systems that boost revenue and reshape decisions. Experiments in memory, trust, and play live here. Enter a <button 
+                  type="button"
+                  onClick={scrollToCaseStudies}
+                  className="no-underline hover:no-underline hover:text-purple-400 transition-colors cursor-pointer bg-transparent border-0 p-0 font-inherit text-inherit inline"
                 >
                   journey
-                </Link>.
+                </button>.
               </p>
               
               {/* Downward arrow */}
@@ -255,8 +273,10 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Divider visible on first screen heights */}
-        <DividerLabel />
+        {/* Divider visible on first screen heights (id="work" for anchor link from About) */}
+        <div id="work">
+          <DividerLabel />
+        </div>
 
         {/* Project Grid - Rockstar Newswire Layout */}
         <motion.main 
@@ -275,38 +295,33 @@ const HomePage = () => {
             <motion.div
               key={item.id}
               variants={itemVariants}
-              className="mb-16 md:mb-24"
+              className="mb-10 md:mb-12"
             >
               <CaseStudyCard
                 href={item.path}
                 title={item.title}
+                cardHeading={item.cardHeading}
+                companyName={item.companyName}
                 subtitle={item.subtitle}
                 description={item.description}
-                footerKicker={item.category}
                 imageSrc={item.image}
                 imageAlt={item.title}
-                companyName={item.companyName}
-                projectType={item.projectType}
+                role={item.role}
+                year={item.year}
                 imageAspectClass="aspect-[16/9]"
-                context={item.context}
-                metrics={item.metrics}
-                impact={item.impact}
-              >
-                {item.tagline}
-              </CaseStudyCard>
+              />
             </motion.div>
           ))}
           
-          {/* Masonry-like two-column layout similar to reference */}
-          <div className="columns-1 md:columns-2 gap-10 md:gap-12 lg:gap-16">
-            {archiveItems.filter(item => !item.fullWidth).map((item, index) => {
-              // Flip staggering so the first is taller
-              const aspectClass = index % 2 === 0 ? "aspect-[4/3]" : "aspect-[16/9]"
+          {/* Two equal columns — reference card grid */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
+            {archiveItems.filter(item => !item.fullWidth).map((item) => {
+              const aspectClass = 'aspect-[4/3]'
               return (
               <motion.div
                 key={item.id}
                 variants={itemVariants}
-                className="mb-10 md:mb-12 break-inside-avoid"
+                className="min-w-0"
               >
                 {item.comingSoon ? (
                   <div className="text-center relative h-full">
@@ -330,26 +345,55 @@ const HomePage = () => {
                   <CaseStudyCard
                     href={item.path}
                     title={item.title}
+                    cardHeading={item.cardHeading}
+                    companyName={item.companyName}
                     subtitle={item.subtitle}
                     description={item.description}
-                    footerKicker={item.category}
                     imageSrc={item.image}
                     imageAlt={item.title}
-                    companyName={item.companyName}
-                    projectType={item.projectType}
+                    role={item.role}
+                    year={item.year}
                     imageAspectClass={aspectClass}
-                    context={item.context}
-                    metrics={item.metrics}
-                    impact={item.impact}
-                  >
-                    {item.tagline}
-                  </CaseStudyCard>
+                    subtitleMaxWidth={item.id === 'second-opinion' ? 500 : item.id === 'omnichannel' ? 520 : undefined}
+                  />
                 )}
               </motion.div>
             )})}
           </div>
         </div>
         </motion.main>
+
+        {/* Homepage footer: white background to match page */}
+        <footer
+          className="homepage-footer-light w-full border-t border-gray-200 py-4 px-6 md:px-10 lg:px-12 xl:px-16 relative z-50 bg-white"
+          style={{
+            backgroundColor: '#ffffff',
+            color: '#171717',
+            minHeight: '3rem',
+            display: 'block',
+            visibility: 'visible',
+            opacity: 1,
+          }}
+        >
+          <div className="max-w-screen-2xl mx-auto flex justify-start items-center">
+            <div className="flex items-center gap-2 text-sm text-neutral-900" style={{ fontFamily: 'monospace' }}>
+              <div className="flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-neutral-900" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <span>New York, NY</span>
+              </div>
+              <span className="text-neutral-500">·</span>
+              <a href="https://www.linkedin.com/in/jamerabradley/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity lowercase text-neutral-900">
+                linkedIn
+              </a>
+              <span className="text-neutral-500">·</span>
+              <a href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity lowercase text-neutral-900">
+                resume
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
     </>
   )
