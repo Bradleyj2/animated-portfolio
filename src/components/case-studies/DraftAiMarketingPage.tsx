@@ -202,14 +202,14 @@ const DraftAiMarketingPage = () => {
             <div className="space-y-4 text-lg leading-relaxed text-gray-700 mb-12">
               <p className="max-w-[80ch]">
                 Marketers at this scale weren&apos;t managing one campaign. They were managing
-                hundreds, spread across multiple ad platforms, each with its own rules,
-                terminology, and quirks. One platform wanted asset groups. Another wanted ad groups. Every
-                platform had a different opinion about what a &quot;product set&quot; was, how
-                targeting should work, and what happened when something failed.
+                hundreds, spread across multiple ad platforms, each needing something a little
+                different. One platform wanted asset groups, another wanted ad groups, and every
+                platform had its own take on what a &quot;product set&quot; was, how targeting
+                should work, and what happened when something failed.
               </p>
               <p className="max-w-[80ch]">
-                Layered on top of that: this wasn&apos;t a simple dashboard. It was an agentic AI
-                platform, meaning marketers weren&apos;t just clicking through forms, they were
+                Layered on top of that: this wasn&apos;t a simple dashboard, it was an agentic AI
+                platform. Marketers weren&apos;t just clicking through forms, they were
                 collaborating with an AI agent that could take actions on their behalf. That raised
                 the design bar considerably. If an AI agent edits a live ad, changes a budget, or
                 swaps a creative asset, the human still needs to feel fully in control, fully
