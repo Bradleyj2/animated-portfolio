@@ -5,7 +5,7 @@ import Navigation from './Navigation'
 import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
 import PageMeta from './PageMeta'
-import { getHomeArchiveItems, hasDraftHomeContent, type HomeArchiveItem } from '../data/homeArchiveItems'
+import { getHomeArchiveItems, isHeroPairItem, type HomeArchiveItem } from '../data/homeArchiveItems'
 
 function HomeCaseStudyCard({
   item,
@@ -110,10 +110,9 @@ const HomePage = () => {
   }
 
   const archiveItems = getHomeArchiveItems()
-  const showDraftPreviewBanner = hasDraftHomeContent()
-  const draftHeroCard = archiveItems.find((item) => item.id === 'ai-marketing-control-center')
+  const aiMarketingCard = archiveItems.find((item) => item.id === 'ai-marketing-control-center')
   const viuHub = archiveItems.find((item) => item.id === 'viu-hub')
-  const showPairedHeroRow = Boolean(showDraftPreviewBanner && draftHeroCard && viuHub)
+  const showPairedHeroRow = Boolean(aiMarketingCard && viuHub)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -241,23 +240,14 @@ const HomePage = () => {
       >
         {/* Rockstar-like centered container & gutters */}
         <div className="mx-auto max-w-screen-xl px-6 md:px-10 lg:px-12 xl:px-16 pb-20 md:pb-24 lg:pb-32">
-          {showDraftPreviewBanner && (
-            <div
-              className="mb-8 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950"
-              role="status"
-            >
-              <span className="font-semibold">Preview mode.</span> Draft case studies
-              are visible here only — they are excluded from production deploys.
-            </div>
-          )}
-          {showPairedHeroRow && draftHeroCard && viuHub ? (
+          {showPairedHeroRow && aiMarketingCard && viuHub ? (
             <div className="mb-10 grid grid-cols-1 gap-8 md:mb-12 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
               <motion.div
-                key={draftHeroCard.id}
+                key={aiMarketingCard.id}
                 variants={itemVariants}
                 className="min-w-0 h-full"
               >
-                <HomeCaseStudyCard item={draftHeroCard} />
+                <HomeCaseStudyCard item={aiMarketingCard} />
               </motion.div>
               <motion.div
                 key={viuHub.id}
@@ -284,7 +274,7 @@ const HomePage = () => {
           {/* Two equal columns — reference card grid */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
             {archiveItems
-              .filter((item) => !item.fullWidth && !item.draft)
+              .filter((item) => !item.fullWidth && !isHeroPairItem(item))
               .map((item) => {
               const aspectClass = 'aspect-[16/9]'
               return (

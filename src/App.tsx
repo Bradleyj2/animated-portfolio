@@ -12,7 +12,6 @@ import ViuHubPage from './components/case-studies/ViuHubPage'
 import SecondOpinionPage from './components/case-studies/SecondOpinionPage'
 import DraftAiMarketingPage from './components/case-studies/DraftAiMarketingPage'
 import ExperienceDesignSlide from './components/ExperienceDesignSlide'
-import { isDraftContentVisible } from './lib/preview'
 import EasterEggConsole from './components/EasterEggConsole'
 import Footer from './components/Footer'
 
@@ -46,9 +45,7 @@ function App() {
           <Route path="/case-studies/omnichannel-strategy" element={<OmnichannelStrategyPage />} />
           <Route path="/case-studies/viu-hub" element={<ViuHubPage />} />
           <Route path="/case-studies/second-opinion" element={<SecondOpinionPage />} />
-          {isDraftContentVisible() && (
-            <Route path="/case-studies/ai-marketing-control-center" element={<DraftAiMarketingPage />} />
-          )}
+          <Route path="/case-studies/ai-marketing-control-center" element={<DraftAiMarketingPage />} />
           {import.meta.env.DEV && (
             <Route path="/experience-design-slide" element={<ExperienceDesignSlide />} />
           )}

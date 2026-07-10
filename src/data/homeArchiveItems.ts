@@ -24,7 +24,29 @@ export type HomeArchiveItem = {
   draft?: boolean
 }
 
+export const HERO_PAIR_IDS = ['ai-marketing-control-center', 'viu-hub'] as const
+
 const publishedHomeArchiveItems: HomeArchiveItem[] = [
+  {
+    id: 'ai-marketing-control-center',
+    title: 'ENTERPRISE AI MARKETING',
+    subtitle:
+      'Building the campaign activation and editing experience for an enterprise agentic AI marketing platform.',
+    tagline: 'How do you design trust when marketers collaborate with an AI agent at scale?',
+    description: '',
+    category: 'Enterprise Product Design',
+    image: '/ai-marketing/fig-01.png',
+    path: '/case-studies/ai-marketing-control-center',
+    posterStyle: 'corporate',
+    dossierId: 'ARCHIVE/ENT-AI-06',
+    stamp: 'CLASSIFIED',
+    coordinates: 'X-12.4, Y-56.8',
+    companyName: 'Fortune 500 Enterprise',
+    projectType: 'AI-Assisted Marketing',
+    cardHeading: 'Fortune 500 Enterprise / AI-Assisted Marketing Control Center',
+    role: 'Senior Product Designer',
+    year: '2026',
+  },
   {
     id: 'viu-hub',
     title: 'VIU BY HUB',
@@ -43,7 +65,6 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     cardHeading: 'VIU by Hub / Digital Insurance',
     role: 'Product Design Lead & Design Operations',
     year: '2022–2024',
-    fullWidth: true,
   },
   {
     id: 'hemispheres',
@@ -126,30 +147,8 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
   },
 ]
 
-/** Draft cards — never included in production unless preview flag is enabled locally */
-export const draftHomeArchiveItems: HomeArchiveItem[] = [
-  {
-    id: 'ai-marketing-control-center',
-    title: 'ENTERPRISE AI MARKETING',
-    subtitle:
-      'Building the campaign activation and editing experience for an enterprise agentic AI marketing platform.',
-    tagline: 'How do you design trust when marketers collaborate with an AI agent at scale?',
-    description: '',
-    category: 'Enterprise Product Design',
-    image: '/ai-marketing/fig-01.png',
-    path: '/case-studies/ai-marketing-control-center',
-    posterStyle: 'corporate',
-    dossierId: 'ARCHIVE/ENT-AI-06',
-    stamp: 'DRAFT',
-    coordinates: 'X-12.4, Y-56.8',
-    companyName: 'Fortune 500 Enterprise',
-    projectType: 'AI-Assisted Marketing',
-    cardHeading: 'Fortune 500 Enterprise / AI-Assisted Marketing Control Center',
-    role: 'Senior Product Designer',
-    year: '2026',
-    draft: true,
-  },
-]
+/** Draft cards — visible in dev or with VITE_SHOW_DRAFT_CONTENT=true */
+export const draftHomeArchiveItems: HomeArchiveItem[] = []
 
 export function getHomeArchiveItems(): HomeArchiveItem[] {
   if (!isDraftContentVisible()) {
@@ -161,4 +160,8 @@ export function getHomeArchiveItems(): HomeArchiveItem[] {
 
 export function hasDraftHomeContent(): boolean {
   return isDraftContentVisible() && draftHomeArchiveItems.length > 0
+}
+
+export function isHeroPairItem(item: HomeArchiveItem): boolean {
+  return (HERO_PAIR_IDS as readonly string[]).includes(item.id)
 }

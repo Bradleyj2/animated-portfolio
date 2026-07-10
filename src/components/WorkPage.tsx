@@ -21,6 +21,15 @@ const WorkPage = () => {
 
   const projects = [
     {
+      id: 'ai-marketing-control-center',
+      title: 'AI-Assisted Marketing Control Center',
+      role: 'Senior Product Designer',
+      duration: '2026',
+      tools: 'Figma, Prototyping, Design Systems',
+      team: 'Product, Engineering, Marketing',
+      path: '/case-studies/ai-marketing-control-center'
+    },
+    {
       id: 'viu-hub',
       title: 'VIU by Hub',
       role: 'Product Design Lead & Design Operations',

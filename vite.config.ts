@@ -20,7 +20,8 @@ export default defineConfig({
           'case-studies/service-blueprint',
           'case-studies/omnichannel-strategy',
           'case-studies/viu-hub',
-          'case-studies/second-opinion'
+          'case-studies/second-opinion',
+          'case-studies/ai-marketing-control-center'
         ]
         
         // Read the main index.html to get the correct asset names
