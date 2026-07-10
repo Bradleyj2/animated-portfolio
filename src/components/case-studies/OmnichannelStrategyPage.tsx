@@ -27,7 +27,7 @@ const OmnichannelStrategyPage = () => {
         description="Led the early redesign and mapping of customer support across touchpoints, eliminating context breaks between digital and human channels."
         ogImage="/og/omnichannel.png"
       />
-      <Navigation />
+      <Navigation scrollProgress={1} />
       <CaseStudyLayout
         previousCase={{
           title: "Hemispheres",
@@ -98,8 +98,8 @@ const OmnichannelStrategyPage = () => {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-gray-500 italic text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
-              The omnichannel strategy unifies customer experiences across all touchpoints
+            <p className="text-sm text-gray-500 text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
+              [fig 1] The omnichannel strategy unifies customer experiences across all touchpoints.
             </p>
           </motion.div>
 
@@ -114,7 +114,7 @@ const OmnichannelStrategyPage = () => {
               The company wanted to reduce call handle times. But the real problem wasn't the calls themselves, it was the broken handoff between digital and human touchpoints. Customers were frustrated. Agents were frustrated. Everyone was wasting time repeating information that should have been captured the first time.
             </p>
             <p className="text-lg leading-relaxed text-gray-700">
-              I decided we needed to design a smarter way to connect these experiences. A strategy that would make every channel feel like one continuous conversation, not a series of disconnected interactions.
+              We needed to design a smarter way to connect these experiences. A strategy that would make every channel feel like one continuous conversation, not a series of disconnected interactions.
             </p>
           </motion.section>
 
@@ -133,12 +133,12 @@ const OmnichannelStrategyPage = () => {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-gray-500 italic text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
-              Strategy kickoff session: mapping out the problem space
+            <p className="text-sm text-gray-500 text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
+              [fig 3] Strategy kickoff workshop where we mapped out the problem space and got the team aligned on what omnichannel is.
             </p>
           </motion.div>
 
-          {/* Narrative Section 3 */}
+          {/* Narrative Section 3 - same positioning as VIU "Improving clarity" (right column, left-aligned in block) */}
           <motion.section
             className="mb-20"
             initial={{ opacity: 0, y: 30 }}
@@ -146,11 +146,21 @@ const OmnichannelStrategyPage = () => {
             transition={{ duration: 0.8, delay: 1.0 }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              <div className="flex items-center justify-center lg:justify-start">
-                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">Talking to the people who live it.</h2>
+              <div>
+                <div className="relative w-full max-w-xl">
+                  <img
+                    src="/secondop0.png"
+                    alt="Interview insights from customer service representatives"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="text-sm text-gray-500 text-left mt-4">
+                  [fig 2] Interview insights from customer service representatives.
+                </p>
               </div>
-              <div className="flex items-center">
-                <p className="text-lg leading-relaxed text-gray-700">
+              <div>
+                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8 text-left">Talking to the people who live it.</h2>
+                <p className="text-lg leading-relaxed text-gray-700 mb-12 text-left">
                   We interviewed 18 customer service representatives. They told me about the frustration of asking customers to repeat information they'd already entered online. They described the awkward pauses while customers tried to remember what they'd typed. They shared how much time was wasted on information gathering instead of problem solving. The insights were clear: we needed to design a system that captured context and made it instantly available.
                 </p>
               </div>
@@ -171,8 +181,8 @@ const OmnichannelStrategyPage = () => {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-gray-500 italic text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
-              Insights from 18 CSR interviews showed the real pain points behind the data
+            <p className="text-sm text-gray-500 text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
+              [fig 4] Insights from 18 CSR interviews showed the real pain points behind the data.
             </p>
           </motion.div>
 
@@ -183,21 +193,17 @@ const OmnichannelStrategyPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              <div className="flex items-center justify-center lg:justify-start">
-                <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">Mapping the invisible handoff.</h2>
-              </div>
-              <div className="flex items-center">
-                <div>
-                  <p className="text-lg leading-relaxed text-gray-700 mb-4">
-                    We created journey maps for both customers and agents. The customer journey showed frustration points where context was lost. The agent journey revealed inefficiencies where information gathering took priority over problem solving.
-                  </p>
-                  <p className="text-lg leading-relaxed text-gray-700">
-                    Then, we designed a unified service blueprint that showed how data could flow seamlessly between channels, making every interaction feel connected, not disconnected.
-                  </p>
-                </div>
-              </div>
+            <div className="mb-6">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 text-left">
+                Mapping the invisible handoff.
+              </h2>
             </div>
+            <p className="text-lg leading-relaxed text-gray-700 mb-4">
+              We created journey maps for both customers and agents. The customer journey showed frustration points where context was lost. The agent journey revealed inefficiencies where information gathering took priority over problem solving.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-700">
+              Then, we designed a unified service blueprint that showed how data could flow seamlessly between channels, making every interaction feel connected, not disconnected.
+            </p>
           </motion.section>
 
           {/* Image Section 4 */}
@@ -214,18 +220,19 @@ const OmnichannelStrategyPage = () => {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-gray-500 italic text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
-              Two journey maps and one unified service blueprint, connecting the experiences
+            <p className="text-sm text-gray-500 text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
+              [fig 5] Multiple journey maps and one unified service blueprint, connecting the experiences.
             </p>
           </motion.div>
 
-          {/* Narrative Section 5 */}
+          {/* Narrative Section 5 - THE RESULT */}
           <motion.section
             className="mb-20"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.8 }}
           >
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">THE RESULT</h2>
             <p className="text-lg leading-relaxed text-gray-700 mb-4">
               The strategy I designed wasn't just about connecting channels, but designing a system where context travels with the customer. Where agents see what customers tried online. Where data flows seamlessly between touchpoints. Where every interaction builds on the last one, instead of starting from scratch.
             </p>
@@ -241,14 +248,13 @@ const OmnichannelStrategyPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.0 }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-12">THE RESULT</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               <div>
                 <div className="text-5xl font-bold text-gray-900 mb-2">18</div>
                 <div className="text-lg text-gray-600">CSR interviews conducted</div>
               </div>
               <div>
-                <div className="text-5xl font-bold text-gray-900 mb-2">2</div>
+                <div className="text-5xl font-bold text-gray-900 mb-2">4</div>
                 <div className="text-lg text-gray-600">Journey maps created</div>
               </div>
               <div>

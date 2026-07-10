@@ -13,9 +13,12 @@
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
+    "lucide-react": "^0.542.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1"
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.8.1",
+    "zod": "^4.1.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

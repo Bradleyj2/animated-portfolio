@@ -5,6 +5,47 @@ import Navigation from './Navigation'
 import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
 import PageMeta from './PageMeta'
+import { getHomeArchiveItems, hasDraftHomeContent, type HomeArchiveItem } from '../data/homeArchiveItems'
+
+function HomeCaseStudyCard({
+  item,
+  aspectClass = 'aspect-[16/9]',
+  subtitleMaxWidth,
+}: {
+  item: HomeArchiveItem
+  aspectClass?: string
+  subtitleMaxWidth?: number
+}) {
+  const card = (
+    <CaseStudyCard
+      href={item.path}
+      title={item.title}
+      cardHeading={item.cardHeading}
+      companyName={item.companyName}
+      subtitle={item.subtitle}
+      description={item.description}
+      imageSrc={item.image}
+      imageAlt={item.title}
+      role={item.role}
+      year={item.year}
+      imageAspectClass={aspectClass}
+      subtitleMaxWidth={subtitleMaxWidth}
+    />
+  )
+
+  if (!item.draft) {
+    return <div className="h-full">{card}</div>
+  }
+
+  return (
+    <div className="relative h-full rounded-[10px] ring-2 ring-amber-300 ring-offset-2">
+      <span className="absolute right-3 top-3 z-10 rounded bg-amber-400 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-950">
+        Draft
+      </span>
+      {card}
+    </div>
+  )
+}
 
 const HomePage = () => {
   const location = useLocation()
@@ -68,101 +109,11 @@ const HomePage = () => {
     }
   }
 
-  const archiveItems = [
-    {
-      id: 'viu-hub',
-      title: 'VIU BY HUB',
-      subtitle: 'Rebuilding Digital Insurance by driving 25% revenue growth after launch.',
-      tagline: 'How do you transform digital trust in the insurance industry?',
-      description: '',
-      category: 'Strategic Design Leadership',
-      image: '/viubyhub1.png',
-      path: '/case-studies/viu-hub',
-      posterStyle: 'corporate',
-      dossierId: 'ARCHIVE/VIU-04',
-      stamp: 'CLASSIFIED',
-      coordinates: 'X-91.7, Y-67.2',
-      companyName: 'VIU by Hub',
-      projectType: 'Finance + Design Ops',
-      cardHeading: 'VIU by Hub / Digital Insurance',
-      role: 'Design Lead & Design Operations',
-      year: '2022–2024',
-      fullWidth: true
-    },
-    {
-      id: 'hemispheres',
-      title: 'HEMISPHERES',
-      subtitle: 'When Thought Becomes Data: Mapping Mind and Decision',
-      tagline: 'How do you balance two avatars controlled by one player?',
-      description: '',
-      category: 'Game Design & Interactive Storytelling',
-      image: '/hemispheres10.png',
-      path: '/case-studies/hemispheres',
-      posterStyle: 'split-screen',
-      dossierId: 'ARCHIVE/HEMI-01',
-      stamp: 'CONFIDENTIAL',
-      coordinates: 'X-47.2, Y-12.8',
-      companyName: 'Hemispheres',
-      projectType: 'Game Design'
-    },
-    {
-      id: 'service-blueprint',
-      title: 'SERVICE BLUEPRINT',
-      subtitle: 'Turning Complexity into Clarity: Scaling Service Design across 8 departments and eliminating 93% of redundant templates.',
-      tagline: 'How do you unify fragmented organizational processes?',
-      description: '',
-      category: 'Service Design & Organizational Systems',
-      image: '/sb1.png',
-      path: '/case-studies/service-blueprint',
-      posterStyle: 'blueprint',
-      dossierId: 'ARCHIVE/SB-02',
-      stamp: 'TOP SECRET',
-      coordinates: 'X-23.1, Y-45.9',
-      companyName: 'Service Blueprint',
-      projectType: 'Design Ops',
-      cardHeading: 'Service Blueprint / Org-wide service templates',
-      role: 'Service Design Lead',
-      year: '2024'
-    },
-    {
-      id: 'omnichannel',
-      title: 'OMNICHANNEL STRATEGY',
-      subtitle: 'Connecting Self Service and Live Support in 1 unified service\nblueprint.',
-      tagline: 'How do you bridge digital and human service experiences?',
-      description: '',
-      category: 'Service Design & Customer Experience',
-      image: '/thumbnail3.png',
-      path: '/case-studies/omnichannel-strategy',
-      posterStyle: 'hud',
-      dossierId: 'ARCHIVE/OMNI-03',
-      stamp: 'MISSION FILE',
-      coordinates: 'X-78.4, Y-33.6',
-      companyName: 'Omnichannel Strategy',
-      projectType: 'Design Ops',
-      cardHeading: 'Omnichannel Strategy / Unified service',
-      role: 'Experience Design Lead',
-      year: '2025'
-    },
-    {
-      id: 'second-opinion',
-      title: 'SECOND OPINION',
-      subtitle: 'When Information Overwhelms Care: Rebuilding Trust in the Home\nof 18+ test users.',
-      tagline: 'When user research changes everything',
-      description: '',
-      category: 'Healthcare & User Research',
-      image: '/secondop1.png',
-      path: '/case-studies/second-opinion',
-      posterStyle: 'medical',
-      dossierId: 'ARCHIVE/SO-05',
-      stamp: 'RESTRICTED',
-      coordinates: 'X-34.8, Y-89.1',
-      companyName: 'Second Opinion',
-      projectType: 'Healthcare',
-      cardHeading: 'Second Opinion / Healthcare experience',
-      role: 'UX Researcher & Designer',
-      year: '2021'
-    }
-  ]
+  const archiveItems = getHomeArchiveItems()
+  const showDraftPreviewBanner = hasDraftHomeContent()
+  const draftHeroCard = archiveItems.find((item) => item.id === 'ai-marketing-control-center')
+  const viuHub = archiveItems.find((item) => item.id === 'viu-hub')
+  const showPairedHeroRow = Boolean(showDraftPreviewBanner && draftHeroCard && viuHub)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -290,38 +241,57 @@ const HomePage = () => {
       >
         {/* Rockstar-like centered container & gutters */}
         <div className="mx-auto max-w-screen-xl px-6 md:px-10 lg:px-12 xl:px-16 pb-20 md:pb-24 lg:pb-32">
-          {/* Full width VIU by Hub card */}
-          {archiveItems.filter(item => item.fullWidth).map((item) => (
-            <motion.div
-              key={item.id}
-              variants={itemVariants}
-              className="mb-10 md:mb-12"
+          {showDraftPreviewBanner && (
+            <div
+              className="mb-8 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950"
+              role="status"
             >
-              <CaseStudyCard
-                href={item.path}
-                title={item.title}
-                cardHeading={item.cardHeading}
-                companyName={item.companyName}
-                subtitle={item.subtitle}
-                description={item.description}
-                imageSrc={item.image}
-                imageAlt={item.title}
-                role={item.role}
-                year={item.year}
-                imageAspectClass="aspect-[16/9]"
-              />
-            </motion.div>
-          ))}
+              <span className="font-semibold">Preview mode.</span> Draft case studies
+              are visible here only — they are excluded from production deploys.
+            </div>
+          )}
+          {showPairedHeroRow && draftHeroCard && viuHub ? (
+            <div className="mb-10 grid grid-cols-1 gap-8 md:mb-12 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
+              <motion.div
+                key={draftHeroCard.id}
+                variants={itemVariants}
+                className="min-w-0 h-full"
+              >
+                <HomeCaseStudyCard item={draftHeroCard} />
+              </motion.div>
+              <motion.div
+                key={viuHub.id}
+                variants={itemVariants}
+                className="min-w-0 h-full"
+              >
+                <HomeCaseStudyCard item={viuHub} />
+              </motion.div>
+            </div>
+          ) : (
+            archiveItems
+              .filter((item) => item.fullWidth)
+              .map((item) => (
+                <motion.div
+                  key={item.id}
+                  variants={itemVariants}
+                  className="mb-10 md:mb-12"
+                >
+                  <HomeCaseStudyCard item={item} />
+                </motion.div>
+              ))
+          )}
           
           {/* Two equal columns — reference card grid */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
-            {archiveItems.filter(item => !item.fullWidth).map((item) => {
-              const aspectClass = 'aspect-[4/3]'
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
+            {archiveItems
+              .filter((item) => !item.fullWidth && !item.draft)
+              .map((item) => {
+              const aspectClass = 'aspect-[16/9]'
               return (
               <motion.div
                 key={item.id}
                 variants={itemVariants}
-                className="min-w-0"
+                className="min-w-0 h-full"
               >
                 {item.comingSoon ? (
                   <div className="text-center relative h-full">
@@ -342,19 +312,16 @@ const HomePage = () => {
                     </div>
                   </div>
                 ) : (
-                  <CaseStudyCard
-                    href={item.path}
-                    title={item.title}
-                    cardHeading={item.cardHeading}
-                    companyName={item.companyName}
-                    subtitle={item.subtitle}
-                    description={item.description}
-                    imageSrc={item.image}
-                    imageAlt={item.title}
-                    role={item.role}
-                    year={item.year}
-                    imageAspectClass={aspectClass}
-                    subtitleMaxWidth={item.id === 'second-opinion' ? 500 : item.id === 'omnichannel' ? 520 : undefined}
+                  <HomeCaseStudyCard
+                    item={item}
+                    aspectClass={aspectClass}
+                    subtitleMaxWidth={
+                      item.id === 'second-opinion'
+                        ? 500
+                        : item.id === 'omnichannel'
+                          ? 520
+                          : undefined
+                    }
                   />
                 )}
               </motion.div>

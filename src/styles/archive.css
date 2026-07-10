@@ -1,0 +1,187 @@
+/* Archivist Workstation Theme - Retro + Cartoony Polish */
+
+:root {
+  --lavender: theme(colors.fuchsia.400);
+  --neon-green: theme(colors.green.400);
+  --ink: theme(colors.zinc.900);
+  --paper: theme(colors.zinc.50);
+}
+
+/* Textures */
+.paper-card { 
+  background: var(--paper);
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.cork { 
+  background: #8b4513;
+  background-image: 
+    radial-gradient(circle at 2px 2px, rgba(139, 69, 19, 0.3) 1px, transparent 0),
+    radial-gradient(circle at 6px 6px, rgba(160, 82, 45, 0.2) 1px, transparent 0);
+  background-size: 8px 8px, 12px 12px;
+}
+
+/* Index card lines */
+.index-lines {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 100% 28px;
+}
+
+/* CRT scanlines for encrypted mode */
+.console-scan {
+  background-image: repeating-linear-gradient(0deg, rgba(0,0,0,.08) 0, rgba(0,0,0,.08) 2px, transparent 2px, transparent 4px);
+}
+
+/* Blinking caret for encrypted mode */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.encrypted-caret::after {
+  content: '█';
+  color: var(--neon-green);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* Drawer + stamp animations */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes drawerSlide { 
+    from { 
+      transform: translateY(16px); 
+      opacity: 0; 
+    } 
+    to { 
+      transform: translateY(0); 
+      opacity: 1; 
+    } 
+  }
+  
+  @keyframes stampPop { 
+    0% { 
+      transform: scale(0.6) rotate(-8deg); 
+      opacity: 0; 
+    } 
+    70% { 
+      transform: scale(1.05) rotate(2deg); 
+      opacity: 1; 
+    } 
+    100% { 
+      transform: scale(1) rotate(0deg); 
+    } 
+  }
+  
+  @keyframes cardSlideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .anim-drawer { 
+    animation: drawerSlide .6s cubic-bezier(.2,.7,.2,1) both; 
+  }
+  
+  .anim-stamp { 
+    animation: stampPop .35s cubic-bezier(.2,.7,.2,1) both; 
+    transform-origin: center; 
+  }
+  
+  .anim-card-slide {
+    animation: cardSlideIn .4s cubic-bezier(.2,.7,.2,1) both;
+  }
+}
+
+/* Focus ring using custom properties */
+.focus-ring:focus {
+  outline: none;
+  ring: 2px solid var(--lavender);
+  ring-offset: 2px;
+  ring-offset-color: white;
+}
+
+/* Rubber stamp styling */
+.rubber-stamp {
+  border: 2px dashed var(--ink);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.2s ease;
+}
+
+.rubber-stamp[aria-checked="true"] {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-style: solid;
+  transform: scale(0.98);
+}
+
+/* Folder edge styling */
+.folder-edge {
+  position: relative;
+}
+
+.folder-edge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(45deg, transparent 0%, transparent 40%, rgba(0,0,0,0.1) 50%, transparent 60%, transparent 100%);
+  background-size: 20px 8px;
+}
+
+/* Corkboard pin */
+.cork-pin {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle, #dc2626 0%, #991b1b 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cork-pin::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 8px;
+  background: #991b1b;
+  border-radius: 1px;
+}
+
+/* Toast positioning */
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  .anim-drawer,
+  .anim-stamp,
+  .anim-card-slide {
+    animation: none;
+  }
+  
+  .encrypted-caret::after {
+    animation: none;
+    opacity: 1;
+  }
+}

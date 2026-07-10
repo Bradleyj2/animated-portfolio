@@ -53,10 +53,10 @@ export default function CaseStudyCard({
   const yearText = year?.trim() || "—";
 
   return (
-    <div className="flex w-full min-w-0 flex-col">
+    <div className="flex h-full w-full min-w-0 flex-col">
       <Link
         to={href}
-        className="home-case-card group block w-full min-w-0 overflow-hidden rounded-[10px] border border-[#e5e5e5] bg-[#f9f9f9] shadow-none transition-colors hover:border-[#d0d0d0] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2"
+        className="home-case-card group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[10px] border border-[#e5e5e5] bg-white shadow-none transition-colors hover:border-[#8a8a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2"
       >
         <div
           className={`relative w-full min-w-0 ${imageAspectClass} overflow-hidden bg-neutral-100`}
@@ -69,10 +69,10 @@ export default function CaseStudyCard({
           />
         </div>
 
-        <div className="case-study-card-text flex w-full min-w-0 flex-col px-6 py-6 md:px-8 md:py-8">
+        <div className="case-study-card-text flex w-full min-w-0 flex-1 flex-col px-5 py-5 md:px-6 md:py-6">
           {heading && (
             <h3
-              className="mb-4 max-w-none text-2xl font-semibold leading-snug tracking-tight text-neutral-900 md:text-[1.65rem] md:leading-tight"
+              className="mb-2.5 max-w-none text-[1.125rem] font-semibold leading-snug tracking-[-0.01em] text-neutral-900 md:text-[1.25rem]"
               style={subtitleMaxWidth ? { maxWidth: `${subtitleMaxWidth}px` } : undefined}
             >
               {heading}
@@ -80,7 +80,7 @@ export default function CaseStudyCard({
           )}
 
           {body && (
-            <p className="mb-8 max-w-none text-base font-normal leading-relaxed text-[#555555] md:text-[1.0625rem]">
+            <p className="mb-5 max-w-none text-[0.875rem] font-normal leading-[1.55] text-[#555555] md:text-[0.9375rem]">
               {body.includes("\n")
                 ? body.split("\n").map((line, i, arr) => (
                     <React.Fragment key={i}>
@@ -92,20 +92,20 @@ export default function CaseStudyCard({
             </p>
           )}
 
-          <div className="grid grid-cols-2 gap-x-10 gap-y-1">
+          <div className="mt-auto grid grid-cols-2 gap-x-8 gap-y-0.5">
             <div className="min-w-0">
-              <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-neutral-400">
+              <p className="text-[0.6rem] font-medium uppercase tracking-[0.14em] text-neutral-400">
                 Role
               </p>
-              <p className="mt-2 text-base font-normal leading-snug text-neutral-700">
+              <p className="mt-1 text-[0.8125rem] font-normal leading-snug text-neutral-700 md:text-[0.875rem]">
                 {roleText}
               </p>
             </div>
             <div className="min-w-0">
-              <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-neutral-400">
+              <p className="text-[0.6rem] font-medium uppercase tracking-[0.14em] text-neutral-400">
                 Year
               </p>
-              <p className="mt-2 text-base font-normal leading-snug text-neutral-700">
+              <p className="mt-1 text-[0.8125rem] font-normal leading-snug text-neutral-700 md:text-[0.875rem]">
                 {yearText}
               </p>
             </div>

@@ -34,9 +34,7 @@ const IMAGES: { file: string; alt: string }[] = [
   { file: 'secondop9.png', alt: 'Second Opinion 9' },
 
   { file: 'viubyhub1.png', alt: 'VIU by HUB 1' },
-  { file: 'viubyhub2.png', alt: 'VIU by HUB 2' },
-  { file: 'viubyhub3.png', alt: 'VIU by HUB 3' },
-  { file: 'viubyhub4.png', alt: 'VIU by HUB 4' },
+  { file: 'viubyhub4.png', alt: 'VIU by HUB 2' },
   { file: 'viubyhub5.png', alt: 'VIU by HUB 5' },
 ]
 

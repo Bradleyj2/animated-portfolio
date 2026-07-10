@@ -33,7 +33,7 @@
 
 /* CaseStudyCard — text panel uses panel background from component */
 .case-study-card-text {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
 }
 
 .case-study-card-overlay {
@@ -1115,7 +1115,7 @@ body:has([data-work-page="true"]) {
 /* Homepage case study tiles: restore panel + shell (overrides transparent rule above) */
 .case-studies-section .home-case-card,
 .case-studies-section .home-case-card .case-study-card-text {
-  background-color: #f9f9f9 !important;
+  background-color: #ffffff !important;
 }
 
 /* Ensure homepage main container transitions with scroll */
