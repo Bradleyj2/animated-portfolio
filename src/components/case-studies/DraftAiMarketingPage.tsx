@@ -93,10 +93,6 @@ const DraftAiMarketingPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="mb-6 text-sm font-semibold uppercase tracking-wider text-amber-700">
-              Draft preview — not published on live site
-            </p>
-
             <div className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">
               Case study —
             </div>
