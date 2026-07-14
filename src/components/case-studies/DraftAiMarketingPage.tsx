@@ -373,7 +373,7 @@ const DraftAiMarketingPage = () => {
               Each of these flows had to hold up under the same test: does this still make sense
               when an AI agent has already pre-filled half of it? Designing for a human working
               alone is one problem. Designing for a human reviewing and adjusting an AI&apos;s work
-              is a different one; it demanded more clarity, not less, at every step.
+              is a different one which demanded more clarity at every step.
             </p>
           </motion.section>
 
