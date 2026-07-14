@@ -44,7 +44,7 @@ function CaseStudyImage({
   className?: string
 }) {
   return (
-    <div className="bg-white px-4 pt-4 pb-2 md:px-6 md:pt-6 md:pb-2">
+    <div className="w-full max-w-full bg-white px-4 pt-4 pb-2 md:px-6 md:pt-6 md:pb-2">
       <img
         src={aiMarketingImage(figNumber)}
         alt={alt}
@@ -345,8 +345,8 @@ const DraftAiMarketingPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 items-start">
-              <div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:gap-12 items-start">
+              <div className="min-w-0">
                 <p className="text-lg leading-relaxed text-gray-700 mb-6">From there, I built out:</p>
                 <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-gray-700 ml-4 mb-8">
                   <li>
@@ -377,10 +377,11 @@ const DraftAiMarketingPage = () => {
                   AI&apos;s work is a different one which demanded more clarity at every step.
                 </p>
               </div>
-              <div className="relative">
+              <div className="relative min-w-0 w-full">
                 <CaseStudyImage
                   figNumber={6}
                   alt="AI-prefilled edit screen with suggested-value treatment"
+                  className="h-auto w-full max-w-full"
                 />
                 <p className="text-sm text-gray-500 text-left mt-2">
                   [fig 6] AI-prefilled state — edit asset group with AI-suggested values visually
