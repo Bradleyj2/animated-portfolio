@@ -505,8 +505,7 @@ const DraftAiMarketingPage = () => {
               <li>
                 A full visual QA pass across the platform, auditing every screen against the design
                 system and documenting the gaps, inconsistent spacing, mismatched states, components
-                drifting from spec, so the product felt like it was built by one team, not stitched
-                together from a dozen sprints
+                drifting from spec, so the product felt like it was built by one team
               </li>
             </ul>
             <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
