@@ -405,8 +405,8 @@ const DraftAiMarketingPage = () => {
               Making the invisible systems visible
             </h2>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
-              Some of the most impactful work I did never showed up as a flashy screen. It was
-              infrastructure that every other flow depended on.
+              Some of the most impactful work I did was the infrastructure that every other flow depended
+              on.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
               <span className="font-semibold">Product sets.</span> I designed the flow for
