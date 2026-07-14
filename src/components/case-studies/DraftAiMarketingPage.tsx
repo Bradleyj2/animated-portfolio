@@ -312,29 +312,6 @@ const DraftAiMarketingPage = () => {
           </motion.div>
 
           {/* Problem 2 */}
-          <motion.section
-            className="mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
-              Making the core flows work
-            </h2>
-            <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
-              The heart of the platform was deceptively simple to describe and genuinely hard to
-              design: let a marketer create and edit campaigns, ad sets, asset groups, and ads.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
-              I took over the initial designs for the create ad, create ad set, and create asset
-              group flows partway through and carried all three across the finish line ahead of
-              MVP launch, inheriting early direction, resolving open questions, and pushing them
-              to a state the team could confidently ship. I also led the UX for the core ad set
-              creation flow and translated it into working prototypes for both create ad set and
-              create ads, testing assumptions before a single line of production code was written.
-            </p>
-          </motion.section>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
