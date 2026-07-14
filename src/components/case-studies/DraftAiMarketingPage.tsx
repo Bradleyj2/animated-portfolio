@@ -38,13 +38,21 @@ function CaseStudyImage({
   figNumber,
   alt,
   className = 'h-auto w-full',
+  padded = true,
 }: {
   figNumber: number
   alt: string
   className?: string
+  padded?: boolean
 }) {
   return (
-    <div className="w-full max-w-full bg-white px-4 pt-4 pb-2 md:px-6 md:pt-6 md:pb-2">
+    <div
+      className={
+        padded
+          ? 'w-full max-w-full bg-white px-4 pt-4 pb-2 md:px-6 md:pt-6 md:pb-2'
+          : 'w-full max-w-full'
+      }
+    >
       <img
         src={aiMarketingImage(figNumber)}
         alt={alt}
@@ -382,6 +390,7 @@ const DraftAiMarketingPage = () => {
                   figNumber={6}
                   alt="AI-prefilled edit screen with suggested-value treatment"
                   className="h-auto w-full max-w-full"
+                  padded={false}
                 />
                 <p className="text-sm text-gray-500 text-left mt-2">
                   [fig 6] AI-prefilled state — edit asset group with AI-suggested values visually
