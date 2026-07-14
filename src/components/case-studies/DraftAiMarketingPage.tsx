@@ -423,11 +423,11 @@ const DraftAiMarketingPage = () => {
               what they were doing, jump to a separate settings area, and lose their place.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
-              <span className="font-semibold">Detailed targeting.</span> I redesigned how
-              marketers browsed, added, and removed targeting criteria, interests, demographics,
-              and more, inside the ad set flow. With targeting options numbering in the thousands,
-              the design challenge was less about &quot;how do we show this data&quot; and more
-              about &quot;how do we keep a marketer from feeling lost inside it.&quot;
+              <span className="font-semibold">Detailed targeting.</span> Redesigned how
+              marketers browsed, added, and removed targeting criteria inside the ad set flow.
+              With targeting options numbering in the thousands, the design challenge was less
+              about &quot;how do we show this data&quot; and more about &quot;how do we keep a
+              marketer from feeling lost inside it.&quot;
             </p>
             <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
               <span className="font-semibold">Labels for offers.</span> This one had a real
