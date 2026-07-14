@@ -585,7 +585,7 @@ const DraftAiMarketingPage = () => {
             </CaseStudyFigure>
 
             <CaseStudyFigure
-              figNumber={14}
+              figNumber={13}
               caption="Delegation feature — user assigning a proxy/delegate and admin view of org-wide delegate assignments."
               className="mb-20"
             >
