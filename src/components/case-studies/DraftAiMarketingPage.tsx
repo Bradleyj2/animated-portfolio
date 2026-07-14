@@ -145,7 +145,7 @@ const DraftAiMarketingPage = () => {
                   Company
                 </dt>
                 <dd className="text-lg leading-relaxed text-gray-700">
-                  A Fortune 500 retail enterprise (name withheld under NDA)
+                  Fortune 500 retail enterprise
                 </dd>
               </div>
               <div>
