@@ -495,8 +495,8 @@ const DraftAiMarketingPage = () => {
             <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-gray-700 ml-4 mb-8 max-w-[80ch]">
               <li>
                 Dynamic error states for the different ways an action could fail, a rejected
-                creative, a platform-side validation error, a budget conflict, each needing its
-                own clear, specific message rather than a generic &quot;something went wrong&quot;
+                creative, a platform-side validation error, a budget conflict... each needing its
+                own clear, specific message rather than simply &quot;something went wrong&quot;
               </li>
               <li>
                 Confirmation screens at key decision points, so marketers always knew exactly what
