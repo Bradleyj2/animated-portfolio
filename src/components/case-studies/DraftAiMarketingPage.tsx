@@ -276,25 +276,21 @@ const DraftAiMarketingPage = () => {
             </h2>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
               The hardest constraint on this project wasn&apos;t visual, it was structural. Major ad
-              platforms and other partners don&apos;t just have different names for things; they
-              have different rules. An offer list might be required on one platform and irrelevant
-              on another. A targeting option might exist in one ecosystem and not the other at
-              all.
+              platforms and other partners don&apos;t just have different terminology, but also
+              different rules. An offer list might be required on one platform and irrelevant on
+              another. A targeting option might exist in one ecosystem and not in another.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
               Early on, I worked a ticket that captured this perfectly: adding a new asset type
-              and updating an offer list from required to optional, specifically for the use case
-              where &quot;Create&quot; and &quot;Copy&quot; actions were available but an offer
-              list wasn&apos;t. It sounds small. It wasn&apos;t. It meant the underlying flow
-              couldn&apos;t assume a fixed, linear set of required fields; it had to adapt based
-              on which asset type and which action the marketer was performing.
+              and updating an offer list from required to optional. It sounds small, but it meant
+              the underlying flow couldn&apos;t assume a fixed, linear set of required fields; it
+              had to adapt based on which asset type and which action the marketer was performing.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
-              That single ticket became a pattern I carried through the rest of the work: design
+              That single ticket became a pattern I carried through the rest of the work. Design
               the flow as a system of conditional states, not a fixed form. Every core flow I
-              built after that, creating an ad set, editing an ad, cloning a campaign, was
-              designed to flex based on platform, asset type, and context, while still feeling
-              like one coherent product to the marketer using it.
+              built after that was designed to flex based on platform and context, while still
+              feeling like one coherent product to the marketer using it.
             </p>
           </motion.section>
 
