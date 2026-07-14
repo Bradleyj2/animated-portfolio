@@ -319,7 +319,7 @@ const DraftAiMarketingPage = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">
-              Making the core flows actually work
+              Making the core flows work
             </h2>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
               The heart of the platform was deceptively simple to describe and genuinely hard to
