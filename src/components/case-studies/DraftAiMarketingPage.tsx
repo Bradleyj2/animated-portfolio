@@ -564,10 +564,7 @@ const DraftAiMarketingPage = () => {
               <span className="font-semibold">Delegation.</span> I designed a feature that let
               marketers assign a temporary proxy to handle their approval tasks while they were out
               of office, with admins able to assign delegates on others&apos; behalf and see every
-              delegate assigned across the org. In a platform where an AI agent might be waiting
-              on a human approval to take action, this feature mattered more than it might
-              elsewhere: an approval bottleneck couldn&apos;t just sit there because one person was
-              on vacation.
+              delegate assigned across the org.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
               Both projects forced the same discipline: design something one person will barely
