@@ -566,15 +566,9 @@ const DraftAiMarketingPage = () => {
               of office, with admins able to assign delegates on others&apos; behalf and see every
               delegate assigned across the org.
             </p>
-            <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
+            <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
               Both projects forced the same discipline: design something one person will barely
               notice, and thousands of people will depend on.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
-              Alongside all of this, I stayed close to the reporting side of the product,
-              updating the UX around forecasting enhancements, and kept a constant eye on
-              integration, making sure every flow I shipped felt like part of one seamless platform
-              rather than a patchwork of features built by different teams at different times.
             </p>
           </motion.section>
 
