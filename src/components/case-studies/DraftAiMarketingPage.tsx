@@ -179,8 +179,7 @@ const DraftAiMarketingPage = () => {
                   My role
                 </dt>
                 <dd className="text-lg leading-relaxed text-gray-700">
-                  Product designer, end-to-end: flows, prototypes, visual QA, and
-                  cross-platform consistency
+                  Lead Product Designer
                 </dd>
               </div>
               <div>
