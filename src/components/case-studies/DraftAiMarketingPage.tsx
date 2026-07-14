@@ -153,8 +153,7 @@ const DraftAiMarketingPage = () => {
                   Product
                 </dt>
                 <dd className="text-lg leading-relaxed text-gray-700">
-                  An internal agentic AI platform that helps marketers plan, launch, and manage
-                  advertising campaigns
+                  Internal agentic AI platform
                 </dd>
               </div>
               <div>
