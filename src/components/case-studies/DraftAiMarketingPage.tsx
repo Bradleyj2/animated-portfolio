@@ -430,12 +430,11 @@ const DraftAiMarketingPage = () => {
               marketer from feeling lost inside it.&quot;
             </p>
             <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
-              <span className="font-semibold">Labels for offers.</span> This one had a real
-              business constraint baked into it: listing groups capped out at 1,000 offers per
-              asset group. Labels didn&apos;t have that limit, so I designed a flow that let
-              marketers apply custom labels to product sets, with the interface being direct
-              about why labels existed and nudging marketers over 1,000 offers toward labels
-              instead of leaving them to hit a wall and wonder why.
+              <span className="font-semibold">Labels for offers.</span> Listing groups capped
+              out at 1,000 offers per asset group, however, labels didn&apos;t have that limit, so
+              a flow was designed to let marketers apply custom labels to product sets, with the
+              interface being direct about why labels existed and nudging marketers over 1,000
+              offers toward labels instead of leaving them to hit a wall and wonder why.
             </p>
           </motion.section>
 
