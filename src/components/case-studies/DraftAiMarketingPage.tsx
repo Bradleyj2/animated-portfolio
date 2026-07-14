@@ -200,24 +200,20 @@ const DraftAiMarketingPage = () => {
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">The challenge</h2>
             <div className="space-y-4 text-lg leading-relaxed text-gray-700 mb-12">
               <p className="max-w-[80ch]">
-                Marketers at this scale weren&apos;t managing one campaign. They were managing
-                hundreds, spread across multiple ad platforms, each needing something a little
-                different. One platform wanted asset groups, another wanted ad groups, and every
-                platform had its own take on what a &quot;product set&quot; was, how targeting
-                should work, and what happened when something failed.
+                Marketers at this scale weren&apos;t just managing one campaign. They were managing
+                many, spread across multiple ad platforms and each needing something a little
+                different.
               </p>
               <p className="max-w-[80ch]">
-                Layered on top of that: this wasn&apos;t a simple dashboard, it was an agentic AI
-                platform. Marketers weren&apos;t just clicking through forms, they were
+                Additionally, marketers weren&apos;t just clicking through forms, they were
                 collaborating with an AI agent that could take actions on their behalf. That raised
                 the design bar considerably. If an AI agent edits a live ad, changes a budget, or
                 swaps a creative asset, the human still needs to feel fully in control, fully
                 informed, and fully able to trust what just happened.
               </p>
               <p className="max-w-[80ch]">
-                My job was to design the workspace where that trust got built: the screens where
-                marketers actually did the work, creating and editing campaigns, ad sets, asset
-                groups, and ads, while an AI agent worked alongside them.
+                My job was to design the workspace where that trust was built. The screens where
+                marketers actually did the work, while an AI agent worked alongside them.
               </p>
             </div>
 
