@@ -171,7 +171,7 @@ const DraftAiMarketingPage = () => {
                   Partners supported
                 </dt>
                 <dd className="text-lg leading-relaxed text-gray-700">
-                  Major paid social, search, and additional media platforms
+                  Major paid social and search media platforms
                 </dd>
               </div>
               <div>
