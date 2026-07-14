@@ -5,7 +5,7 @@ import PageMeta from '../PageMeta'
 import CaseStudyLayout from '../CaseStudyLayout'
 
 const FIGURE_CAPTION_CLASS =
-  'text-sm text-gray-500 text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]'
+  'text-sm text-gray-500 text-left mt-2 px-6 md:px-6 lg:px-[98px] xl:px-[98px]'
 
 const FULL_BLEED_CLASS = '-mx-6 md:-mx-6 lg:-mx-[98px] xl:-mx-[98px]'
 
@@ -44,7 +44,7 @@ function CaseStudyImage({
   className?: string
 }) {
   return (
-    <div className="bg-white p-4 md:p-6">
+    <div className="bg-white px-4 pt-4 pb-2 md:px-6 md:pt-6 md:pb-2">
       <img
         src={aiMarketingImage(figNumber)}
         alt={alt}
