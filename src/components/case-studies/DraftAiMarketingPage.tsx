@@ -353,7 +353,7 @@ const DraftAiMarketingPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.65fr_1fr] md:gap-10 lg:gap-12 items-start">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-[2.2fr_1fr] md:gap-10 lg:gap-12 items-start">
               <div className="min-w-0">
                 <p className="text-lg leading-relaxed text-gray-700 mb-6">From there, we built out:</p>
                 <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-gray-700 ml-4 mb-8">
