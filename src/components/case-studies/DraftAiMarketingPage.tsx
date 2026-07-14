@@ -384,7 +384,7 @@ const DraftAiMarketingPage = () => {
           >
             <CaseStudyFigure
               figNumber={6}
-              caption="AI-prefilled state — edit ad or edit asset group with AI-suggested values visually distinguished from marketer-entered fields."
+              caption="AI-prefilled state — edit asset group with AI-suggested values visually distinguished from marketer-entered fields."
               className="mb-20"
             >
               <CaseStudyImage
