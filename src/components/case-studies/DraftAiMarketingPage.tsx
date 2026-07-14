@@ -529,7 +529,7 @@ const DraftAiMarketingPage = () => {
               className="mb-20"
             >
               <CaseStudyImage
-                figNumber={12}
+                figNumber={11}
                 alt="Visual QA audit documentation"
               />
             </CaseStudyFigure>
@@ -580,7 +580,7 @@ const DraftAiMarketingPage = () => {
               className="mb-12"
             >
               <CaseStudyImage
-                figNumber={13}
+                figNumber={12}
                 alt="Unified login flow with authentication paths behind a single entry point"
               />
             </CaseStudyFigure>
@@ -591,7 +591,7 @@ const DraftAiMarketingPage = () => {
               className="mb-20"
             >
               <CaseStudyImage
-                figNumber={14}
+                figNumber={13}
                 alt="Delegation feature — assign proxy and admin delegate overview"
               />
             </CaseStudyFigure>
