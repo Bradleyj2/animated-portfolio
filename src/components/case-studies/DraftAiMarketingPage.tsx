@@ -162,8 +162,8 @@ const DraftAiMarketingPage = () => {
                   My focus
                 </dt>
                 <dd className="text-lg leading-relaxed text-gray-700">
-                  Campaign activation and editing: campaigns, ad sets, asset groups, ads, and
-                  global assets like product sets and lookalike audiences
+                  Activation and management of campaigns, ad sets, asset groups, ads, and global
+                  assets
                 </dd>
               </div>
               <div>
