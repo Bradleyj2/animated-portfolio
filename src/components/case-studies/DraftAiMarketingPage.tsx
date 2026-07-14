@@ -574,7 +574,7 @@ const DraftAiMarketingPage = () => {
             transition={{ duration: 0.8, delay: 1.8 }}
           >
             <CaseStudyFigure
-              figNumber={13}
+              figNumber={12}
               caption="Unified login flow — single entry point with authentication paths (SSO/AD vs. GTP/IAM/PingFed) branching behind it."
               className="mb-12"
             >
