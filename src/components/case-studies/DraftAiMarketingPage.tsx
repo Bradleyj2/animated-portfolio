@@ -355,34 +355,33 @@ const DraftAiMarketingPage = () => {
           >
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:gap-12 items-start">
               <div className="min-w-0">
-                <p className="text-lg leading-relaxed text-gray-700 mb-6">From there, I built out:</p>
+                <p className="text-lg leading-relaxed text-gray-700 mb-6">From there, we built out:</p>
                 <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-gray-700 ml-4 mb-8">
                   <li>
-                    <span className="font-semibold">Edit ad</span>, allowing marketers to modify
+                    <span className="font-semibold">Edit ad</span>, letting marketers modify
                     creative, destination URLs, and tracking on a live ad without starting over
                   </li>
                   <li>
                     <span className="font-semibold">Edit asset group</span>, the platform-specific
-                    equivalent, with its own asset and creative logic
+                    equivalent
                   </li>
                   <li>
-                    <span className="font-semibold">Clone campaign, ad set, and ad</span>, because in
-                    an agency-scale marketing org, almost nothing is built from scratch; it&apos;s
-                    duplicated, adjusted, and relaunched. Getting cloning right saved marketers
-                    from re-entering dozens of fields by hand every time they wanted to run a
-                    variation of an existing campaign
+                    <span className="font-semibold">Clone campaign, ad set, and ad</span>, since
+                    almost nothing at this scale gets built from scratch; it&apos;s duplicated,
+                    adjusted, and relaunched. Getting cloning right meant marketers weren&apos;t
+                    re-entering dozens of fields for every variation
+                  </li>
+                  <li>
+                    <span className="font-semibold">Video creative support</span> within asset
+                    groups, small in scope but important as budget shifted toward video-first
+                    placements
                   </li>
                 </ul>
-                <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                  I also added support for video creatives within asset groups, a small-sounding
-                  feature that mattered a lot to marketers who were shifting budget toward
-                  video-first placements and didn&apos;t want a workaround outside the tool.
-                </p>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Each of these flows had to hold up under the same test: does this still make
-                  sense when an AI agent has already pre-filled half of it? Designing for a human
-                  working alone is one problem. Designing for a human reviewing and adjusting an
-                  AI&apos;s work is a different one which demanded more clarity at every step.
+                  Each flow had to hold up under the same test. Does this still make sense when an
+                  AI agent has already pre-filled half of it? Designing for a human working alone
+                  is one problem. Designing for a human reviewing an AI&apos;s work is another, and
+                  it demanded more clarity at every step.
                 </p>
               </div>
               <div className="relative min-w-0 w-full">
