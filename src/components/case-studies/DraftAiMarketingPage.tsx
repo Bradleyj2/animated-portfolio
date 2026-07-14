@@ -523,7 +523,7 @@ const DraftAiMarketingPage = () => {
             </CaseStudyFigure>
 
             <CaseStudyFigure
-              figNumber={12}
+              figNumber={11}
               caption="Visual QA documentation — annotated audit of spacing, states, and off-spec components with found vs. fixed callouts."
               className="mb-20"
             >
