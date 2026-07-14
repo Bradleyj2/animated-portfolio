@@ -500,8 +500,7 @@ const DraftAiMarketingPage = () => {
               </li>
               <li>
                 Confirmation screens at key decision points, so marketers always knew exactly what
-                action they were about to take and what would happen next, especially when an AI
-                agent had proposed the action
+                action they were about to take and what would happen next.
               </li>
               <li>
                 A full visual QA pass across the platform, auditing every screen against the design
