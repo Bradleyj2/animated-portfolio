@@ -508,11 +508,6 @@ const DraftAiMarketingPage = () => {
                 drifting from spec, so the product felt like it was built by one team
               </li>
             </ul>
-            <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
-              This is the kind of work that rarely makes a portfolio highlight reel, but it&apos;s
-              often the difference between a tool marketers trust with high-stakes, real-money
-              campaigns and one they route around.
-            </p>
           </motion.section>
 
           <motion.div
