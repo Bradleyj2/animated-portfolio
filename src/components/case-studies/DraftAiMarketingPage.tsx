@@ -123,7 +123,7 @@ const DraftAiMarketingPage = () => {
           >
             <CaseStudyFigure
               figNumber={1}
-              caption="Hero shot — campaign dashboard with AI agent panel alongside campaign and ad set management."
+              caption="Campaign dashboard with AI agent panel."
               className="mb-24"
             >
               <CaseStudyImage
