@@ -415,11 +415,11 @@ const DraftAiMarketingPage = () => {
               needed to be fast, predictable, and scalable.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
-              <span className="font-semibold">Lookalike audiences.</span> I designed a flow that
-              let marketers build reusable, global lookalike audiences instead of recreating the
-              same audience logic inside every ad set, and then made it possible to edit those
-              audiences directly inline, from within the create/edit ad set flow itself. That
-              inline editing decision mattered: it meant marketers didn&apos;t have to abandon
+              <span className="font-semibold">Lookalike audiences.</span> Designed a flow that
+              let marketers build and manage reusable, global lookalike audiences instead of
+              recreating the same audience logic inside every ad set. As well as made it possible
+              to edit those audiences directly inline, from within the create/edit ad set flow
+              itself. That inline editing decision meant marketers didn&apos;t have to abandon
               what they were doing, jump to a separate settings area, and lose their place.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
