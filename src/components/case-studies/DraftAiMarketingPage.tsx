@@ -301,7 +301,7 @@ const DraftAiMarketingPage = () => {
           >
             <CaseStudyFigure
               figNumber={3}
-              caption="Conditional field states — same asset creation screen with offer list required vs. optional or hidden, annotated Required vs. Optional."
+              caption="Conditional field states — same asset creation screen with offer list required vs. optional or hidden."
               className="mb-20"
             >
               <CaseStudyImage
