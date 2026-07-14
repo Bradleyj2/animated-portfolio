@@ -527,17 +527,6 @@ const DraftAiMarketingPage = () => {
             </CaseStudyFigure>
 
             <CaseStudyFigure
-              figNumber={11}
-              caption="Confirmation screen — key decision point before publishing a cloned campaign or approving an AI-proposed change."
-              className="mb-12"
-            >
-              <CaseStudyImage
-                figNumber={11}
-                alt="Confirmation screen before publishing or approving an AI-proposed change"
-              />
-            </CaseStudyFigure>
-
-            <CaseStudyFigure
               figNumber={12}
               caption="Visual QA documentation — annotated audit of spacing, states, and off-spec components with found vs. fixed callouts."
               className="mb-20"
