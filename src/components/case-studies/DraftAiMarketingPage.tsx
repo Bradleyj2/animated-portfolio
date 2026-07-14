@@ -330,7 +330,7 @@ const DraftAiMarketingPage = () => {
 
             <CaseStudyFigure
               figNumber={5}
-              caption="Prototype walkthrough — create ad set and create ads flow: new ad set, budget/targeting, creative selection, confirmation."
+              caption="Walkthrough — create ad set flow: new ad set, budget/targeting, creative selection, confirmation."
               className="mb-20"
             >
               <CaseStudyImage
