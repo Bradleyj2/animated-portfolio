@@ -236,7 +236,7 @@ const DraftAiMarketingPage = () => {
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">My role</h2>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
-              I owned the activation and editing experience, the operational core of the platform.
+              I owned the activation and management experience, the operational core of the platform.
               That meant:
             </p>
             <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-gray-700 ml-4 mb-8 max-w-[80ch]">
@@ -254,7 +254,7 @@ const DraftAiMarketingPage = () => {
                 matter which ad platform a marketer was publishing to
               </li>
               <li>
-                Handling the unglamorous but critical layer of error states, confirmations, and
+                Handling the critical layer of error states, confirmations, and
                 visual QA that determines whether a complex tool feels trustworthy or chaotic
               </li>
               <li>
