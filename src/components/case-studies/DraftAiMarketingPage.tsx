@@ -409,11 +409,10 @@ const DraftAiMarketingPage = () => {
               on.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
-              <span className="font-semibold">Product sets.</span> I designed the flow for
-              creating and managing product sets off the global product list, a shared resource
-              used across campaigns and platforms. This wasn&apos;t a one-off form; it was a
-              system marketers would return to constantly, so it needed to be fast, predictable,
-              and forgiving of scale.
+              <span className="font-semibold">Product sets.</span> Designed the flow for creating
+              and managing product sets from the global product list, a shared resource used across
+              campaigns and platforms. It was a system marketers would return to constantly, so it
+              needed to be fast, predictable, and scalable.
             </p>
             <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
               <span className="font-semibold">Lookalike audiences.</span> I designed a flow that
