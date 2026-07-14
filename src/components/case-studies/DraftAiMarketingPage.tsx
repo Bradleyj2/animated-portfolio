@@ -340,58 +340,55 @@ const DraftAiMarketingPage = () => {
           </motion.div>
 
           <motion.section
-            className="mb-12"
+            className="mb-20"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">From there, I built out:</p>
-            <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-gray-700 ml-4 mb-8 max-w-[80ch]">
-              <li>
-                <span className="font-semibold">Edit ad</span>, allowing marketers to modify
-                creative, destination URLs, and tracking on a live ad without starting over
-              </li>
-              <li>
-                <span className="font-semibold">Edit asset group</span>, the platform-specific equivalent,
-                with its own asset and creative logic
-              </li>
-              <li>
-                <span className="font-semibold">Clone campaign, ad set, and ad</span>, because in an
-                agency-scale marketing org, almost nothing is built from scratch; it&apos;s
-                duplicated, adjusted, and relaunched. Getting cloning right saved marketers from
-                re-entering dozens of fields by hand every time they wanted to run a variation of
-                an existing campaign
-              </li>
-            </ul>
-            <p className="text-lg leading-relaxed text-gray-700 mb-6 max-w-[80ch]">
-              I also added support for video creatives within asset groups, a
-              small-sounding feature that mattered a lot to marketers who were shifting budget
-              toward video-first placements and didn&apos;t want a workaround outside the tool.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-700 max-w-[80ch]">
-              Each of these flows had to hold up under the same test: does this still make sense
-              when an AI agent has already pre-filled half of it? Designing for a human working
-              alone is one problem. Designing for a human reviewing and adjusting an AI&apos;s work
-              is a different one which demanded more clarity at every step.
-            </p>
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 items-start">
+              <div>
+                <p className="text-lg leading-relaxed text-gray-700 mb-6">From there, I built out:</p>
+                <ul className="list-disc list-inside space-y-3 text-lg leading-relaxed text-gray-700 ml-4 mb-8">
+                  <li>
+                    <span className="font-semibold">Edit ad</span>, allowing marketers to modify
+                    creative, destination URLs, and tracking on a live ad without starting over
+                  </li>
+                  <li>
+                    <span className="font-semibold">Edit asset group</span>, the platform-specific
+                    equivalent, with its own asset and creative logic
+                  </li>
+                  <li>
+                    <span className="font-semibold">Clone campaign, ad set, and ad</span>, because in
+                    an agency-scale marketing org, almost nothing is built from scratch; it&apos;s
+                    duplicated, adjusted, and relaunched. Getting cloning right saved marketers
+                    from re-entering dozens of fields by hand every time they wanted to run a
+                    variation of an existing campaign
+                  </li>
+                </ul>
+                <p className="text-lg leading-relaxed text-gray-700 mb-6">
+                  I also added support for video creatives within asset groups, a small-sounding
+                  feature that mattered a lot to marketers who were shifting budget toward
+                  video-first placements and didn&apos;t want a workaround outside the tool.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Each of these flows had to hold up under the same test: does this still make
+                  sense when an AI agent has already pre-filled half of it? Designing for a human
+                  working alone is one problem. Designing for a human reviewing and adjusting an
+                  AI&apos;s work is a different one which demanded more clarity at every step.
+                </p>
+              </div>
+              <div className="relative">
+                <CaseStudyImage
+                  figNumber={6}
+                  alt="AI-prefilled edit screen with suggested-value treatment"
+                />
+                <p className="text-sm text-gray-500 text-left mt-2">
+                  [fig 6] AI-prefilled state — edit asset group with AI-suggested values visually
+                  distinguished from marketer-entered fields.
+                </p>
+              </div>
+            </div>
           </motion.section>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <CaseStudyFigure
-              figNumber={6}
-              caption="AI-prefilled state — edit asset group with AI-suggested values visually distinguished from marketer-entered fields."
-              className="mb-20"
-            >
-              <CaseStudyImage
-                figNumber={6}
-                alt="AI-prefilled edit screen with suggested-value treatment"
-              />
-            </CaseStudyFigure>
-          </motion.div>
 
           {/* Problem 3 */}
           <motion.section
