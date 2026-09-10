@@ -39,15 +39,6 @@ const WorkPage = () => {
       path: '/case-studies/viu-hub'
     },
     {
-      id: 'hemispheres',
-      title: 'Hemispheres',
-      role: 'Lead Game Designer',
-      duration: '2025–2026',
-      tools: 'Unity, Narrative Design, Brain-Computer Interfaces',
-      team: 'Game Design, Neuroscience, Engineering',
-      path: '/case-studies/hemispheres'
-    },
-    {
       id: 'second-opinion',
       title: 'Second Opinion',
       role: 'Product Designer & UX Researcher',

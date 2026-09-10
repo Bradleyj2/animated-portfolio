@@ -26,7 +26,29 @@ export type HomeArchiveItem = {
 
 export const HERO_PAIR_IDS = ['ai-marketing-control-center', 'viu-hub'] as const
 
+/** IDs shown under Side Projects (homepage section + /side-projects page) */
+export const SIDE_PROJECT_IDS = ['hemispheres'] as const
+
 const publishedHomeArchiveItems: HomeArchiveItem[] = [
+  {
+    id: 'viu-hub',
+    title: 'VIU BY HUB',
+    subtitle: 'Rebuilding Digital Insurance by driving 25% revenue growth after launch.',
+    tagline: 'How do you transform digital trust in the insurance industry?',
+    description: '',
+    category: 'Strategic Design Leadership',
+    image: '/viubyhub1.png',
+    path: '/case-studies/viu-hub',
+    posterStyle: 'corporate',
+    dossierId: 'ARCHIVE/VIU-04',
+    stamp: 'CLASSIFIED',
+    coordinates: 'X-91.7, Y-67.2',
+    companyName: 'VIU by Hub',
+    projectType: 'Finance + Design Ops',
+    cardHeading: 'VIU by Hub / Digital Insurance',
+    role: 'Product Design Lead & Design Operations',
+    year: '2022–2024',
+  },
   {
     id: 'ai-marketing-control-center',
     title: 'ENTERPRISE AI MARKETING',
@@ -48,42 +70,24 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     year: '2026',
   },
   {
-    id: 'viu-hub',
-    title: 'VIU BY HUB',
-    subtitle: 'Rebuilding Digital Insurance by driving 25% revenue growth after launch.',
-    tagline: 'How do you transform digital trust in the insurance industry?',
+    id: 'second-opinion',
+    title: 'SECOND OPINION',
+    subtitle:
+      'When Information Overwhelms Care: Rebuilding Trust in the Home\nof 18+ test users.',
+    tagline: 'When user research changes everything',
     description: '',
-    category: 'Strategic Design Leadership',
-    image: '/viubyhub1.png',
-    path: '/case-studies/viu-hub',
-    posterStyle: 'corporate',
-    dossierId: 'ARCHIVE/VIU-04',
-    stamp: 'CLASSIFIED',
-    coordinates: 'X-91.7, Y-67.2',
-    companyName: 'VIU by Hub',
-    projectType: 'Finance + Design Ops',
-    cardHeading: 'VIU by Hub / Digital Insurance',
-    role: 'Product Design Lead & Design Operations',
-    year: '2022–2024',
-  },
-  {
-    id: 'hemispheres',
-    title: 'HEMISPHERES',
-    subtitle: 'When Thought Becomes Data: Mapping Mind and Decision',
-    tagline: 'How do you balance two avatars controlled by one player?',
-    description: '',
-    category: 'Game Design & Interactive Storytelling',
-    image: '/hemispheres10.png',
-    path: '/case-studies/hemispheres',
-    posterStyle: 'split-screen',
-    dossierId: 'ARCHIVE/HEMI-01',
-    stamp: 'CONFIDENTIAL',
-    coordinates: 'X-47.2, Y-12.8',
-    companyName: 'Hemispheres',
-    projectType: 'Game Design',
-    cardHeading: 'Hemispheres / Game Design',
-    role: 'Lead Game Designer',
-    year: '2025–2026',
+    category: 'Healthcare & User Research',
+    image: '/secondop1.png',
+    path: '/case-studies/second-opinion',
+    posterStyle: 'medical',
+    dossierId: 'ARCHIVE/SO-05',
+    stamp: 'RESTRICTED',
+    coordinates: 'X-34.8, Y-89.1',
+    companyName: 'Second Opinion',
+    projectType: 'Healthcare',
+    cardHeading: 'Second Opinion / Healthcare experience',
+    role: 'Product Designer & UX Researcher',
+    year: '2021',
   },
   {
     id: 'service-blueprint',
@@ -126,24 +130,23 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     year: '2025',
   },
   {
-    id: 'second-opinion',
-    title: 'SECOND OPINION',
-    subtitle:
-      'When Information Overwhelms Care: Rebuilding Trust in the Home\nof 18+ test users.',
-    tagline: 'When user research changes everything',
+    id: 'hemispheres',
+    title: 'HEMISPHERES',
+    subtitle: 'When Thought Becomes Data: Mapping Mind and Decision',
+    tagline: 'How do you balance two avatars controlled by one player?',
     description: '',
-    category: 'Healthcare & User Research',
-    image: '/secondop1.png',
-    path: '/case-studies/second-opinion',
-    posterStyle: 'medical',
-    dossierId: 'ARCHIVE/SO-05',
-    stamp: 'RESTRICTED',
-    coordinates: 'X-34.8, Y-89.1',
-    companyName: 'Second Opinion',
-    projectType: 'Healthcare',
-    cardHeading: 'Second Opinion / Healthcare experience',
-    role: 'Product Designer & UX Researcher',
-    year: '2021',
+    category: 'Game Design & Interactive Storytelling',
+    image: '/hemispheres10.png',
+    path: '/case-studies/hemispheres',
+    posterStyle: 'split-screen',
+    dossierId: 'ARCHIVE/HEMI-01',
+    stamp: 'CONFIDENTIAL',
+    coordinates: 'X-47.2, Y-12.8',
+    companyName: 'Hemispheres',
+    projectType: 'Game Design',
+    cardHeading: 'Hemispheres / Game Design',
+    role: 'Lead Game Designer',
+    year: '2025–2026',
   },
 ]
 
@@ -164,4 +167,12 @@ export function hasDraftHomeContent(): boolean {
 
 export function isHeroPairItem(item: HomeArchiveItem): boolean {
   return (HERO_PAIR_IDS as readonly string[]).includes(item.id)
+}
+
+export function isSideProjectItem(item: HomeArchiveItem): boolean {
+  return (SIDE_PROJECT_IDS as readonly string[]).includes(item.id)
+}
+
+export function getSideProjectItems(): HomeArchiveItem[] {
+  return getHomeArchiveItems().filter(isSideProjectItem)
 }

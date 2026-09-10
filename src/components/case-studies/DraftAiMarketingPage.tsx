@@ -204,6 +204,16 @@ const DraftAiMarketingPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            <aside
+              className="mb-10 max-w-[80ch] border-l-4 border-gray-900 bg-gray-50 px-6 py-5"
+              aria-label="Case study framing"
+            >
+              <p className="text-lg leading-relaxed text-gray-800 italic">
+                The design challenge of building trust between a human and an AI agent is the same
+                whether the human is a marketer, a clinician, or a patient. This is a case study about
+                designing that trust.
+              </p>
+            </aside>
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">The challenge</h2>
             <div className="space-y-4 text-lg leading-relaxed text-gray-700 mb-12">
               <p className="max-w-[80ch]">

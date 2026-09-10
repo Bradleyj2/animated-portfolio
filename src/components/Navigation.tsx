@@ -13,6 +13,7 @@ const Navigation = ({ scrollProgress = 0 }: NavigationProps) => {
 
   const navItems = [
     { path: '/', label: 'DOCS', sublabel: 'WORK' },
+    { path: '/side-projects', label: 'SIDE', sublabel: 'PROJECTS' },
     { path: '/about', label: 'USER', sublabel: 'ABOUT' }
   ]
 

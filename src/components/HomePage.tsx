@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Navigation from './Navigation'
 import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
 import PageMeta from './PageMeta'
-import { getHomeArchiveItems, isHeroPairItem, type HomeArchiveItem } from '../data/homeArchiveItems'
+import { getHomeArchiveItems, getSideProjectItems, isHeroPairItem, isSideProjectItem, type HomeArchiveItem } from '../data/homeArchiveItems'
 
 function HomeCaseStudyCard({
   item,
@@ -113,6 +113,10 @@ const HomePage = () => {
   const aiMarketingCard = archiveItems.find((item) => item.id === 'ai-marketing-control-center')
   const viuHub = archiveItems.find((item) => item.id === 'viu-hub')
   const showPairedHeroRow = Boolean(aiMarketingCard && viuHub)
+  const sideProjectItems = getSideProjectItems()
+  const mainGridItems = archiveItems.filter(
+    (item) => !item.fullWidth && !isHeroPairItem(item) && !isSideProjectItem(item)
+  )
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -169,7 +173,7 @@ const HomePage = () => {
                   color: `rgb(${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)})`
                 }}
               >
-                Design • Narrative • Health + Systems
+                Insurtech • Healthcare • Agentic AI
               </div>
               
               {/* Main headline */}
@@ -189,7 +193,7 @@ const HomePage = () => {
                   color: `rgb(${Math.round(200 - scrollProgress * 150)}, ${Math.round(200 - scrollProgress * 150)}, ${Math.round(200 - scrollProgress * 150)})`
                 }}
               >
-                I design behavioral UX systems that boost revenue and reshape decisions. Experiments in memory, trust, and play live here. Enter a <button 
+                I design behavioral UX systems that make complex, high-stakes decisions feel trustworthy and human. Insurtech, healthcare, and agentic AI — the systems where trust is the product. Enter a <button 
                   type="button"
                   onClick={scrollToCaseStudies}
                   className="no-underline hover:no-underline hover:text-purple-400 transition-colors cursor-pointer bg-transparent border-0 p-0 font-inherit text-inherit inline"
@@ -271,11 +275,9 @@ const HomePage = () => {
               ))
           )}
           
-          {/* Two equal columns — reference card grid */}
+          {/* Two equal columns — primary case studies */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
-            {archiveItems
-              .filter((item) => !item.fullWidth && !isHeroPairItem(item))
-              .map((item) => {
+            {mainGridItems.map((item) => {
               const aspectClass = 'aspect-[16/9]'
               return (
               <motion.div
@@ -317,6 +319,39 @@ const HomePage = () => {
               </motion.div>
             )})}
           </div>
+
+          {sideProjectItems.length > 0 && (
+            <section className="mt-16 md:mt-20 lg:mt-24" aria-labelledby="side-projects-heading">
+              <h2 id="side-projects-heading" className="sr-only">
+                Side Projects
+              </h2>
+              <Link to="/side-projects" className="block">
+                <DividerLabel label="Side Projects" />
+              </Link>
+              <div className="mb-8 flex justify-end">
+                <Link
+                  to="/side-projects"
+                  className="text-sm font-semibold uppercase tracking-[0.14em] text-gray-500 hover:text-gray-800 transition-colors"
+                >
+                  View all →
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
+                {sideProjectItems.map((item) => (
+                  <motion.div
+                    key={item.id}
+                    variants={itemVariants}
+                    className="min-w-0 h-full"
+                  >
+                    <HomeCaseStudyCard
+                      item={item}
+                      aspectClass="aspect-[16/9]"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
         </motion.main>
 

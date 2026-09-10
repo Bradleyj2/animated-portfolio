@@ -25,10 +25,10 @@ export default function AboutPage() {
           <div className="about-me-body mb-20 w-2/3 max-w-full">
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-white">
-                I'm a multidisciplinary designer with a neuroscience background, which means I'm a little obsessed with cognitive patterns, interactive systems, and why people focus on certain buttons first. I design experiences that make things clearer, easier, and more delightful, without ever underestimating the power of a well-timed animation.
+                I'm a multidisciplinary designer with a neuroscience background, which means I'm a little obsessed with cognitive patterns, interactive systems, and why people focus on certain things first. My work spans insurtech, healthcare systems, and agentic AI products: regulated, high-stakes environments where making complexity feel trustworthy is the whole job.
               </p>
               <p className="text-lg leading-relaxed text-white">
-                I believe great design is part science, part empathy, and all about finding the sweet spot between chaos and clarity. I'm currently a Lead Interaction Designer at Rightpoint, working on complex enterprise solutions and design systems.
+                I believe great design is part science, part empathy, and all about finding the sweet spot between chaos and clarity. I'm currently a Lead Product Designer at Rightpoint, working on complex enterprise solutions, design systems, and AI-native product experiences.
               </p>
             </div>
           </div>
@@ -85,18 +85,18 @@ export default function AboutPage() {
             {/* Three Column Client List */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
               <div className="space-y-4">
-                <div>Rightpoint</div>
-                <div>VIU by HUB</div>
-                <div>Walmart</div>
-                <div>North Agency</div>
+                <div>WellStar</div>
+                <div>Advocate Health</div>
                 <div>Second Opinion</div>
-                <div>Springboard</div>
+                <div>VIU by HUB</div>
+                <div>Rightpoint</div>
+                <div>Primrose</div>
               </div>
               <div className="space-y-4">
-                <div>Primrose</div>
-                <div>WellStar</div>
+                <div>Springboard</div>
+                <div>Walmart</div>
                 <div>Clorox</div>
-                <div>Advocate Health</div>
+                <div>North Agency</div>
                 <div>Exelon</div>
                 <div>Big Break Foundation</div>
               </div>

@@ -2,6 +2,7 @@ import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import HomePage from './components/HomePage'
 import WorkPage from './components/WorkPage'
+import SideProjectsPage from './components/SideProjectsPage'
 import AboutPage from './components/AboutPage'
 import ResumePage from './components/ResumePage'
 import ContactPage from './pages/Contact'
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/work" element={<WorkPage />} />
+          <Route path="/side-projects" element={<SideProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/resume" element={<ResumePage />} />
           <Route path="/contact" element={<ContactPage />} />
