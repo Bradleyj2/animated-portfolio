@@ -164,17 +164,17 @@ const HomePage = () => {
         <Navigation scrollProgress={scrollProgress} />
         
         {/* Hero Title Section */}
-        <section className="pt-28 md:pt-32 pb-10 md:pb-12">
+        <section className="pt-28 md:pt-32 pb-14 md:pb-16">
           <div className="mx-auto max-w-screen-xl px-6 md:px-10 lg:px-12 xl:px-16">
             <div className="max-w-4xl">
               {/* Name line */}
-              <div className="text-sm font-normal tracking-widest text-gray-400 uppercase mb-2">
+              <div className="text-sm font-normal tracking-widest text-gray-400 uppercase mb-3">
                 Mera Bradley — Lead Product Designer
               </div>
 
               {/* Kicker line */}
               <div 
-                className="text-base md:text-lg font-medium leading-none tracking-wide mb-3 transition-colors duration-300"
+                className="text-base md:text-lg font-medium leading-none tracking-wide mb-5 transition-colors duration-300"
                 style={{
                   color: `rgb(${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)})`
                 }}
@@ -184,7 +184,7 @@ const HomePage = () => {
               
               {/* Main headline */}
               <h1 
-                className="font-sans font-extrabold tracking-tight leading-[0.9] text-[clamp(2.25rem,5.5vw+1rem,5.25rem)] mb-4 transition-colors duration-300"
+                className="font-sans font-extrabold tracking-tight leading-[0.9] text-[clamp(2.25rem,5.5vw+1rem,5.25rem)] mb-6 md:mb-8 transition-colors duration-300"
                 style={{
                   color: `rgb(${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)})`
                 }}
@@ -194,7 +194,7 @@ const HomePage = () => {
               
               {/* Subtitle */}
               <p 
-                className="text-lg md:text-xl max-w-2xl leading-relaxed mb-6 transition-colors duration-300"
+                className="text-lg md:text-xl max-w-2xl leading-relaxed mb-8 md:mb-10 transition-colors duration-300"
                 style={{
                   color: `rgb(${Math.round(200 - scrollProgress * 150)}, ${Math.round(200 - scrollProgress * 150)}, ${Math.round(200 - scrollProgress * 150)})`
                 }}
