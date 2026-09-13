@@ -31,9 +31,9 @@
   font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* CaseStudyCard — text panel uses panel background from component */
+/* CaseStudyCard — text panel matches dark card shell */
 .case-study-card-text {
-  background-color: #ffffff;
+  background-color: #171717;
 }
 
 .case-study-card-overlay {
@@ -1108,14 +1108,19 @@ body:has([data-work-page="true"]) {
   max-width: 100% !important;
 }
 
-.case-studies-section * {
+.case-studies-section *:not(.custom-project-thumbnail):not(.custom-project-thumbnail *) {
   background-color: transparent !important;
 }
 
-/* Homepage case study tiles: restore panel + shell (overrides transparent rule above) */
+/* Homepage case study tiles: dark panel + shell (overrides transparent rule above) */
 .case-studies-section .home-case-card,
 .case-studies-section .home-case-card .case-study-card-text {
-  background-color: #ffffff !important;
+  background-color: #171717 !important;
+}
+
+/* Restore custom thumbnail root background wiped by .case-studies-section * transparent rule */
+.case-studies-section .custom-project-thumbnail {
+  background-color: #042f2e !important;
 }
 
 /* Ensure homepage main container transitions with scroll */

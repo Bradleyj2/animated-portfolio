@@ -31,6 +31,7 @@ function HomeCaseStudyCard({
       metric={item.metric}
       imageAspectClass={aspectClass}
       subtitleMaxWidth={subtitleMaxWidth}
+      useCustomThumbnail={item.useCustomThumbnail}
     />
   )
 

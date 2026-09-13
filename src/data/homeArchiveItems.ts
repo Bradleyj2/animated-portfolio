@@ -19,6 +19,8 @@ export type HomeArchiveItem = {
   role: string
   year: string
   metric?: string
+  /** Render CSS collage instead of image thumbnail on homepage cards */
+  useCustomThumbnail?: boolean
   fullWidth?: boolean
   comingSoon?: boolean
   /** Hidden on live site; visible in dev or with VITE_SHOW_DRAFT_CONTENT=true */
@@ -92,6 +94,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Product Designer & UX Researcher',
     year: '2021',
     metric: '18+ user research sessions',
+    useCustomThumbnail: true,
   },
   {
     id: 'service-blueprint',
