@@ -117,7 +117,7 @@ const SideProjectsPage = () => {
                         </div>
 
                         <span className="inline-block text-sm md:text-base font-medium text-white underline underline-offset-4 transition-opacity group-hover:opacity-70">
-                          {item.draft ? 'Coming soon' : 'View Project →'}
+                          {item.draft ? 'Coming soon' : 'View project →'}
                         </span>
                       </div>
                     </Link>

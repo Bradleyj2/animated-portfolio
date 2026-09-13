@@ -23,7 +23,7 @@ const OmnichannelStrategyPage = () => {
   return (
     <>
       <PageMeta
-        title="Connecting Self Service and Live Support — Mera Bradley"
+        title="Connecting self service and live support — Mera Bradley"
         description="Led the early redesign and mapping of customer support across touchpoints, eliminating context breaks between digital and human channels."
         ogImage="/og/omnichannel.png"
       />
@@ -53,7 +53,7 @@ const OmnichannelStrategyPage = () => {
             
             {/* Main Headline */}
             <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-              Connecting Self Service and Live Support
+              Connecting self service and live support
             </h1>
             
             {/* Subtitle */}
@@ -232,7 +232,7 @@ const OmnichannelStrategyPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.8 }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">THE RESULT</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">The result</h2>
             <p className="text-lg leading-relaxed text-gray-700 mb-4">
               The strategy I designed wasn't just about connecting channels, but designing a system where context travels with the customer. Where agents see what customers tried online. Where data flows seamlessly between touchpoints. Where every interaction builds on the last one, instead of starting from scratch.
             </p>

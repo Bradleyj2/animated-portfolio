@@ -188,7 +188,7 @@ const HomePage = () => {
                   color: `rgb(${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)})`
                 }}
               >
-                ARCHIVIST OF{'\n'}JOURNEYS
+                Archivist of{'\n'}journeys
               </h1>
               
               {/* Subtitle */}
@@ -283,7 +283,7 @@ const HomePage = () => {
                 {item.comingSoon ? (
                   <div className="text-center relative h-full">
                     <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-800 flex items-center justify-center mt-16 opacity-60">
-                      <span className="text-sm font-bold text-gray-400">TOOLS</span>
+                      <span className="text-sm font-bold text-gray-400">Tools</span>
                     </div>
                     <h3 className="font-serif text-xl mb-3 text-white">
                       {item.title}
@@ -295,7 +295,7 @@ const HomePage = () => {
                       {item.category}
                     </p>
                     <div className="px-6 py-2 rounded-lg inline-block cursor-not-allowed opacity-50 bg-gray-700 text-gray-300">
-                      <span className="text-sm font-semibold">COMING SOON</span>
+                      <span className="text-sm font-semibold">Coming soon</span>
                     </div>
                   </div>
                 ) : (

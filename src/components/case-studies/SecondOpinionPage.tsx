@@ -23,7 +23,7 @@ const SecondOpinionPage = () => {
   return (
     <>
       <PageMeta
-        title="When Information Overwhelms Care: Rebuilding Trust in the Home — Mera Bradley"
+        title="When information overwhelms care: rebuilding trust in the home — Mera Bradley"
         description="Researched and prototyped a caregiver platform simplifying critical decisions and establishing trust centered patterns through study with 18+ users."
         ogImage="/og/second-opinion.png"
       />
@@ -53,7 +53,7 @@ const SecondOpinionPage = () => {
             
             {/* Main Headline */}
             <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-              When Information Overwhelms Care: Rebuilding Trust in the Home
+              When information overwhelms care: rebuilding trust in the home
             </h1>
             
             {/* Subtitle */}

@@ -70,7 +70,7 @@ const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              <span className="text-sm">Previous Project</span>
+              <span className="text-sm">Previous project</span>
             </Link>
           )}
           {nextCase && (
@@ -78,7 +78,7 @@ const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
               to={nextCase.path}
               className="flex items-center space-x-2 px-4 py-2 text-black/80 hover:text-black transition-colors duration-300"
             >
-              <span className="text-sm">Next Project</span>
+              <span className="text-sm">Next project</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

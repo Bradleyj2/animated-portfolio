@@ -113,10 +113,10 @@ const ResumePage = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl lg:text-6xl font-bold hologram-text mb-4">
-              RESUME
+              Resume
             </h1>
             <p className="text-xl text-neon-blue terminal-text">
-              MERA BRADLEY - INTERACTION DESIGNER
+              Mera Bradley — Interaction designer
             </p>
           </motion.div>
 
@@ -132,7 +132,7 @@ const ResumePage = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              📄 DOWNLOAD PDF RESUME
+              📄 Download PDF resume
             </motion.button>
           </motion.div>
 
@@ -164,7 +164,7 @@ const ResumePage = () => {
                   onClick={() => toggleSection('experience')}
                   className="w-full flex items-center justify-between text-left"
                 >
-                  <h2 className="text-2xl font-bold text-neon-blue">Employment History</h2>
+                  <h2 className="text-2xl font-bold text-neon-blue">Employment history</h2>
                   <motion.span
                     animate={{ rotate: expandedSections.includes('experience') ? 180 : 0 }}
                     transition={{ duration: 0.3 }}

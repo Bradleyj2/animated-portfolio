@@ -67,7 +67,7 @@ const HemispheresPage = () => {
                 <span className="font-semibold">Mera Bradley</span> • Lead Game Designer
               </div>
               <div className="text-sm text-gray-400">
-                Game Design Project, 2025–2026
+                Game design project, 2025–2026
               </div>
             </div>
           </motion.div>
@@ -253,7 +253,7 @@ const HemispheresPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.2 }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-12">WE WERE BUSY</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-12">We were busy</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               <div>
                 <div className="text-5xl font-bold text-gray-900 mb-2">2</div>

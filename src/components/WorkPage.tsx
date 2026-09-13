@@ -22,7 +22,7 @@ const WorkPage = () => {
   const projects = [
     {
       id: 'ai-marketing-control-center',
-      title: 'AI-Assisted Marketing Control Center',
+      title: 'AI-assisted marketing control center',
       role: 'Senior Product Designer',
       duration: '2026',
       tools: 'Figma, Prototyping, Design Systems',
@@ -49,7 +49,7 @@ const WorkPage = () => {
     },
     {
       id: 'service-blueprint',
-      title: 'Service Blueprint',
+      title: 'Service blueprint',
       role: 'Service Design Lead',
       duration: '2024',
       tools: 'Figma, Service Design, Stakeholder Mapping',
@@ -58,7 +58,7 @@ const WorkPage = () => {
     },
     {
       id: 'omnichannel-strategy',
-      title: 'Omnichannel Strategy',
+      title: 'Omnichannel strategy',
       role: 'Product Design Lead',
       duration: '2025',
       tools: 'Figma, Journey Mapping, Design Systems',
@@ -131,7 +131,7 @@ const WorkPage = () => {
                           to={project.path}
                           className="inline-block text-base font-medium text-gray-900 hover:text-gray-600 transition-colors underline underline-offset-4"
                         >
-                          View Project →
+                          View project →
                         </Link>
                       </div>
                     </div>

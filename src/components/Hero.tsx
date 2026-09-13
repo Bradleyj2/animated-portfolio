@@ -14,7 +14,7 @@ export default function Hero({
   mediaSrc = "/images/hero-poster.jpg",
   mediaAlt = "Portfolio hero",
   kicker = "Grand Theft Auto Online", // example format of the style only
-  headline = "ARCHIVIST OF\nJOURNEYS",
+  headline = "Archivist of\njourneys",
   subcopy = "",
   ctaHref,
   ctaLabel,

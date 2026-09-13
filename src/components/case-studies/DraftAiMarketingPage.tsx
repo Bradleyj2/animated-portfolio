@@ -80,7 +80,7 @@ const DraftAiMarketingPage = () => {
   return (
     <>
       <PageMeta
-        title="Designing the Control Center for AI-Assisted Marketing at Scale — Mera Bradley"
+        title="Designing the control center for AI-assisted marketing at scale — Mera Bradley"
         description="A case study on building the campaign activation and editing experience for an enterprise agentic AI marketing platform."
       />
       <Navigation scrollProgress={1} />

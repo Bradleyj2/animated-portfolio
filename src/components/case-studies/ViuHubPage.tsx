@@ -23,7 +23,7 @@ const ViuHubPage = () => {
   return (
     <>
       <PageMeta
-        title="Rebuilding Digital Insurance — Mera Bradley"
+        title="Rebuilding digital insurance — Mera Bradley"
         description="Directed a full design transformation aligning product, systems, and experience, simplifying critical financial decisions and driving 25% revenue growth after launch."
         ogImage="/og/viu-hub.png"
       />
@@ -53,7 +53,7 @@ const ViuHubPage = () => {
             
             {/* Main Headline */}
             <h1 className="text-6xl lg:text-8xl font-bold text-black mb-8 leading-tight">
-              Rebuilding Digital Insurance
+              Rebuilding digital insurance
             </h1>
             
             {/* Subtitle */}

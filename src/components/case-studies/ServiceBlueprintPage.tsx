@@ -23,7 +23,7 @@ const ServiceBlueprintPage = () => {
   return (
     <>
       <PageMeta
-        title="Turning Complexity into Clarity: Scaling Service Design — Mera Bradley"
+        title="Turning complexity into clarity: scaling service design — Mera Bradley"
         description="Unified blueprinting practices across 8 departments, establishing a shared design language that improved collaboration and eliminated 93% of redundant templates."
         ogImage="/og/service-blueprint.png"
       />
@@ -53,7 +53,7 @@ const ServiceBlueprintPage = () => {
             
             {/* Main Headline */}
             <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-              Turning Complexity into Clarity: Scaling Service Design
+              Turning complexity into clarity: scaling service design
             </h1>
             
             {/* Subtitle */}
@@ -216,7 +216,7 @@ const ServiceBlueprintPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.8 }}
           >
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">The Results</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8">The results</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               <div>
                 <div className="text-5xl font-bold text-gray-900 mb-2">50+</div>

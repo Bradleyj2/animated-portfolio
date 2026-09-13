@@ -12,7 +12,7 @@ const TracePage = () => {
   return (
     <>
       <PageMeta
-        title="When Thought Becomes Data: Mapping How We Think, Feel, and Decide — Mera Bradley"
+        title="When thought becomes data: mapping how we think, feel, and decide — Mera Bradley"
         description="Led the creation of a neuroadaptive storytelling system linking brain activity to real-time outcomes, establishing a foundation for therapeutic and adaptive digital experiences."
         ogImage="/og/trace.png"
       />
@@ -42,7 +42,7 @@ const TracePage = () => {
             
             {/* Main Headline */}
             <h1 className="text-6xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-              When Thought Becomes Data: Mapping How We Think, Feel, and Decide
+              When thought becomes data: mapping how we think, feel, and decide
             </h1>
             
             {/* Subtitle */}

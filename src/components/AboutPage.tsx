@@ -72,7 +72,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
               {/* Left - Title */}
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Some of my Clients.</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Some of my clients.</h2>
               </div>
               
               {/* Right - Intro Text */}
