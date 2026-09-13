@@ -18,6 +18,7 @@ export type HomeArchiveItem = {
   cardHeading: string
   role: string
   year: string
+  metric?: string
   fullWidth?: boolean
   comingSoon?: boolean
   /** Hidden on live site; visible in dev or with VITE_SHOW_DRAFT_CONTENT=true */
@@ -48,6 +49,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     cardHeading: 'VIU by Hub / Digital Insurance',
     role: 'Product Design Lead & Design Operations',
     year: '2022–2024',
+    metric: '25% revenue growth post-launch',
   },
   {
     id: 'ai-marketing-control-center',
@@ -68,6 +70,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     cardHeading: 'Fortune 500 Enterprise / AI-Assisted Marketing Control Center',
     role: 'Senior Product Designer',
     year: '2026',
+    metric: 'Shipped to MVP · 2026',
   },
   {
     id: 'second-opinion',
@@ -88,6 +91,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     cardHeading: 'Second Opinion / Healthcare experience',
     role: 'Product Designer & UX Researcher',
     year: '2021',
+    metric: '18+ user research sessions',
   },
   {
     id: 'service-blueprint',
@@ -108,6 +112,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     cardHeading: 'Service Blueprint / Org-wide service templates',
     role: 'Service Design Lead',
     year: '2024',
+    metric: '93% reduction in redundant templates',
   },
   {
     id: 'omnichannel',
@@ -128,6 +133,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     cardHeading: 'Omnichannel Strategy / Unified service',
     role: 'Product Design Lead',
     year: '2025',
+    metric: '1 unified blueprint across 2 service channels',
   },
   {
     id: 'hemispheres',

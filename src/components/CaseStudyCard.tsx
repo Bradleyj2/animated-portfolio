@@ -17,6 +17,7 @@ type Props = {
   description?: string;
   role?: string;
   year?: string;
+  metric?: string;
   imageAspectClass?: string;
   subtitleMaxWidth?: number;
   children?: React.ReactNode;
@@ -34,6 +35,7 @@ export default function CaseStudyCard({
   description,
   role,
   year,
+  metric,
   imageAspectClass = "aspect-[4/3]",
   subtitleMaxWidth,
   children,
@@ -80,7 +82,11 @@ export default function CaseStudyCard({
           )}
 
           {body && (
-            <p className="mb-5 max-w-none text-[0.875rem] font-normal leading-[1.55] text-[#555555] md:text-[0.9375rem]">
+            <p
+              className={`max-w-none text-[0.875rem] font-normal leading-[1.55] text-[#555555] md:text-[0.9375rem] ${
+                metric ? "mb-0" : "mb-5"
+              }`}
+            >
               {body.includes("\n")
                 ? body.split("\n").map((line, i, arr) => (
                     <React.Fragment key={i}>
@@ -89,6 +95,12 @@ export default function CaseStudyCard({
                     </React.Fragment>
                   ))
                 : body}
+            </p>
+          )}
+
+          {metric && (
+            <p className="mt-2 mb-5 text-xs font-medium text-purple-400">
+              {metric}
             </p>
           )}
 

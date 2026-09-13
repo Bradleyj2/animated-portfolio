@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Navigation from './Navigation'
 import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
@@ -28,6 +28,7 @@ function HomeCaseStudyCard({
       imageAlt={item.title}
       role={item.role}
       year={item.year}
+      metric={item.metric}
       imageAspectClass={aspectClass}
       subtitleMaxWidth={subtitleMaxWidth}
     />
@@ -165,6 +166,11 @@ const HomePage = () => {
         <section className="pt-52 pb-28 min-h-[70vh] flex items-center">
           <div className="mx-auto max-w-screen-xl px-6 md:px-10 lg:px-12 xl:px-16">
             <div className="max-w-4xl">
+              {/* Name line */}
+              <div className="text-sm font-normal tracking-widest text-gray-400 uppercase mb-2">
+                Mera Bradley — Lead Product Designer
+              </div>
+
               {/* Kicker line */}
               <div 
                 className="text-base md:text-lg font-medium leading-none tracking-wide mb-4 transition-colors duration-300"
@@ -201,34 +207,55 @@ const HomePage = () => {
                 </button>.
               </p>
               
-              {/* Downward arrow */}
-              <motion.button 
-                onClick={scrollToCaseStudies}
-                className="hover:opacity-70 transition-opacity duration-200 cursor-pointer"
-                style={{
-                  color: `rgb(${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)})`
-                }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Scroll to case studies"
-              >
-                <svg 
-                  className="w-8 h-8" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
-                  xmlns="http://www.w3.org/2000/svg"
+              {/* Downward arrow + contact link */}
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+                <motion.button 
+                  onClick={scrollToCaseStudies}
+                  className="hover:opacity-70 transition-opacity duration-200 cursor-pointer"
+                  style={{
+                    color: `rgb(${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)})`
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="Scroll to case studies"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </motion.button>
+                  <svg 
+                    className="w-8 h-8" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </motion.button>
+                <Link
+                  to="/about#contact"
+                  className="text-sm text-white opacity-60 hover:opacity-100 hover:underline underline-offset-4 transition-opacity"
+                >
+                  Get in touch →
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Divider visible on first screen heights (id="work" for anchor link from About) */}
         <div id="work">
-          <DividerLabel />
+          <p className="mx-auto mt-8 mb-6 max-w-xl text-center text-sm text-gray-400 px-6 md:px-10 lg:px-12 xl:px-16">
+            Five years designing for insurtech, healthcare, and agentic AI — regulated environments where trust is the hardest thing to ship. Selected work below.
+          </p>
+
+          {/* Client bar */}
+          <div className="mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-12 xl:px-16">
+            <div className="border-t border-b border-gray-800 py-4">
+              <p className="text-center text-xs tracking-widest uppercase text-gray-500">
+                Clients include WellStar · Advocate Health · VIU by HUB · Rightpoint · Walmart
+              </p>
+            </div>
+          </div>
+
+          <DividerLabel label="Selected Work" />
         </div>
 
         {/* Project Grid - Rockstar Newswire Layout */}
