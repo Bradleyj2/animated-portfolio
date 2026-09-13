@@ -111,32 +111,43 @@ export default function AboutPage() {
             id="contact"
             className="mt-20 pt-12 border-t border-gray-700 scroll-mt-24"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-10">
-              Get in touch
-            </h2>
-            <div className="space-y-6">
-              <a
-                href="mailto:jamera.bradley@gmail.com"
-                className="block text-lg leading-relaxed text-white hover:text-purple-400 transition-colors"
-              >
-                jamera.bradley@gmail.com
-              </a>
-              <a
-                href="https://www.linkedin.com/in/jamerabradley/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-lg leading-relaxed text-white hover:text-purple-400 transition-colors"
-              >
-                LinkedIn →
-              </a>
-              <a
-                href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-lg leading-relaxed text-white hover:text-purple-400 transition-colors"
-              >
-                Resume →
-              </a>
+            <div className="mt-16 rounded-2xl border border-white/10 bg-white/5 p-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-10">
+                Get in touch
+              </h2>
+              <p className="mb-8 max-w-md text-sm text-gray-400">
+                Open to founding designer and senior product design roles in healthcare and AI. Always happy to talk about the work.
+              </p>
+              <div className="space-y-4">
+                <a
+                  href="mailto:jamera.bradley@gmail.com"
+                  className="block font-medium text-white underline-offset-4 transition-colors duration-200 hover:text-purple-400 hover:underline"
+                >
+                  jamera.bradley@gmail.com
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/jamerabradley/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
+                >
+                  LinkedIn{" "}
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+                <a
+                  href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
+                >
+                  Resume{" "}
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
             </div>
           </section>
 
