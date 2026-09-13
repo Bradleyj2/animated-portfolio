@@ -5,7 +5,6 @@ import WorkPage from './components/WorkPage'
 import SideProjectsPage from './components/SideProjectsPage'
 import AboutPage from './components/AboutPage'
 import ResumePage from './components/ResumePage'
-import ContactPage from './pages/Contact'
 import HemispheresPage from './components/case-studies/HemispheresPage'
 import ServiceBlueprintPage from './components/case-studies/ServiceBlueprintPage'
 import OmnichannelStrategyPage from './components/case-studies/OmnichannelStrategyPage'
@@ -41,7 +40,6 @@ function App() {
           <Route path="/side-projects" element={<SideProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/resume" element={<ResumePage />} />
-          <Route path="/contact" element={<ContactPage />} />
           <Route path="/case-studies/hemispheres" element={<HemispheresPage />} />
           <Route path="/case-studies/service-blueprint" element={<ServiceBlueprintPage />} />
           <Route path="/case-studies/omnichannel-strategy" element={<OmnichannelStrategyPage />} />

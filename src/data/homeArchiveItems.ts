@@ -117,7 +117,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     tagline: 'How do you bridge digital and human service experiences?',
     description: '',
     category: 'Service Design & Customer Experience',
-    image: '/thumbnail3.png',
+    image: '/omnichannel-flow.jpg',
     path: '/case-studies/omnichannel-strategy',
     posterStyle: 'hud',
     dossierId: 'ARCHIVE/OMNI-03',

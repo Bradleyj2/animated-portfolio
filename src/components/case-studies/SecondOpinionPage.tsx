@@ -72,25 +72,6 @@ const SecondOpinionPage = () => {
             </div>
           </motion.div>
 
-          {/* Image Section */}
-          <motion.div
-            className="mb-12 -mx-6 md:-mx-6 lg:-mx-[98px] xl:-mx-[98px]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="relative w-full">
-              <img
-                src="/secondop1.png"
-                alt="Second Opinion platform interface"
-                className="w-full h-auto"
-              />
-            </div>
-            <p className="text-sm text-gray-500 text-left mt-4 px-6 md:px-6 lg:px-[98px] xl:px-[98px]">
-              [fig 1] Second Opinion platform is designed for trust and accessibility.
-            </p>
-          </motion.div>
-
           {/* Narrative Section */}
           <motion.section
             className="mb-20"

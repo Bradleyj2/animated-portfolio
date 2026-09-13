@@ -21,8 +21,8 @@ const SEARCH_INDEX = [
   },
   {
     title: "Contact",
-    excerpt: "Encrypted message form and social links. Get in touch to discuss design, neuropsychology, or collaboration opportunities.",
-    href: "/contact",
+    excerpt: "Get in touch via email, LinkedIn, or resume. Discuss design, healthcare, AI, or collaboration opportunities.",
+    href: "/about#contact",
     category: "Pages",
     icon: "📧"
   },

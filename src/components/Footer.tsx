@@ -2,7 +2,6 @@ const Footer = () => {
   return (
     <footer className="w-full border-t border-white/10 bg-black py-4 px-6 md:px-10 lg:px-12 xl:px-16 relative z-50">
       <div className="max-w-screen-2xl mx-auto flex justify-start items-center">
-        {/* Left side: Location and social links */}
         <div className="flex items-center gap-2 text-white text-sm" style={{ fontFamily: 'monospace' }}>
           <div className="flex items-center gap-1.5">
             <svg 
@@ -16,23 +15,7 @@ const Footer = () => {
             <span>New York, NY</span>
           </div>
           <span className="text-white/40">·</span>
-          <a 
-            href="https://www.linkedin.com/in/jamerabradley/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:opacity-70 transition-opacity lowercase"
-          >
-            linkedIn
-          </a>
-          <span className="text-white/40">·</span>
-          <a 
-            href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:opacity-70 transition-opacity lowercase"
-          >
-            resume
-          </a>
+          <span>meraabradley.com</span>
         </div>
       </div>
     </footer>

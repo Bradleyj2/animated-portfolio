@@ -376,13 +376,7 @@ const HomePage = () => {
                 <span>New York, NY</span>
               </div>
               <span className="text-neutral-500">·</span>
-              <a href="https://www.linkedin.com/in/jamerabradley/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity lowercase text-neutral-900">
-                linkedIn
-              </a>
-              <span className="text-neutral-500">·</span>
-              <a href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity lowercase text-neutral-900">
-                resume
-              </a>
+              <span className="text-neutral-900">meraabradley.com</span>
             </div>
           </div>
         </footer>

@@ -1,9 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
 import PageMeta from "./PageMeta";
 
 export default function AboutPage() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash === '#contact') {
+      // Wait a tick for layout, then smooth-scroll past the fixed nav
+      requestAnimationFrame(() => {
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+    }
+  }, [location.hash])
+
   return (
     <>
       <PageMeta
@@ -35,7 +46,7 @@ export default function AboutPage() {
 
           {/* Links Section */}
           <div className="mb-20 flex gap-8">
-            <a href="/contact" className="text-lg text-white hover:text-purple-400 transition-colors">
+            <a href="#contact" className="text-lg text-white hover:text-purple-400 transition-colors">
               → Let's connect
             </a>
             <a href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-lg text-white hover:text-purple-400 transition-colors">
@@ -105,9 +116,42 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Contact Section */}
+          <section
+            id="contact"
+            className="mt-20 pt-12 border-t border-gray-700 scroll-mt-24"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-10">
+              Get in touch
+            </h2>
+            <div className="space-y-6">
+              <a
+                href="mailto:jamera.bradley@gmail.com"
+                className="block text-lg leading-relaxed text-white hover:text-purple-400 transition-colors"
+              >
+                jamera.bradley@gmail.com
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jamerabradley/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-lg leading-relaxed text-white hover:text-purple-400 transition-colors"
+              >
+                LinkedIn →
+              </a>
+              <a
+                href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-lg leading-relaxed text-white hover:text-purple-400 transition-colors"
+              >
+                Resume →
+              </a>
+            </div>
+          </section>
+
         </div>
       </main>
     </>
   );
 }
- 
