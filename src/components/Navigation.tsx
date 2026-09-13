@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import ArchiveSearch from './ArchiveSearch'
 
@@ -9,7 +9,6 @@ interface NavigationProps {
 
 const Navigation = ({ scrollProgress = 0 }: NavigationProps) => {
   const location = useLocation()
-  const navigate = useNavigate()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navItems = [
@@ -27,20 +26,11 @@ const Navigation = ({ scrollProgress = 0 }: NavigationProps) => {
     setIsMobileMenuOpen(false)
   }
 
-  const handleContactClick = () => {
-    setIsMobileMenuOpen(false)
-    if (location.pathname === '/about') {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    } else {
-      navigate('/about#contact')
-    }
-  }
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  /* Unified nav: solid black bar, white links/logo/search, purple CONTACT ME, thin light border on ALL pages */
+  /* Unified nav: solid black bar, white links/logo/search, thin light border on ALL pages */
   const bgColor = '#000000'
   const textColor = '#ffffff'
   const borderColor = 'rgba(255, 255, 255, 0.15)'
@@ -112,27 +102,6 @@ const Navigation = ({ scrollProgress = 0 }: NavigationProps) => {
                 </Link>
               )
             })}
-
-            {/* CONTACT ME CTA Button */}
-            <motion.button
-              type="button"
-              onClick={handleContactClick}
-              className="px-6 py-2.5 text-sm rounded-full transition-colors duration-300 bg-purple-600 hover:bg-purple-700 text-white font-bold uppercase tracking-wider"
-              style={{
-                backgroundColor: '#9333ea !important',
-                color: '#ffffff !important',
-                border: 'none !important',
-                padding: '8px 24px',
-                borderRadius: '9999px',
-                fontSize: '14px',
-                fontWeight: 'bold',
-                zIndex: 10
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              CONTACT ME
-            </motion.button>
             
             {/* Archive Scanner Search */}
             <ArchiveSearch scrollProgress={scrollProgress} />
@@ -241,27 +210,6 @@ const Navigation = ({ scrollProgress = 0 }: NavigationProps) => {
                     </Link>
                   )
                 })}
-
-                {/* CONTACT ME CTA Button */}
-                <motion.button
-                  type="button"
-                  onClick={handleContactClick}
-                  className="w-full px-6 py-3 text-base rounded-lg transition-colors duration-300 bg-purple-600 hover:bg-purple-700 text-white font-bold uppercase tracking-wider"
-                  style={{
-                    backgroundColor: '#9333ea !important',
-                    color: '#ffffff !important',
-                    border: 'none !important',
-                    padding: '12px 24px',
-                    borderRadius: '8px',
-                    fontSize: '16px',
-                    fontWeight: 'bold',
-                    zIndex: 10
-                  }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  CONTACT ME
-                </motion.button>
               </div>
             </motion.div>
           )}
