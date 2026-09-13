@@ -4,7 +4,7 @@ export default function DividerLabel({
   label = "SOME OF MY LATEST WORK",
 }: { label?: string }) {
   return (
-    <div className="w-full mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-12 xl:px-16 my-2 md:my-4 mb-8 md:mb-12 divider-label-container">
+    <div className="w-full mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-12 xl:px-16 mt-2 mb-4 md:mb-6 divider-label-container">
       <div className="flex items-center justify-center gap-4">
         <div 
           className="flex-1 border-t divider-line transition-colors duration-300"
