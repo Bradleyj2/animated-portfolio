@@ -8,9 +8,9 @@ import { getSideProjectItems } from '../data/homeArchiveItems'
 const SideProjectsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
-    document.documentElement.style.setProperty('--scroll-bg-color', '#ffffff')
-    document.documentElement.style.setProperty('background-color', '#ffffff')
-    document.body.style.setProperty('background-color', '#ffffff')
+    document.documentElement.style.setProperty('--scroll-bg-color', '#0a0a0a')
+    document.documentElement.style.setProperty('background-color', '#0a0a0a')
+    document.body.style.setProperty('background-color', '#0a0a0a')
 
     return () => {
       document.documentElement.style.removeProperty('--scroll-bg-color')
@@ -30,7 +30,7 @@ const SideProjectsPage = () => {
       />
       <Navigation scrollProgress={0} />
       <div
-        className="min-h-screen bg-white text-black pt-24"
+        className="min-h-screen bg-[#0a0a0a] text-white pt-24"
         data-side-projects-page="true"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12 xl:px-16 pt-16 md:pt-20 pb-28 md:pb-36">
@@ -40,15 +40,12 @@ const SideProjectsPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-400 mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-400 mb-1.5">
               Side Projects
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black leading-[1.05] mb-5">
-              Experiments outside the client brief
-            </h1>
-            <p className="text-lg leading-relaxed text-neutral-600 max-w-2xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-white max-w-2xl">
               Personal and exploratory work — game design, interactive systems, and other projects that sit alongside the primary case studies.
-            </p>
+            </h2>
           </motion.div>
 
           {sideProjects.length > 0 ? (
@@ -131,15 +128,6 @@ const SideProjectsPage = () => {
           ) : (
             <p className="text-lg text-neutral-500">No side projects published yet.</p>
           )}
-
-          <div className="mt-16 pt-8 border-t border-gray-200">
-            <Link
-              to="/#work"
-              className="text-base font-medium text-gray-900 hover:text-gray-600 transition-colors underline underline-offset-4"
-            >
-              ← Back to primary work
-            </Link>
-          </div>
         </div>
       </div>
     </>

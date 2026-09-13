@@ -207,35 +207,13 @@ const HomePage = () => {
                 </button>.
               </p>
               
-              {/* Downward arrow + contact link */}
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-                <motion.button 
-                  onClick={scrollToCaseStudies}
-                  className="hover:opacity-70 transition-opacity duration-200 cursor-pointer"
-                  style={{
-                    color: `rgb(${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)}, ${Math.round(255 - scrollProgress * 255)})`
-                  }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label="Scroll to case studies"
-                >
-                  <svg 
-                    className="w-8 h-8" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24" 
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                </motion.button>
-                <Link
-                  to="/about#contact"
-                  className="text-sm text-white opacity-60 hover:opacity-100 hover:underline underline-offset-4 transition-opacity"
-                >
-                  Get in touch →
-                </Link>
-              </div>
+              {/* Contact link */}
+              <Link
+                to="/about#contact"
+                className="inline-block text-base md:text-lg text-white hover:text-purple-400 transition-colors"
+              >
+                Get in touch →
+              </Link>
             </div>
           </div>
         </section>
@@ -245,15 +223,6 @@ const HomePage = () => {
           <p className="mx-auto mt-8 mb-6 max-w-xl text-center text-sm text-gray-400 px-6 md:px-10 lg:px-12 xl:px-16">
             Five years designing for insurtech, healthcare, and agentic AI — regulated environments where trust is the hardest thing to ship. Selected work below.
           </p>
-
-          {/* Client bar */}
-          <div className="mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-12 xl:px-16">
-            <div className="border-t border-b border-gray-800 py-4">
-              <p className="text-center text-xs tracking-widest uppercase text-gray-500">
-                Clients include WellStar · Advocate Health · VIU by HUB · Rightpoint · Walmart
-              </p>
-            </div>
-          </div>
 
           <DividerLabel label="Selected Work" />
         </div>

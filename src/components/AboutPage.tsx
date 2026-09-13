@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Navigation from "./Navigation";
 import PageMeta from "./PageMeta";
 
@@ -49,16 +49,10 @@ export default function AboutPage() {
             <a href="#contact" className="text-lg text-white hover:text-purple-400 transition-colors">
               → Let's connect
             </a>
-            <a href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-lg text-white hover:text-purple-400 transition-colors">
-              → My resume
-            </a>
-            <Link to="/#work" className="text-lg text-white hover:text-purple-400 transition-colors">
-              → My work
-            </Link>
           </div>
 
           {/* Statistics Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             <div className="bg-black border border-gray-800 rounded-lg p-6">
               <div className="text-5xl font-bold text-white mb-2">5+</div>
               <div className="text-sm text-gray-400">Years of design experience</div>
@@ -70,10 +64,6 @@ export default function AboutPage() {
             <div className="bg-black border border-gray-800 rounded-lg p-6">
               <div className="text-5xl font-bold text-white mb-2">12</div>
               <div className="text-sm text-gray-400">Clients worked with</div>
-            </div>
-            <div className="bg-black border border-gray-800 rounded-lg p-6">
-              <div className="text-5xl font-bold text-white mb-2">6+</div>
-              <div className="text-sm text-gray-400">Worked in cities</div>
             </div>
           </div>
 

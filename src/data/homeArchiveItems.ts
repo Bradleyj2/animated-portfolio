@@ -80,7 +80,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     tagline: 'When user research changes everything',
     description: '',
     category: 'Healthcare & User Research',
-    image: '/secondop1.png',
+    image: '/secondop-wireframes.jpg',
     path: '/case-studies/second-opinion',
     posterStyle: 'medical',
     dossierId: 'ARCHIVE/SO-05',
