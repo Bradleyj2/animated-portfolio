@@ -38,7 +38,7 @@ const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
         )}
 
         {/* Center Content - Full width between navigation buttons */}
-        <div className="flex-1 px-6 py-16 pt-32" style={{marginLeft: '98px', marginRight: '98px'}}>
+        <div className="flex-1 px-6 pb-16 pt-24" style={{marginLeft: '98px', marginRight: '98px'}}>
           <div className="max-w-5xl mx-auto">
             {children}
           </div>

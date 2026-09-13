@@ -164,7 +164,7 @@ const HomePage = () => {
         <Navigation scrollProgress={scrollProgress} />
         
         {/* Hero Title Section */}
-        <section className="pt-28 md:pt-32 pb-14 md:pb-16">
+        <section className="pt-24 pb-14 md:pb-16">
           <div className="mx-auto max-w-screen-xl px-6 md:px-10 lg:px-12 xl:px-16">
             <div className="max-w-4xl">
               {/* Name line */}

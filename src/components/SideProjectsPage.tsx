@@ -44,7 +44,7 @@ const SideProjectsPage = () => {
               Side Projects
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-white max-w-2xl">
-              Personal and exploratory work — game design, interactive systems, and other projects that sit alongside the primary case studies.
+              Personal and exploratory work — game design, interactive systems, and other projects...
             </h2>
           </motion.div>
 

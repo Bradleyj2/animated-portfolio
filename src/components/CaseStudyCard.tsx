@@ -99,7 +99,7 @@ export default function CaseStudyCard({
     <div className="flex h-full w-full min-w-0 flex-col">
       <Link
         to={href}
-        className="home-case-card group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[10px] border border-white/5 bg-neutral-900 shadow-none transition-colors hover:border-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
+        className="home-case-card group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[10px] border border-[#e5e5e5] bg-white shadow-none transition-colors hover:border-[#8a8a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2"
       >
         {useCustomThumbnail ? (
           <div className="relative w-full min-w-0 overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.02]">
@@ -118,10 +118,10 @@ export default function CaseStudyCard({
           </div>
         )}
 
-        <div className="case-study-card-text flex w-full min-w-0 flex-1 flex-col p-5 bg-neutral-900">
+        <div className="case-study-card-text flex w-full min-w-0 flex-1 flex-col p-5 bg-white">
           {heading && (
             <h3
-              className="mb-2.5 max-w-none text-white font-semibold leading-snug tracking-[-0.01em] text-[1.125rem] md:text-[1.25rem]"
+              className="mb-2.5 max-w-none text-[1.125rem] font-semibold leading-snug tracking-[-0.01em] text-neutral-900 md:text-[1.25rem]"
               style={subtitleMaxWidth ? { maxWidth: `${subtitleMaxWidth}px` } : undefined}
             >
               {heading}
@@ -130,7 +130,7 @@ export default function CaseStudyCard({
 
           {body && (
             <p
-              className={`max-w-none text-sm font-normal leading-[1.55] text-gray-400 ${
+              className={`max-w-none text-sm font-normal leading-[1.55] text-[#555555] ${
                 metric ? "mb-0" : "mb-5"
               }`}
             >
@@ -153,18 +153,18 @@ export default function CaseStudyCard({
 
           <div className="mt-auto grid grid-cols-2 gap-x-8 gap-y-0.5">
             <div className="min-w-0">
-              <p className="text-xs font-medium uppercase tracking-widest text-gray-600">
+              <p className="text-xs font-medium uppercase tracking-widest text-neutral-400">
                 Role
               </p>
-              <p className="mt-1 text-sm font-normal leading-snug text-gray-300">
+              <p className="mt-1 text-sm font-normal leading-snug text-neutral-700">
                 {roleText}
               </p>
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-medium uppercase tracking-widest text-gray-600">
+              <p className="text-xs font-medium uppercase tracking-widest text-neutral-400">
                 Year
               </p>
-              <p className="mt-1 text-sm font-normal leading-snug text-gray-300">
+              <p className="mt-1 text-sm font-normal leading-snug text-neutral-700">
                 {yearText}
               </p>
             </div>

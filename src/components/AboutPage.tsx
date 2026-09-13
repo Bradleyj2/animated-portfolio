@@ -24,8 +24,8 @@ export default function AboutPage() {
       />
       <Navigation />
       
-      <main className="bg-[#0a0a0a] text-white min-h-screen about-page">
-        <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12 pt-20 pb-32">
+      <main className="bg-[#0a0a0a] text-white min-h-screen about-page pt-24">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12 pb-32">
           
           {/* Full Width Heading */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-20 pt-8">
