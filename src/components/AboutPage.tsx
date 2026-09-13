@@ -24,11 +24,11 @@ export default function AboutPage() {
       />
       <Navigation />
       
-      <main className="bg-[#0a0a0a] text-white min-h-screen about-page pt-24">
+      <main className="bg-[#0a0a0a] text-white min-h-screen about-page pt-32">
         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12 pb-32">
           
           {/* Full Width Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-20 pt-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-20">
             About me — I'm Mera, a designer who bridges cognitive science and storytelling to create experiences that make complex systems feel simple.
           </h2>
           
@@ -125,28 +125,30 @@ export default function AboutPage() {
                 >
                   jamera.bradley@gmail.com
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/jamerabradley/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
-                >
-                  LinkedIn{" "}
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
-                <a
-                  href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
-                >
-                  Resume{" "}
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+                  <a
+                    href="https://www.linkedin.com/in/jamerabradley/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
+                  >
+                    LinkedIn{" "}
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </a>
+                  <a
+                    href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
+                  >
+                    Resume{" "}
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </section>

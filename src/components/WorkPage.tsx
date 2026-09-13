@@ -75,8 +75,8 @@ const WorkPage = () => {
         ogImage="/og/work.png"
       />
       <Navigation scrollProgress={0} />
-      <div className="min-h-screen bg-white text-black pt-24" data-work-page="true">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12 xl:px-16 pt-20 pb-32">
+      <div className="min-h-screen bg-white text-black pt-32" data-work-page="true">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12 xl:px-16 pb-32">
           <div className="space-y-0">
             {projects.map((project, index) => (
               <div key={project.id} className="border-t border-gray-200 pt-12 pb-12 first:border-t-0 first:pt-0">

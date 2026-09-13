@@ -30,10 +30,10 @@ const SideProjectsPage = () => {
       />
       <Navigation scrollProgress={0} />
       <div
-        className="min-h-screen bg-[#0a0a0a] text-white pt-24"
+        className="min-h-screen bg-[#0a0a0a] text-white pt-32"
         data-side-projects-page="true"
       >
-        <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12 xl:px-16 pt-16 md:pt-20 pb-28 md:pb-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12 xl:px-16 pb-28 md:pb-36">
           <motion.div
             className="mb-12 md:mb-16 max-w-3xl"
             initial={{ opacity: 0, y: 16 }}
