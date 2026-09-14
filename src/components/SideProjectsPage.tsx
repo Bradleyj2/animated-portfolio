@@ -78,6 +78,11 @@ const SideProjectsPage = () => {
                       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
 
                       <div className="relative z-10 flex h-full min-h-[320px] md:min-h-[420px] lg:min-h-[480px] flex-col justify-end md:justify-center p-6 md:p-10 lg:p-12 max-w-xl">
+                        {item.id === 'hemispheres' && (
+                          <p className="mb-2 text-xs uppercase tracking-widest text-white/40">
+                            Side Project
+                          </p>
+                        )}
                         <p className="mb-3 text-[0.6rem] font-medium uppercase tracking-[0.14em] text-white/55">
                           {item.projectType || item.category}
                         </p>
@@ -97,26 +102,38 @@ const SideProjectsPage = () => {
                           </p>
                         )}
 
-                        <div className="mb-6 grid grid-cols-2 gap-x-8 max-w-sm">
-                          <div>
-                            <p className="text-[0.6rem] font-medium uppercase tracking-[0.14em] text-white/45">
-                              Role
-                            </p>
-                            <p className="mt-1 text-[0.8125rem] md:text-sm text-white/85 leading-snug">
-                              {item.role || '—'}
-                            </p>
+                        {item.id === 'hemispheres' ? (
+                          <p className="mt-3 text-xs text-white/40">
+                            Lead Game Designer · 2025–2026
+                          </p>
+                        ) : (
+                          <div className="mb-6 grid grid-cols-2 gap-x-8 max-w-sm">
+                            <div>
+                              <p className="text-[0.6rem] font-medium uppercase tracking-[0.14em] text-white/45">
+                                Role
+                              </p>
+                              <p className="mt-1 text-[0.8125rem] md:text-sm text-white/85 leading-snug">
+                                {item.role || '—'}
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-[0.6rem] font-medium uppercase tracking-[0.14em] text-white/45">
+                                Year
+                              </p>
+                              <p className="mt-1 text-[0.8125rem] md:text-sm text-white/85 leading-snug">
+                                {item.year || '—'}
+                              </p>
+                            </div>
                           </div>
-                          <div>
-                            <p className="text-[0.6rem] font-medium uppercase tracking-[0.14em] text-white/45">
-                              Year
-                            </p>
-                            <p className="mt-1 text-[0.8125rem] md:text-sm text-white/85 leading-snug">
-                              {item.year || '—'}
-                            </p>
-                          </div>
-                        </div>
+                        )}
 
-                        <span className="inline-block text-sm md:text-base font-medium text-white underline underline-offset-4 transition-opacity group-hover:opacity-70">
+                        <span
+                          className={`inline-block text-sm md:text-base font-medium text-white transition-opacity group-hover:opacity-70 ${
+                            item.id === 'hemispheres'
+                              ? ''
+                              : 'underline underline-offset-4'
+                          }`}
+                        >
                           {item.draft ? 'Coming soon' : 'View project →'}
                         </span>
                       </div>
