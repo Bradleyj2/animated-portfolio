@@ -5,7 +5,7 @@ import Navigation from './Navigation'
 import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
 import PageMeta from './PageMeta'
-import { getHomeArchiveItems, isHeroPairItem, isSideProjectItem, type HomeArchiveItem } from '../data/homeArchiveItems'
+import { getHomeArchiveItems, type HomeArchiveItem } from '../data/homeArchiveItems'
 
 function HomeCaseStudyCard({
   item,
@@ -32,6 +32,7 @@ function HomeCaseStudyCard({
       imageAspectClass={aspectClass}
       subtitleMaxWidth={subtitleMaxWidth}
       useCustomThumbnail={item.useCustomThumbnail}
+      imageRight={item.imageRight}
     />
   )
 
@@ -112,12 +113,6 @@ const HomePage = () => {
   }
 
   const archiveItems = getHomeArchiveItems()
-  const aiMarketingCard = archiveItems.find((item) => item.id === 'ai-marketing-control-center')
-  const viuHub = archiveItems.find((item) => item.id === 'viu-hub')
-  const showPairedHeroRow = Boolean(aiMarketingCard && viuHub)
-  const mainGridItems = archiveItems.filter(
-    (item) => !item.fullWidth && !isHeroPairItem(item) && !isSideProjectItem(item)
-  )
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -236,46 +231,13 @@ const HomePage = () => {
       >
         {/* Rockstar-like centered container & gutters */}
         <div className="mx-auto max-w-screen-xl px-6 md:px-10 lg:px-12 xl:px-16 pb-20 md:pb-24 lg:pb-32">
-          {showPairedHeroRow && aiMarketingCard && viuHub ? (
-            <div className="mb-10 grid grid-cols-1 gap-8 md:mb-12 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
-              <motion.div
-                key={aiMarketingCard.id}
-                variants={itemVariants}
-                className="min-w-0 h-full"
-              >
-                <HomeCaseStudyCard item={aiMarketingCard} />
-              </motion.div>
-              <motion.div
-                key={viuHub.id}
-                variants={itemVariants}
-                className="min-w-0 h-full"
-              >
-                <HomeCaseStudyCard item={viuHub} />
-              </motion.div>
-            </div>
-          ) : (
-            archiveItems
-              .filter((item) => item.fullWidth)
-              .map((item) => (
-                <motion.div
-                  key={item.id}
-                  variants={itemVariants}
-                  className="mb-10 md:mb-12"
-                >
-                  <HomeCaseStudyCard item={item} />
-                </motion.div>
-              ))
-          )}
-          
-          {/* Two equal columns — primary case studies */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
-            {mainGridItems.map((item) => {
-              const aspectClass = 'aspect-[16/9]'
-              return (
+          {archiveItems.map((item) => {
+            const aspectClass = 'aspect-[16/9]'
+            return (
               <motion.div
                 key={item.id}
                 variants={itemVariants}
-                className="min-w-0 h-full"
+                className="mb-10 md:mb-12 min-h-[360px] md:min-h-[420px] w-full"
               >
                 {item.comingSoon ? (
                   <div className="text-center relative h-full">
@@ -309,8 +271,8 @@ const HomePage = () => {
                   />
                 )}
               </motion.div>
-            )})}
-          </div>
+            )
+          })}
         </div>
         </motion.main>
 

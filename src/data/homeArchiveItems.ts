@@ -21,6 +21,8 @@ export type HomeArchiveItem = {
   metric?: string
   /** Render CSS collage instead of image thumbnail on homepage cards */
   useCustomThumbnail?: boolean
+  /** When true, thumbnail sits on the right on desktop */
+  imageRight?: boolean
   fullWidth?: boolean
   comingSoon?: boolean
   /** Hidden on live site; visible in dev or with VITE_SHOW_DRAFT_CONTENT=true */
@@ -52,6 +54,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Product Design Lead & Design Operations',
     year: '2022–2024',
     metric: '25% revenue growth post-launch',
+    imageRight: true,
   },
   {
     id: 'ai-marketing-control-center',
@@ -73,6 +76,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Senior Product Designer',
     year: '2026',
     metric: 'Shipped to MVP · 2026',
+    imageRight: false,
   },
   {
     id: 'second-opinion',
@@ -95,6 +99,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     year: '2021',
     metric: '18+ user research sessions',
     useCustomThumbnail: true,
+    imageRight: false,
   },
   {
     id: 'service-blueprint',
@@ -116,6 +121,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Service Design Lead',
     year: '2024',
     metric: '93% reduction in redundant templates',
+    imageRight: true,
   },
   {
     id: 'omnichannel',
@@ -137,6 +143,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Product Design Lead',
     year: '2025',
     metric: '1 unified blueprint across 2 service channels',
+    imageRight: false,
   },
   {
     id: 'hemispheres',
@@ -156,6 +163,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     cardHeading: 'Hemispheres / Game design',
     role: 'Lead Game Designer',
     year: '2025–2026',
+    imageRight: true,
   },
 ]
 
