@@ -19,8 +19,6 @@ export type HomeArchiveItem = {
   role: string
   year: string
   metric?: string
-  /** Render CSS collage instead of image thumbnail on homepage cards */
-  useCustomThumbnail?: boolean
   /** When true, thumbnail sits on the right on desktop */
   imageRight?: boolean
   fullWidth?: boolean
@@ -99,7 +97,6 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Product Designer & UX Researcher',
     year: '2021',
     metric: '18+ user research sessions',
-    useCustomThumbnail: true,
     imageRight: false,
   },
   {

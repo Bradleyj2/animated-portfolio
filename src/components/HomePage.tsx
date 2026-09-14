@@ -1,11 +1,24 @@
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Navigation from './Navigation'
 import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
 import PageMeta from './PageMeta'
+import AiMarketingThumbnail from './thumbnails/AiMarketingThumbnail'
+import ViuThumbnail from './thumbnails/ViuThumbnail'
+import SecondOpinionThumbnail from './thumbnails/SecondOpinionThumbnail'
+import ServiceBlueprintThumbnail from './thumbnails/ServiceBlueprintThumbnail'
+import OmnichannelThumbnail from './thumbnails/OmnichannelThumbnail'
 import { getHomeArchiveItems, isSideProjectItem, type HomeArchiveItem } from '../data/homeArchiveItems'
+
+const thumbnailMap: Record<string, ReactNode> = {
+  'ai-marketing-control-center': <AiMarketingThumbnail />,
+  'viu-hub': <ViuThumbnail />,
+  'second-opinion': <SecondOpinionThumbnail />,
+  'service-blueprint': <ServiceBlueprintThumbnail />,
+  'omnichannel': <OmnichannelThumbnail />,
+}
 
 function HomeCaseStudyCard({
   item,
@@ -31,7 +44,7 @@ function HomeCaseStudyCard({
       metric={item.metric}
       imageAspectClass={aspectClass}
       subtitleMaxWidth={subtitleMaxWidth}
-      useCustomThumbnail={item.useCustomThumbnail}
+      thumbnailComponent={thumbnailMap[item.id]}
     />
   )
 
