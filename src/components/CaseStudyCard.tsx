@@ -21,8 +21,6 @@ type Props = {
   imageAspectClass?: string;
   subtitleMaxWidth?: number;
   useCustomThumbnail?: boolean;
-  /** When true, thumbnail sits on the right on desktop */
-  imageRight?: boolean;
   children?: React.ReactNode;
 };
 
@@ -81,7 +79,6 @@ export default function CaseStudyCard({
   imageAspectClass = "aspect-[4/3]",
   subtitleMaxWidth,
   useCustomThumbnail = false,
-  imageRight = false,
   children,
 }: Props) {
   const heading =
@@ -102,17 +99,15 @@ export default function CaseStudyCard({
     <div className="flex h-full w-full min-w-0 flex-col">
       <Link
         to={href}
-        className={`home-case-card group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[10px] border border-[#e5e5e5] bg-white shadow-none transition-colors hover:border-[#8a8a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2 ${
-          imageRight ? "md:flex-row-reverse" : "md:flex-row"
-        }`}
+        className="home-case-card group flex h-full w-full min-w-0 flex-col overflow-hidden rounded-[10px] border border-[#e5e5e5] bg-white shadow-none transition-colors hover:border-[#8a8a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2"
       >
         {useCustomThumbnail ? (
-          <div className="relative w-full md:w-1/2 min-w-0 overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.02] shrink-0">
+          <div className="relative w-full min-w-0 overflow-hidden transition-transform duration-500 ease-out group-hover:scale-[1.02]">
             <SecondOpinionCustomThumbnail />
           </div>
         ) : (
           <div
-            className="relative w-full md:w-1/2 min-w-0 aspect-[16/10] md:aspect-auto overflow-hidden bg-neutral-800 shrink-0"
+            className={`relative w-full min-w-0 ${imageAspectClass} overflow-hidden bg-neutral-800`}
           >
             <img
               src={imageSrc}
@@ -123,10 +118,10 @@ export default function CaseStudyCard({
           </div>
         )}
 
-        <div className="case-study-card-text flex w-full min-w-0 flex-1 flex-col justify-center p-8 md:p-10 bg-white">
+        <div className="case-study-card-text flex w-full min-w-0 flex-1 flex-col p-5 bg-white">
           {heading && (
             <h3
-              className="max-w-none text-2xl font-bold leading-snug tracking-[-0.01em] text-neutral-900 md:text-3xl"
+              className="mb-2.5 max-w-none text-[1.125rem] font-semibold leading-snug tracking-[-0.01em] text-neutral-900 md:text-[1.25rem]"
               style={subtitleMaxWidth ? { maxWidth: `${subtitleMaxWidth}px` } : undefined}
             >
               {heading}
@@ -134,7 +129,11 @@ export default function CaseStudyCard({
           )}
 
           {body && (
-            <p className="mt-3 max-w-lg text-base font-normal leading-[1.55] text-gray-600">
+            <p
+              className={`max-w-none text-sm font-normal leading-[1.55] text-[#555555] ${
+                metric ? "mb-0" : "mb-5"
+              }`}
+            >
               {body.includes("\n")
                 ? body.split("\n").map((line, i, arr) => (
                     <React.Fragment key={i}>
@@ -147,25 +146,25 @@ export default function CaseStudyCard({
           )}
 
           {metric && (
-            <p className="mt-4 text-sm font-medium text-purple-400">
+            <p className="mt-2 mb-5 text-xs font-medium text-purple-400">
               {metric}
             </p>
           )}
 
-          <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-0.5">
+          <div className="mt-auto grid grid-cols-2 gap-x-8 gap-y-0.5">
             <div className="min-w-0">
-              <p className="text-xs font-medium uppercase tracking-widest text-gray-400">
+              <p className="text-xs font-medium uppercase tracking-widest text-neutral-400">
                 Role
               </p>
-              <p className="mt-1 text-base font-medium leading-snug text-gray-900">
+              <p className="mt-1 text-sm font-normal leading-snug text-neutral-700">
                 {roleText}
               </p>
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-medium uppercase tracking-widest text-gray-400">
+              <p className="text-xs font-medium uppercase tracking-widest text-neutral-400">
                 Year
               </p>
-              <p className="mt-1 text-base font-medium leading-snug text-gray-900">
+              <p className="mt-1 text-sm font-normal leading-snug text-neutral-700">
                 {yearText}
               </p>
             </div>

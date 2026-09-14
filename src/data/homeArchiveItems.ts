@@ -29,7 +29,7 @@ export type HomeArchiveItem = {
   draft?: boolean
 }
 
-export const HERO_PAIR_IDS = ['ai-marketing-control-center', 'viu-hub'] as const
+export const HERO_PAIR_IDS = ['ai-marketing-control-center'] as const
 
 /** IDs shown under Side Projects (homepage section + /side-projects page) */
 export const SIDE_PROJECT_IDS = ['hemispheres'] as const
@@ -55,6 +55,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     year: '2022–2024',
     metric: '25% revenue growth post-launch',
     imageRight: true,
+    fullWidth: true,
   },
   {
     id: 'ai-marketing-control-center',

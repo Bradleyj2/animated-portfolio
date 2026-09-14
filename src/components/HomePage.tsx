@@ -5,7 +5,7 @@ import Navigation from './Navigation'
 import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
 import PageMeta from './PageMeta'
-import { getHomeArchiveItems, type HomeArchiveItem } from '../data/homeArchiveItems'
+import { getHomeArchiveItems, isSideProjectItem, type HomeArchiveItem } from '../data/homeArchiveItems'
 
 function HomeCaseStudyCard({
   item,
@@ -32,7 +32,6 @@ function HomeCaseStudyCard({
       imageAspectClass={aspectClass}
       subtitleMaxWidth={subtitleMaxWidth}
       useCustomThumbnail={item.useCustomThumbnail}
-      imageRight={item.imageRight}
     />
   )
 
@@ -47,6 +46,58 @@ function HomeCaseStudyCard({
       </span>
       {card}
     </div>
+  )
+}
+
+/** Full-bleed featured card — same visual language as Side Projects / Hemispheres */
+function HomeFeaturedProjectCard({ item }: { item: HomeArchiveItem }) {
+  const heading = item.cardHeading || item.title
+  const body = item.subtitle || item.tagline
+  const roleYear = [item.role, item.year].filter(Boolean).join(' · ')
+
+  return (
+    <Link
+      to={item.path}
+      className="group relative block overflow-hidden rounded-[10px] border border-[#e5e5e5] min-h-[320px] md:min-h-[420px] lg:min-h-[480px] transition-colors hover:border-[#8a8a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2"
+    >
+      <img
+        src={item.image}
+        alt={item.title}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
+
+      <div className="relative z-10 flex h-full min-h-[320px] md:min-h-[420px] lg:min-h-[480px] flex-col justify-end md:justify-center p-6 md:p-10 lg:p-12 max-w-xl">
+        <p className="mb-3 text-[0.6rem] font-medium uppercase tracking-[0.14em] text-white/55">
+          {item.projectType || item.category}
+        </p>
+        <h2 className="mb-3 text-[1.5rem] md:text-3xl lg:text-4xl font-semibold leading-snug tracking-[-0.01em] text-white">
+          {heading}
+        </h2>
+        {body && (
+          <p className="mb-4 text-[0.9375rem] md:text-base font-normal leading-relaxed text-white/75 max-w-md">
+            {body.includes('\n')
+              ? body.split('\n').map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br />}
+                  </span>
+                ))
+              : body}
+          </p>
+        )}
+        {item.metric && (
+          <p className="mb-2 text-sm font-medium text-purple-400">{item.metric}</p>
+        )}
+        {roleYear && (
+          <p className="mt-3 text-xs text-white/40">{roleYear}</p>
+        )}
+        <span className="mt-6 inline-block text-sm md:text-base font-medium text-white transition-opacity group-hover:opacity-70">
+          {item.draft ? 'Coming soon' : 'View project →'}
+        </span>
+      </div>
+    </Link>
   )
 }
 
@@ -113,6 +164,12 @@ const HomePage = () => {
   }
 
   const archiveItems = getHomeArchiveItems()
+  const fullWidthItems = archiveItems.filter(
+    (item) => item.fullWidth && !isSideProjectItem(item)
+  )
+  const mainGridItems = archiveItems.filter(
+    (item) => !item.fullWidth && !isSideProjectItem(item)
+  )
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -231,48 +288,61 @@ const HomePage = () => {
       >
         {/* Rockstar-like centered container & gutters */}
         <div className="mx-auto max-w-screen-xl px-6 md:px-10 lg:px-12 xl:px-16 pb-20 md:pb-24 lg:pb-32">
-          {archiveItems.map((item) => {
-            const aspectClass = 'aspect-[16/9]'
-            return (
-              <motion.div
-                key={item.id}
-                variants={itemVariants}
-                className="mb-10 md:mb-12 min-h-[360px] md:min-h-[420px] w-full"
-              >
-                {item.comingSoon ? (
-                  <div className="text-center relative h-full">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-800 flex items-center justify-center mt-16 opacity-60">
-                      <span className="text-sm font-bold text-gray-400">Tools</span>
+          {fullWidthItems.map((item) => (
+            <motion.div
+              key={item.id}
+              variants={itemVariants}
+              className="mb-10 md:mb-12"
+            >
+              <HomeFeaturedProjectCard item={item} />
+            </motion.div>
+          ))}
+
+          {/* Two equal columns — primary case studies */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
+            {mainGridItems.map((item) => {
+              const aspectClass = 'aspect-[16/9]'
+              return (
+                <motion.div
+                  key={item.id}
+                  variants={itemVariants}
+                  className="min-w-0 h-full"
+                >
+                  {item.comingSoon ? (
+                    <div className="text-center relative h-full">
+                      <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-800 flex items-center justify-center mt-16 opacity-60">
+                        <span className="text-sm font-bold text-gray-400">Tools</span>
+                      </div>
+                      <h3 className="font-serif text-xl mb-3 text-white">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm mb-3 text-gray-300">
+                        {item.subtitle}
+                      </p>
+                      <p className="text-xs mb-6 text-gray-400">
+                        {item.category}
+                      </p>
+                      <div className="px-6 py-2 rounded-lg inline-block cursor-not-allowed opacity-50 bg-gray-700 text-gray-300">
+                        <span className="text-sm font-semibold">Coming soon</span>
+                      </div>
                     </div>
-                    <h3 className="font-serif text-xl mb-3 text-white">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm mb-3 text-gray-300">
-                      {item.subtitle}
-                    </p>
-                    <p className="text-xs mb-6 text-gray-400">
-                      {item.category}
-                    </p>
-                    <div className="px-6 py-2 rounded-lg inline-block cursor-not-allowed opacity-50 bg-gray-700 text-gray-300">
-                      <span className="text-sm font-semibold">Coming soon</span>
-                    </div>
-                  </div>
-                ) : (
-                  <HomeCaseStudyCard
-                    item={item}
-                    aspectClass={aspectClass}
-                    subtitleMaxWidth={
-                      item.id === 'second-opinion'
-                        ? 500
-                        : item.id === 'omnichannel'
-                          ? 520
-                          : undefined
-                    }
-                  />
-                )}
-              </motion.div>
-            )
-          })}
+                  ) : (
+                    <HomeCaseStudyCard
+                      item={item}
+                      aspectClass={aspectClass}
+                      subtitleMaxWidth={
+                        item.id === 'second-opinion'
+                          ? 500
+                          : item.id === 'omnichannel'
+                            ? 520
+                            : undefined
+                      }
+                    />
+                  )}
+                </motion.div>
+              )
+            })}
+          </div>
         </div>
         </motion.main>
 
