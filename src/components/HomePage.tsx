@@ -62,7 +62,7 @@ function HomeCaseStudyCard({
   )
 }
 
-/** Full-bleed featured card — same visual language as Side Projects / Hemispheres */
+/** Full-bleed featured card — Kyson-style layout, Hemispheres visual language */
 function HomeFeaturedProjectCard({ item }: { item: HomeArchiveItem }) {
   const heading = item.cardHeading || item.title
   const body = item.subtitle || item.tagline
@@ -71,7 +71,7 @@ function HomeFeaturedProjectCard({ item }: { item: HomeArchiveItem }) {
   return (
     <Link
       to={item.path}
-      className="group relative block overflow-hidden rounded-[10px] border border-[#e5e5e5] min-h-[320px] md:min-h-[420px] lg:min-h-[480px] transition-colors hover:border-[#8a8a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2"
+      className="group relative block overflow-hidden rounded-[10px] border border-[#e5e5e5] min-h-[360px] md:min-h-[480px] lg:min-h-[560px] transition-colors hover:border-[#8a8a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2"
     >
       <img
         src={item.image}
@@ -79,42 +79,45 @@ function HomeFeaturedProjectCard({ item }: { item: HomeArchiveItem }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
         loading="lazy"
       />
-      {/* Inline gradient so homepage transparent-bg override cannot wipe the scrim */}
+      {/* Kyson-style left fade: solid black → clear by mid-card (inline to beat homepage transparent overrides) */}
       <div
         className="featured-card-scrim absolute inset-0 z-[1]"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.62) 45%, rgba(0,0,0,0.28) 100%)',
+            'linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 32%, rgba(0, 0, 0, 0) 54%)',
         }}
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex h-full min-h-[320px] md:min-h-[420px] lg:min-h-[480px] flex-col justify-end md:justify-center p-6 md:p-10 lg:p-12 max-w-xl">
-        <p className="mb-3 text-[0.6rem] font-medium uppercase tracking-[0.14em] text-white/55">
-          {item.projectType || item.category}
-        </p>
-        <h2 className="mb-3 text-[1.5rem] md:text-3xl lg:text-4xl font-semibold leading-snug tracking-[-0.01em] text-white">
-          {heading}
-        </h2>
-        {body && (
-          <p className="mb-4 text-[0.9375rem] md:text-base font-normal leading-relaxed text-white/75 max-w-md">
-            {body.includes('\n')
-              ? body.split('\n').map((line, i, arr) => (
-                  <span key={i}>
-                    {line}
-                    {i < arr.length - 1 && <br />}
-                  </span>
-                ))
-              : body}
+      <div className="relative z-10 flex h-full min-h-[360px] md:min-h-[480px] lg:min-h-[560px] flex-col justify-between p-8 md:p-12 lg:px-16 lg:py-14 max-w-xl">
+        <div>
+          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white/55">
+            {item.projectType || item.category}
           </p>
-        )}
-        {item.metric && (
-          <p className="mb-2 text-sm font-medium text-purple-400">{item.metric}</p>
-        )}
-        {roleYear && (
-          <p className="mt-3 text-xs text-white/40">{roleYear}</p>
-        )}
-        <span className="mt-6 inline-block text-sm md:text-base font-medium text-white transition-opacity group-hover:opacity-70">
+          <h2 className="mb-4 text-[1.75rem] md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-white">
+            {heading}
+          </h2>
+          {body && (
+            <p className="mb-4 text-[0.9375rem] md:text-base font-normal leading-relaxed text-white/75 max-w-md">
+              {body.includes('\n')
+                ? body.split('\n').map((line, i, arr) => (
+                    <span key={i}>
+                      {line}
+                      {i < arr.length - 1 && <br />}
+                    </span>
+                  ))
+                : body}
+            </p>
+          )}
+          {item.metric && (
+            <p className="mb-3 text-sm font-medium text-purple-400">{item.metric}</p>
+          )}
+          {roleYear && (
+            <p className="text-xs text-white/40">{roleYear}</p>
+          )}
+        </div>
+
+        <span className="mt-8 inline-flex w-fit items-center rounded-full bg-white px-6 py-3 text-sm md:text-base font-medium text-black transition-opacity group-hover:opacity-90">
           {item.draft ? 'Coming soon' : 'View project →'}
         </span>
       </div>
