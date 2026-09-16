@@ -53,7 +53,6 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     year: '2022–2024',
     metric: '25% revenue growth post-launch',
     imageRight: true,
-    fullWidth: true,
   },
   {
     id: 'ai-marketing-control-center',
@@ -97,7 +96,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Product Designer & UX Researcher',
     year: '2021',
     metric: '18+ user research sessions',
-    imageRight: false,
+    imageRight: true,
   },
   {
     id: 'service-blueprint',
@@ -119,7 +118,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Service Design Lead',
     year: '2024',
     metric: '93% reduction in redundant templates',
-    imageRight: true,
+    imageRight: false,
   },
   {
     id: 'omnichannel',
@@ -141,7 +140,7 @@ const publishedHomeArchiveItems: HomeArchiveItem[] = [
     role: 'Product Design Lead',
     year: '2025',
     metric: '1 unified blueprint across 2 service channels',
-    imageRight: false,
+    imageRight: true,
   },
   {
     id: 'hemispheres',

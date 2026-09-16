@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { useState, useEffect, type ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Navigation from './Navigation'
-import CaseStudyCard from './CaseStudyCard'
 import DividerLabel from './DividerLabel'
 import PageMeta from './PageMeta'
 import AiMarketingThumbnail from './thumbnails/AiMarketingThumbnail'
@@ -20,107 +19,103 @@ const thumbnailMap: Record<string, ReactNode> = {
   'omnichannel': <OmnichannelThumbnail />,
 }
 
-function HomeCaseStudyCard({
-  item,
-  aspectClass = 'aspect-[16/9]',
-  subtitleMaxWidth,
-}: {
-  item: HomeArchiveItem
-  aspectClass?: string
-  subtitleMaxWidth?: number
-}) {
-  const card = (
-    <CaseStudyCard
-      href={item.path}
-      title={item.title}
-      cardHeading={item.cardHeading}
-      companyName={item.companyName}
-      subtitle={item.subtitle}
-      description={item.description}
-      imageSrc={item.image}
-      imageAlt={item.title}
-      role={item.role}
-      year={item.year}
-      metric={item.metric}
-      imageAspectClass={aspectClass}
-      subtitleMaxWidth={subtitleMaxWidth}
-      thumbnailComponent={thumbnailMap[item.id]}
-    />
-  )
-
-  if (!item.draft) {
-    return <div className="h-full">{card}</div>
-  }
-
-  return (
-    <div className="relative h-full rounded-[10px] ring-2 ring-amber-300 ring-offset-2">
-      <span className="absolute right-3 top-3 z-10 rounded bg-amber-400 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-950">
-        Draft
-      </span>
-      {card}
-    </div>
-  )
-}
-
-/** Full-bleed featured card — Kyson-style layout, Hemispheres visual language */
-function HomeFeaturedProjectCard({ item }: { item: HomeArchiveItem }) {
+/**
+ * Homepage work row — Lola Jiang split (text | large media, alternating)
+ * + Kyson Dana hierarchy (large headline, pill CTA, hover scale).
+ */
+function HomeWorkRow({ item }: { item: HomeArchiveItem }) {
   const heading = item.cardHeading || item.title
   const body = item.subtitle || item.tagline
   const roleYear = [item.role, item.year].filter(Boolean).join(' · ')
+  const imageOnRight = item.imageRight !== false
+  const thumbnail = thumbnailMap[item.id]
 
-  return (
-    <Link
-      to={item.path}
-      className="group relative block overflow-hidden rounded-[10px] border border-[#e5e5e5] min-h-[360px] md:min-h-[480px] lg:min-h-[560px] transition-colors hover:border-[#8a8a8a] focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2"
-    >
-      <img
-        src={item.image}
-        alt={item.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-        loading="lazy"
-      />
-      {/* Kyson-style left fade — class locked in CSS so homepage bg !important rules cannot wipe it */}
-      <div className="featured-card-scrim absolute inset-0 z-[1]" aria-hidden="true" />
-
-      <div className="relative z-10 flex h-full min-h-[360px] md:min-h-[480px] lg:min-h-[560px] flex-col justify-between p-8 md:p-12 lg:px-16 lg:py-14 max-w-xl">
-        <div>
-          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-            {item.projectType || item.category}
+  const textPanel = (
+    <div className="work-row-text flex flex-col justify-center md:col-span-5">
+      <div className="work-row-rule border-l pl-5 md:pl-7">
+        <p className="work-row-eyebrow mb-3 text-xs font-medium uppercase tracking-widest">
+          {item.projectType || item.category}
+        </p>
+        <h2 className="work-row-heading mb-4 text-[1.75rem] font-semibold leading-[1.12] tracking-[-0.02em] md:text-3xl lg:text-[2.5rem]">
+          {heading}
+        </h2>
+        {body && (
+          <p className="work-row-body mb-4 max-w-md text-[0.9375rem] font-normal leading-relaxed md:text-base">
+            {body.includes('\n')
+              ? body.split('\n').map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br />}
+                  </span>
+                ))
+              : body}
           </p>
-          <h2 className="mb-4 text-[1.75rem] md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
-            {heading}
-          </h2>
-          {body && (
-            <p className="mb-4 text-[0.9375rem] md:text-base font-normal leading-relaxed text-white/90 max-w-md drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
-              {body.includes('\n')
-                ? body.split('\n').map((line, i, arr) => (
-                    <span key={i}>
-                      {line}
-                      {i < arr.length - 1 && <br />}
-                    </span>
-                  ))
-                : body}
-            </p>
-          )}
-          {item.metric && (
-            <p className="mb-3 text-sm font-medium text-purple-300 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">{item.metric}</p>
-          )}
-          {roleYear && (
-            <p className="text-xs text-white/70 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">{roleYear}</p>
-          )}
-        </div>
-
-        <span className="featured-card-cta mt-8 inline-flex w-fit items-center rounded-full px-6 py-3 text-sm md:text-base font-medium text-black shadow-md transition-opacity group-hover:opacity-90">
-          {item.draft ? 'Coming soon' : 'View project →'}
+        )}
+        {item.metric && (
+          <p className="work-row-metric mb-3 text-sm font-medium">{item.metric}</p>
+        )}
+        {roleYear && (
+          <p className="work-row-meta text-xs">{roleYear}</p>
+        )}
+        <span className="work-row-cta mt-8 inline-flex w-fit items-center rounded-full px-6 py-3 text-sm font-medium shadow-sm transition-transform duration-300 group-hover:translate-x-0.5 md:text-base">
+          {item.draft || item.comingSoon ? 'Coming soon' : 'View project →'}
         </span>
       </div>
+    </div>
+  )
+
+  const mediaPanel = (
+    <div className="md:col-span-7">
+      <div className="work-row-media custom-project-thumbnail relative aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_16px_48px_rgba(0,0,0,0.14)]">
+        {thumbnail ? (
+          <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-[1.02]">
+            {thumbnail}
+          </div>
+        ) : (
+          <img
+            src={item.image}
+            alt={item.title}
+            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        )}
+      </div>
+    </div>
+  )
+
+  const row = (
+    <Link
+      to={item.path}
+      className="group grid grid-cols-1 items-center gap-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-4 md:grid-cols-12 md:gap-10 lg:gap-14"
+    >
+      {imageOnRight ? (
+        <>
+          {textPanel}
+          {mediaPanel}
+        </>
+      ) : (
+        <>
+          {mediaPanel}
+          {textPanel}
+        </>
+      )}
     </Link>
+  )
+
+  if (!item.draft) return row
+
+  return (
+    <div className="relative">
+      <span className="absolute right-3 top-3 z-10 rounded bg-amber-400 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-950">
+        Draft
+      </span>
+      {row}
+    </div>
   )
 }
 
 const HomePage = () => {
   const location = useLocation()
-  const [isLightMode, setIsLightMode] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
@@ -134,7 +129,6 @@ const HomePage = () => {
     // Scroll-based dark to light transition
     const handleScroll = () => {
       const windowHeight = window.innerHeight
-      const documentHeight = document.documentElement.scrollHeight
       const scrollTop = window.scrollY || document.documentElement.scrollTop
       
       // Calculate progress (0 to 1) - transition happens over first viewport height (faster)
@@ -159,8 +153,8 @@ const HomePage = () => {
       document.documentElement.style.setProperty('--scroll-text-color-light', textColorLight)
       document.documentElement.style.setProperty('--scroll-text-color-lighter', textColorLighter)
       
-      // Update isLightMode for component logic
-      setIsLightMode(progress > 0.5)
+      // Drive html.light-mode for divider/nav/work-row CSS
+      document.documentElement.classList.toggle('light-mode', progress > 0.5)
     }
     
     handleScroll() // Initial call
@@ -168,6 +162,7 @@ const HomePage = () => {
     
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      document.documentElement.classList.remove('light-mode')
     }
   }, [])
   const scrollToCaseStudies = () => {
@@ -180,13 +175,7 @@ const HomePage = () => {
     }
   }
 
-  const archiveItems = getHomeArchiveItems()
-  const fullWidthItems = archiveItems.filter(
-    (item) => item.fullWidth && !isSideProjectItem(item)
-  )
-  const mainGridItems = archiveItems.filter(
-    (item) => !item.fullWidth && !isSideProjectItem(item)
-  )
+  const workItems = getHomeArchiveItems().filter((item) => !isSideProjectItem(item))
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -303,62 +292,14 @@ const HomePage = () => {
         initial="hidden"
         animate="visible"
       >
-        {/* Rockstar-like centered container & gutters */}
-        <div className="mx-auto max-w-screen-xl px-6 md:px-10 lg:px-12 xl:px-16 pb-20 md:pb-24 lg:pb-32">
-          {fullWidthItems.map((item) => (
-            <motion.div
-              key={item.id}
-              variants={itemVariants}
-              className="mb-10 md:mb-12"
-            >
-              <HomeFeaturedProjectCard item={item} />
-            </motion.div>
-          ))}
-
-          {/* Two equal columns — primary case studies */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:auto-rows-fr md:gap-10 lg:gap-12">
-            {mainGridItems.map((item) => {
-              const aspectClass = 'aspect-[16/9]'
-              return (
-                <motion.div
-                  key={item.id}
-                  variants={itemVariants}
-                  className="min-w-0 h-full"
-                >
-                  {item.comingSoon ? (
-                    <div className="text-center relative h-full">
-                      <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gray-800 flex items-center justify-center mt-16 opacity-60">
-                        <span className="text-sm font-bold text-gray-400">Tools</span>
-                      </div>
-                      <h3 className="font-serif text-xl mb-3 text-white">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm mb-3 text-gray-300">
-                        {item.subtitle}
-                      </p>
-                      <p className="text-xs mb-6 text-gray-400">
-                        {item.category}
-                      </p>
-                      <div className="px-6 py-2 rounded-lg inline-block cursor-not-allowed opacity-50 bg-gray-700 text-gray-300">
-                        <span className="text-sm font-semibold">Coming soon</span>
-                      </div>
-                    </div>
-                  ) : (
-                    <HomeCaseStudyCard
-                      item={item}
-                      aspectClass={aspectClass}
-                      subtitleMaxWidth={
-                        item.id === 'second-opinion'
-                          ? 500
-                          : item.id === 'omnichannel'
-                            ? 520
-                            : undefined
-                      }
-                    />
-                  )}
-                </motion.div>
-              )
-            })}
+        {/* Lola-style stacked split rows + Kyson hierarchy */}
+        <div className="mx-auto max-w-screen-xl px-6 pb-20 md:px-10 md:pb-24 lg:px-12 lg:pb-32 xl:px-16">
+          <div className="flex flex-col gap-16 md:gap-24 lg:gap-28">
+            {workItems.map((item) => (
+              <motion.div key={item.id} variants={itemVariants} className="min-w-0">
+                <HomeWorkRow item={item} />
+              </motion.div>
+            ))}
           </div>
         </div>
         </motion.main>

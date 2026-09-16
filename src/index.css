@@ -1108,7 +1108,7 @@ body:has([data-work-page="true"]) {
   max-width: 100% !important;
 }
 
-.case-studies-section *:not(.custom-project-thumbnail):not(.custom-project-thumbnail *):not(.featured-card-scrim):not(.featured-card-cta) {
+.case-studies-section *:not(.custom-project-thumbnail):not(.custom-project-thumbnail *):not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media) {
   background-color: transparent !important;
 }
 
@@ -1120,7 +1120,98 @@ body:has([data-work-page="true"]) {
 
 /* Restore custom thumbnail root background wiped by .case-studies-section * transparent rule */
 .case-studies-section .custom-project-thumbnail {
-  background-color: #042f2e !important;
+  background-color: #171717 !important;
+}
+
+/* Lola + Kyson hybrid work rows */
+.work-row-media.custom-project-thumbnail,
+.case-studies-section .work-row-media.custom-project-thumbnail {
+  background-color: #171717 !important;
+  background: #171717 !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14) !important;
+}
+
+/* Beat homepage light/dark bg wipes inside media panels */
+html.light-mode .homepage-main .work-row-media,
+html.light-mode .homepage-main .work-row-media *,
+html:not(.light-mode) .homepage-main .work-row-media,
+html:not(.light-mode) .homepage-main .work-row-media *,
+.case-studies-section .work-row-media,
+.case-studies-section .work-row-media * {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+html.light-mode .homepage-main .work-row-media.custom-project-thumbnail,
+html:not(.light-mode) .homepage-main .work-row-media.custom-project-thumbnail,
+.case-studies-section .work-row-media.custom-project-thumbnail,
+html.light-mode .homepage-main .work-row-media [data-thumb-root],
+html:not(.light-mode) .homepage-main .work-row-media [data-thumb-root],
+html.light-mode .homepage-main .work-row-media [data-thumb-bg],
+html:not(.light-mode) .homepage-main .work-row-media [data-thumb-bg],
+.case-studies-section .work-row-media [data-thumb-root],
+.case-studies-section .work-row-media [data-thumb-bg] {
+  background-color: var(--thumb-bg, #171717) !important;
+  background: var(--thumb-bg, #171717) !important;
+}
+
+html.light-mode .homepage-main .work-row-media [data-thumb-accent],
+html:not(.light-mode) .homepage-main .work-row-media [data-thumb-accent],
+.case-studies-section .work-row-media [data-thumb-accent] {
+  background-color: var(--thumb-accent, #fbbf24) !important;
+  background: var(--thumb-accent, #fbbf24) !important;
+}
+
+html.light-mode .homepage-main .work-row-media [data-thumb-fade],
+html:not(.light-mode) .homepage-main .work-row-media [data-thumb-fade],
+.case-studies-section .work-row-media [data-thumb-fade] {
+  background-color: transparent !important;
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  ) !important;
+}
+
+.work-row-rule {
+  border-color: color-mix(in srgb, var(--scroll-text-color, #ffffff) 28%, transparent) !important;
+}
+
+.work-row-eyebrow,
+.work-row-meta {
+  color: var(--scroll-text-color-lighter, #b4b4b4) !important;
+}
+
+.work-row-heading {
+  color: var(--scroll-text-color, #ffffff) !important;
+}
+
+.work-row-body {
+  color: var(--scroll-text-color-light, #c8c8c8) !important;
+}
+
+.work-row-metric {
+  color: #c084fc !important;
+}
+
+html.light-mode .work-row-metric {
+  color: #9333ea !important;
+}
+
+.work-row-cta,
+.homepage-main .work-row-cta,
+html:not(.light-mode) .homepage-main .work-row-cta {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid #ffffff !important;
+}
+
+html.light-mode .homepage-main .work-row-cta {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid #171717 !important;
 }
 
 /* Kyson-style featured card overlay — must beat homepage `background: #fff/#000 !important` wipes */
@@ -1198,7 +1289,7 @@ html:has(.homepage-main) {
 
 /* Ensure no white backgrounds anywhere on homepage (dark mode only) */
 html:not(.light-mode) .homepage-main,
-html:not(.light-mode) .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.custom-project-thumbnail):not(.custom-project-thumbnail *),
+html:not(.light-mode) .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.custom-project-thumbnail *),
 html:not(.light-mode) .homepage-main > *:not(.featured-card-scrim) {
   background: #000000 !important;
 }
@@ -1229,10 +1320,10 @@ html.light-mode html:has(.homepage-main) {
 }
 
 html.light-mode .homepage-main,
-html.light-mode .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.custom-project-thumbnail):not(.custom-project-thumbnail *),
+html.light-mode .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.custom-project-thumbnail *):not(.work-row-media *),
 html.light-mode .homepage-main > *:not(.featured-card-scrim),
 html.light-mode .homepage-main section:not(:has(.featured-card-scrim)),
-html.light-mode .homepage-main div:not(.featured-card-scrim):not(.featured-card-cta):not(.custom-project-thumbnail),
+html.light-mode .homepage-main div:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.work-row-media div):not(.custom-project-thumbnail div),
 html.light-mode .homepage-main main,
 html.light-mode .homepage-main article {
   background: #ffffff !important;
@@ -1241,6 +1332,38 @@ html.light-mode .homepage-main article {
 
 html.light-mode .homepage-main section {
   background: #ffffff !important;
+}
+
+/* FINAL: work-row media must win over light-mode white wipes above */
+html.light-mode .homepage-main .work-row-media,
+html.light-mode .homepage-main .work-row-media *,
+.homepage-main .work-row-media,
+.homepage-main .work-row-media * {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+html.light-mode .homepage-main .work-row-media.custom-project-thumbnail,
+.homepage-main .work-row-media.custom-project-thumbnail,
+html.light-mode .homepage-main .work-row-media [data-thumb-root],
+html.light-mode .homepage-main .work-row-media [data-thumb-bg],
+.homepage-main .work-row-media [data-thumb-root],
+.homepage-main .work-row-media [data-thumb-bg] {
+  background: var(--thumb-bg, #171717) !important;
+  background-color: var(--thumb-bg, #171717) !important;
+}
+html.light-mode .homepage-main .work-row-media [data-thumb-accent],
+.homepage-main .work-row-media [data-thumb-accent] {
+  background: var(--thumb-accent, #fbbf24) !important;
+  background-color: var(--thumb-accent, #fbbf24) !important;
+}
+html.light-mode .homepage-main .work-row-media [data-thumb-fade],
+.homepage-main .work-row-media [data-thumb-fade] {
+  background-color: transparent !important;
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  ) !important;
 }
 
 /* Override any default browser backgrounds */
@@ -1253,7 +1376,7 @@ html {
 }
 
 /* Force black background on all elements when homepage is active (dark mode only) */
-html:not(.light-mode) body:has(.homepage-main) *:not(.get-in-touch-banner):not(.get-in-touch-banner *):not(.site-footer):not(.site-footer *):not(.featured-card-scrim):not(.featured-card-cta):not(.custom-project-thumbnail):not(.custom-project-thumbnail *) {
+html:not(.light-mode) body:has(.homepage-main) *:not(.get-in-touch-banner):not(.get-in-touch-banner *):not(.site-footer):not(.site-footer *):not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.custom-project-thumbnail *) {
   background-color: transparent !important;
 }
 
