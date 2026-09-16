@@ -1,4 +1,4 @@
-import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import HomePage from './components/HomePage'
 import WorkPage from './components/WorkPage'
@@ -13,11 +13,10 @@ import SecondOpinionPage from './components/case-studies/SecondOpinionPage'
 import DraftAiMarketingPage from './components/case-studies/DraftAiMarketingPage'
 import ExperienceDesignSlide from './components/ExperienceDesignSlide'
 import EasterEggConsole from './components/EasterEggConsole'
+import GetInTouchBanner from './components/GetInTouchBanner'
 import Footer from './components/Footer'
 
 function App() {
-  const location = useLocation()
-  const isHomePage = location.pathname === '/'
   const [showEasterEgg, setShowEasterEgg] = useState(false)
 
   useEffect(() => {
@@ -68,7 +67,8 @@ function App() {
         </Routes>
       </div>
 
-      {!isHomePage && <Footer />}
+      <GetInTouchBanner />
+      <Footer />
       {showEasterEgg && <EasterEggConsole onClose={() => setShowEasterEgg(false)} />}
     </div>
   )

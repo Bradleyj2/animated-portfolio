@@ -369,32 +369,6 @@ const HomePage = () => {
           </div>
         </div>
         </motion.main>
-
-        {/* Homepage footer: white background to match page */}
-        <footer
-          className="homepage-footer-light w-full border-t border-gray-200 py-4 px-6 md:px-10 lg:px-12 xl:px-16 relative z-50 bg-white"
-          style={{
-            backgroundColor: '#ffffff',
-            color: '#171717',
-            minHeight: '3rem',
-            display: 'block',
-            visibility: 'visible',
-            opacity: 1,
-          }}
-        >
-          <div className="max-w-screen-2xl mx-auto flex justify-start items-center">
-            <div className="flex items-center gap-2 text-sm text-neutral-900" style={{ fontFamily: 'monospace' }}>
-              <div className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-neutral-900" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                <span>New York, NY</span>
-              </div>
-              <span className="text-neutral-500">·</span>
-              <span className="text-neutral-900">meraabradley.com</span>
-            </div>
-          </div>
-        </footer>
       </div>
     </>
   )
