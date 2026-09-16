@@ -1,14 +1,14 @@
 const Footer = () => {
   return (
-    <footer className="site-footer relative z-50 w-full border-t border-neutral-200 bg-white py-4 px-6 md:px-10 lg:px-12 xl:px-16">
+    <footer className="site-footer relative z-50 w-full border-t border-neutral-800 bg-neutral-950 py-4 px-6 md:px-10 lg:px-12 xl:px-16">
       <div className="mx-auto flex max-w-screen-2xl items-center justify-start">
         <div
-          className="flex items-center gap-2 text-sm text-neutral-900"
+          className="flex items-center gap-2 text-sm text-white"
           style={{ fontFamily: 'monospace' }}
         >
           <div className="flex items-center gap-1.5">
             <svg
-              className="h-4 w-4 text-neutral-900"
+              className="h-4 w-4 text-white"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ const Footer = () => {
             </svg>
             <span>New York, NY</span>
           </div>
-          <span className="text-neutral-500">·</span>
+          <span className="text-white/50">·</span>
           <span>meraabradley.com</span>
         </div>
       </div>

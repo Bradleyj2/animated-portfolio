@@ -667,18 +667,23 @@ html.light-mode body:has(.homepage-main) nav a[href="/contact"] button * {
   color: #ffffff !important;
 }
 
-/* Footer light mode */
-html.light-mode footer {
-  background-color: #ffffff !important;
-  border-top-color: rgba(0, 0, 0, 0.1) !important;
+/* Footer stays dark sitewide — do not wash to white in light-mode */
+html.light-mode footer.site-footer,
+html.light-mode .site-footer {
+  background-color: #0a0a0a !important;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-html.light-mode footer .text-white {
-  color: #000000 !important;
+html.light-mode footer.site-footer .text-white,
+html.light-mode .site-footer .text-white,
+html.light-mode footer.site-footer span,
+html.light-mode footer.site-footer svg {
+  color: #ffffff !important;
 }
 
-html.light-mode footer .text-white\/40 {
-  color: rgba(0, 0, 0, 0.4) !important;
+html.light-mode footer.site-footer .text-white\/50,
+html.light-mode .site-footer .text-white\/50 {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 /* Archive of Worlds Typography System */
@@ -1380,57 +1385,80 @@ html:not(.light-mode) body:has(.homepage-main) *:not(.get-in-touch-banner):not(.
   background-color: transparent !important;
 }
 
-/* Sitewide contact banner + footer: light mode (readable on scrolled homepage) */
-.get-in-touch-banner {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-  color: #171717 !important;
+/* Sitewide contact banner + footer: dark treatment (locked against homepage light wipes) */
+.get-in-touch-banner,
+html.light-mode .get-in-touch-banner,
+body:has(.homepage-main) .get-in-touch-banner,
+html.light-mode body:has(.homepage-main) .get-in-touch-banner {
+  background-color: #0a0a0a !important;
+  background: #0a0a0a !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
 }
 .get-in-touch-banner h2,
-.get-in-touch-banner a {
-  color: #171717 !important;
+.get-in-touch-banner a,
+html.light-mode .get-in-touch-banner h2,
+html.light-mode .get-in-touch-banner a,
+body:has(.homepage-main) .get-in-touch-banner h2,
+body:has(.homepage-main) .get-in-touch-banner a {
+  color: #ffffff !important;
 }
-.get-in-touch-banner p {
-  color: #737373 !important;
+.get-in-touch-banner p,
+html.light-mode .get-in-touch-banner p,
+body:has(.homepage-main) .get-in-touch-banner p {
+  color: #a3a3a3 !important;
 }
-.get-in-touch-banner a:hover {
-  color: #a855f7 !important;
+.get-in-touch-banner a:hover,
+html.light-mode .get-in-touch-banner a:hover {
+  color: #c084fc !important;
 }
 
 .site-footer,
 body:has(.homepage-main) .site-footer,
-html.light-mode body:has(.homepage-main) .site-footer {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+html.light-mode body:has(.homepage-main) .site-footer,
+html.light-mode .site-footer {
+  background-color: #0a0a0a !important;
+  background: #0a0a0a !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
   min-height: 3rem !important;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   position: relative !important;
-  z-index: 10 !important;
+  z-index: 50 !important;
 }
-.site-footer,
 .site-footer span,
 .site-footer svg,
-body:has(.homepage-main) .site-footer,
-body:has(.homepage-main) .site-footer *,
-html.light-mode body:has(.homepage-main) .site-footer,
-html.light-mode body:has(.homepage-main) .site-footer * {
-  color: #171717 !important;
+.site-footer a,
+.site-footer div,
+body:has(.homepage-main) .site-footer span,
+body:has(.homepage-main) .site-footer svg,
+body:has(.homepage-main) .site-footer a,
+body:has(.homepage-main) .site-footer div,
+html.light-mode body:has(.homepage-main) .site-footer span,
+html.light-mode body:has(.homepage-main) .site-footer svg,
+html.light-mode body:has(.homepage-main) .site-footer a,
+html.light-mode body:has(.homepage-main) .site-footer div,
+html.light-mode .site-footer span,
+html.light-mode .site-footer svg,
+html.light-mode .site-footer a,
+html.light-mode .site-footer div {
+  color: #ffffff !important;
   background-color: transparent !important;
+  background: transparent !important;
 }
-.site-footer .text-neutral-500,
-body:has(.homepage-main) .site-footer .text-neutral-500 {
-  color: #737373 !important;
+.site-footer .text-white\/50,
+body:has(.homepage-main) .site-footer .text-white\/50,
+html.light-mode .site-footer .text-white\/50 {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Footer must stay visible on homepage: solid black bar (override transparent rule above) */
+/* Footer must stay visible on homepage: solid dark bar (override transparent rule above) */
 body:has(.homepage-main) footer:not(.site-footer),
 .homepage-main footer:not(.site-footer) {
-  background-color: #000000 !important;
-  background: #000000 !important;
+  background-color: #0a0a0a !important;
+  background: #0a0a0a !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   min-height: 3rem !important;
   display: block !important;
@@ -1442,13 +1470,14 @@ body:has(.homepage-main) footer:not(.site-footer),
 body:has(.homepage-main) footer:not(.site-footer) *,
 .homepage-main footer:not(.site-footer) * {
   background-color: transparent !important;
+  color: #ffffff !important;
 }
 
-/* Homepage footer: always a visible black bar (override light-mode white wash) */
+/* Homepage footer: always a visible dark bar (override light-mode white wash) */
 html.light-mode body:has(.homepage-main) footer:not(.site-footer),
 html.light-mode .homepage-main footer:not(.site-footer) {
-  background-color: #000000 !important;
-  background: #000000 !important;
+  background-color: #0a0a0a !important;
+  background: #0a0a0a !important;
   border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 html.light-mode body:has(.homepage-main) footer:not(.site-footer) *,
@@ -1462,22 +1491,9 @@ html.light-mode .homepage-main footer:not(.site-footer) .text-white\/40 {
 }
 
 /* Homepage footer: white background to match page (override black footer rules above) */
-.homepage-footer-light,
-body:has(.homepage-main) .homepage-footer-light,
-.homepage-main .homepage-footer-light {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-.homepage-footer-light a,
-.homepage-footer-light span:not(.text-neutral-500) {
-  color: #171717 !important;
-}
-.homepage-footer-light .text-neutral-500 {
-  color: #737373 !important;
-}
-.homepage-footer-light svg {
-  color: #171717 !important;
+/* DEPRECATED — site footer stays dark; keep selectors inert */
+.homepage-footer-light {
+  /* no-op: dark site-footer is canonical */
 }
 
 /* Ensure navigation background is solid black */
