@@ -24,8 +24,8 @@ export default function AboutPage() {
       />
       <Navigation />
       
-      <main className="bg-[#0a0a0a] text-white min-h-screen about-page pt-32">
-        <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12 pb-32">
+      <main className="about-page flex min-h-[calc(100vh-3.5rem)] flex-col bg-[#0a0a0a] pt-32 text-white">
+        <div className="mx-auto w-full max-w-7xl flex-1 px-6 pb-16 md:px-10 lg:px-12">
           
           {/* Full Width Heading */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-20">
@@ -68,7 +68,7 @@ export default function AboutPage() {
           </div>
 
           {/* Clients Section */}
-          <div className="pt-12 border-t border-gray-700">
+          <div className="border-t border-gray-700 pt-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
               {/* Left - Title */}
               <div>
@@ -106,54 +106,54 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Contact Section */}
-          <section
-            id="contact"
-            className="mt-20 pt-12 border-t border-gray-700 scroll-mt-24"
-          >
-            <div className="mt-16 rounded-2xl border border-white/10 bg-white/5 p-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-10">
-                Get in touch
-              </h2>
-              <p className="mb-8 max-w-md text-sm text-gray-400">
-                Open to founding designer and senior product design roles in healthcare and AI. Always happy to talk about the work.
-              </p>
-              <div className="space-y-4">
+        </div>
+
+        {/* Contact — pinned to page bottom, flush above global footer */}
+        <section
+          id="contact"
+          className="mt-auto scroll-mt-24 border-t border-white/10 bg-white/[0.04]"
+        >
+          <div className="mx-auto max-w-7xl px-6 py-10 md:px-10 md:py-12 lg:px-12">
+            <h2 className="mb-6 text-2xl font-bold text-white md:text-3xl">
+              Get in touch
+            </h2>
+            <p className="mb-8 max-w-md text-sm text-gray-400">
+              Open to founding designer and senior product design roles in healthcare and AI. Always happy to talk about the work.
+            </p>
+            <div className="space-y-4">
+              <a
+                href="mailto:jamera.bradley@gmail.com"
+                className="block font-medium text-white underline-offset-4 transition-colors duration-200 hover:text-purple-400 hover:underline"
+              >
+                jamera.bradley@gmail.com
+              </a>
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
                 <a
-                  href="mailto:jamera.bradley@gmail.com"
-                  className="block font-medium text-white underline-offset-4 transition-colors duration-200 hover:text-purple-400 hover:underline"
+                  href="https://www.linkedin.com/in/jamerabradley/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
                 >
-                  jamera.bradley@gmail.com
+                  LinkedIn{" "}
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
                 </a>
-                <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-                  <a
-                    href="https://www.linkedin.com/in/jamerabradley/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
-                  >
-                    LinkedIn{" "}
-                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-                      →
-                    </span>
-                  </a>
-                  <a
-                    href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
-                  >
-                    Resume{" "}
-                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-                      →
-                    </span>
-                  </a>
-                </div>
+                <a
+                  href="/Bradley-Jamera-Senior-Product-Designer-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-white transition-colors duration-200 hover:text-purple-400"
+                >
+                  Resume{" "}
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
               </div>
             </div>
-          </section>
-
-        </div>
+          </div>
+        </section>
       </main>
     </>
   );

@@ -79,7 +79,15 @@ function HomeFeaturedProjectCard({ item }: { item: HomeArchiveItem }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
+      {/* Inline gradient so homepage transparent-bg override cannot wipe the scrim */}
+      <div
+        className="featured-card-scrim absolute inset-0 z-[1]"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.62) 45%, rgba(0,0,0,0.28) 100%)',
+        }}
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 flex h-full min-h-[320px] md:min-h-[420px] lg:min-h-[480px] flex-col justify-end md:justify-center p-6 md:p-10 lg:p-12 max-w-xl">
         <p className="mb-3 text-[0.6rem] font-medium uppercase tracking-[0.14em] text-white/55">
