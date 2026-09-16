@@ -1108,7 +1108,7 @@ body:has([data-work-page="true"]) {
   max-width: 100% !important;
 }
 
-.case-studies-section *:not(.custom-project-thumbnail):not(.custom-project-thumbnail *) {
+.case-studies-section *:not(.custom-project-thumbnail):not(.custom-project-thumbnail *):not(.featured-card-scrim):not(.featured-card-cta) {
   background-color: transparent !important;
 }
 
@@ -1121,6 +1121,53 @@ body:has([data-work-page="true"]) {
 /* Restore custom thumbnail root background wiped by .case-studies-section * transparent rule */
 .case-studies-section .custom-project-thumbnail {
   background-color: #042f2e !important;
+}
+
+/* Kyson-style featured card overlay — must beat homepage `background: #fff/#000 !important` wipes */
+.featured-card-scrim,
+.case-studies-section .featured-card-scrim,
+.homepage-main .featured-card-scrim,
+html:not(.light-mode) .homepage-main .featured-card-scrim,
+html.light-mode .homepage-main .featured-card-scrim,
+body:has(.homepage-main) .featured-card-scrim {
+  background-color: transparent !important;
+  background-image: linear-gradient(
+    90deg,
+    rgb(0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.85) 28%,
+    rgba(0, 0, 0, 0.45) 42%,
+    rgba(0, 0, 0, 0) 58%
+  ) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  pointer-events: none !important;
+}
+
+.featured-card-cta,
+.homepage-main .featured-card-cta,
+html:not(.light-mode) .homepage-main .featured-card-cta,
+html.light-mode .homepage-main .featured-card-cta {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Featured card copy must stay light on the dark scrim (beat light-mode text-white → black rules) */
+.homepage-main .featured-card-scrim ~ div,
+.homepage-main .featured-card-scrim ~ div *,
+html.light-mode .homepage-main .featured-card-scrim ~ div,
+html.light-mode .homepage-main .featured-card-scrim ~ div *,
+html.light-mode .case-studies-section .featured-card-scrim ~ div .text-white,
+html.light-mode .case-studies-section .featured-card-scrim ~ div [class*="text-white"] {
+  color: #ffffff !important;
+}
+.homepage-main .featured-card-scrim ~ div .text-purple-300,
+html.light-mode .homepage-main .featured-card-scrim ~ div .text-purple-300 {
+  color: #d8b4fe !important;
+}
+.homepage-main .featured-card-cta,
+html.light-mode .homepage-main .featured-card-cta {
+  color: #000000 !important;
 }
 
 /* Ensure homepage main container transitions with scroll */
@@ -1151,8 +1198,8 @@ html:has(.homepage-main) {
 
 /* Ensure no white backgrounds anywhere on homepage (dark mode only) */
 html:not(.light-mode) .homepage-main,
-html:not(.light-mode) .homepage-main *,
-html:not(.light-mode) .homepage-main > * {
+html:not(.light-mode) .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.custom-project-thumbnail):not(.custom-project-thumbnail *),
+html:not(.light-mode) .homepage-main > *:not(.featured-card-scrim) {
   background: #000000 !important;
 }
 
@@ -1182,10 +1229,10 @@ html.light-mode html:has(.homepage-main) {
 }
 
 html.light-mode .homepage-main,
-html.light-mode .homepage-main *,
-html.light-mode .homepage-main > *,
-html.light-mode .homepage-main section,
-html.light-mode .homepage-main div,
+html.light-mode .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.custom-project-thumbnail):not(.custom-project-thumbnail *),
+html.light-mode .homepage-main > *:not(.featured-card-scrim),
+html.light-mode .homepage-main section:not(:has(.featured-card-scrim)),
+html.light-mode .homepage-main div:not(.featured-card-scrim):not(.featured-card-cta):not(.custom-project-thumbnail),
 html.light-mode .homepage-main main,
 html.light-mode .homepage-main article {
   background: #ffffff !important;
@@ -1206,13 +1253,59 @@ html {
 }
 
 /* Force black background on all elements when homepage is active (dark mode only) */
-html:not(.light-mode) body:has(.homepage-main) * {
+html:not(.light-mode) body:has(.homepage-main) *:not(.get-in-touch-banner):not(.get-in-touch-banner *):not(.site-footer):not(.site-footer *):not(.featured-card-scrim):not(.featured-card-cta):not(.custom-project-thumbnail):not(.custom-project-thumbnail *) {
   background-color: transparent !important;
 }
 
+/* Sitewide contact banner + footer: light mode (readable on scrolled homepage) */
+.get-in-touch-banner {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #171717 !important;
+}
+.get-in-touch-banner h2,
+.get-in-touch-banner a {
+  color: #171717 !important;
+}
+.get-in-touch-banner p {
+  color: #737373 !important;
+}
+.get-in-touch-banner a:hover {
+  color: #a855f7 !important;
+}
+
+.site-footer,
+body:has(.homepage-main) .site-footer,
+html.light-mode body:has(.homepage-main) .site-footer {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  min-height: 3rem !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+.site-footer,
+.site-footer span,
+.site-footer svg,
+body:has(.homepage-main) .site-footer,
+body:has(.homepage-main) .site-footer *,
+html.light-mode body:has(.homepage-main) .site-footer,
+html.light-mode body:has(.homepage-main) .site-footer * {
+  color: #171717 !important;
+  background-color: transparent !important;
+}
+.site-footer .text-neutral-500,
+body:has(.homepage-main) .site-footer .text-neutral-500 {
+  color: #737373 !important;
+}
+
 /* Footer must stay visible on homepage: solid black bar (override transparent rule above) */
-body:has(.homepage-main) footer,
-.homepage-main footer {
+body:has(.homepage-main) footer:not(.site-footer),
+.homepage-main footer:not(.site-footer) {
   background-color: #000000 !important;
   background: #000000 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -1223,35 +1316,25 @@ body:has(.homepage-main) footer,
   position: relative !important;
   z-index: 10 !important;
 }
-body:has(.homepage-main) footer *,
-.homepage-main footer * {
+body:has(.homepage-main) footer:not(.site-footer) *,
+.homepage-main footer:not(.site-footer) * {
   background-color: transparent !important;
 }
 
-/* Force white background on all elements when homepage is active in light mode */
-html.light-mode body:has(.homepage-main),
-html.light-mode body:has(.homepage-main) *,
-html.light-mode body:has(.homepage-main) > *,
-html.light-mode html:has(.homepage-main),
-html.light-mode html:has(.homepage-main) * {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-}
-
 /* Homepage footer: always a visible black bar (override light-mode white wash) */
-html.light-mode body:has(.homepage-main) footer,
-html.light-mode .homepage-main footer {
+html.light-mode body:has(.homepage-main) footer:not(.site-footer),
+html.light-mode .homepage-main footer:not(.site-footer) {
   background-color: #000000 !important;
   background: #000000 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
-html.light-mode body:has(.homepage-main) footer *,
-html.light-mode .homepage-main footer * {
+html.light-mode body:has(.homepage-main) footer:not(.site-footer) *,
+html.light-mode .homepage-main footer:not(.site-footer) * {
   background-color: transparent !important;
   color: #ffffff !important;
 }
-html.light-mode body:has(.homepage-main) footer .text-white\/40,
-html.light-mode .homepage-main footer .text-white\/40 {
+html.light-mode body:has(.homepage-main) footer:not(.site-footer) .text-white\/40,
+html.light-mode .homepage-main footer:not(.site-footer) .text-white\/40 {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 

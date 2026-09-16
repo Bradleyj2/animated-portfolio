@@ -79,26 +79,19 @@ function HomeFeaturedProjectCard({ item }: { item: HomeArchiveItem }) {
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
         loading="lazy"
       />
-      {/* Kyson-style left fade: solid black → clear by mid-card (inline to beat homepage transparent overrides) */}
-      <div
-        className="featured-card-scrim absolute inset-0 z-[1]"
-        style={{
-          backgroundImage:
-            'linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.72) 32%, rgba(0, 0, 0, 0) 54%)',
-        }}
-        aria-hidden="true"
-      />
+      {/* Kyson-style left fade — class locked in CSS so homepage bg !important rules cannot wipe it */}
+      <div className="featured-card-scrim absolute inset-0 z-[1]" aria-hidden="true" />
 
       <div className="relative z-10 flex h-full min-h-[360px] md:min-h-[480px] lg:min-h-[560px] flex-col justify-between p-8 md:p-12 lg:px-16 lg:py-14 max-w-xl">
         <div>
-          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white/55">
+          <p className="mb-4 text-xs font-medium uppercase tracking-widest text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
             {item.projectType || item.category}
           </p>
-          <h2 className="mb-4 text-[1.75rem] md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-white">
+          <h2 className="mb-4 text-[1.75rem] md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
             {heading}
           </h2>
           {body && (
-            <p className="mb-4 text-[0.9375rem] md:text-base font-normal leading-relaxed text-white/75 max-w-md">
+            <p className="mb-4 text-[0.9375rem] md:text-base font-normal leading-relaxed text-white/90 max-w-md drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
               {body.includes('\n')
                 ? body.split('\n').map((line, i, arr) => (
                     <span key={i}>
@@ -110,14 +103,14 @@ function HomeFeaturedProjectCard({ item }: { item: HomeArchiveItem }) {
             </p>
           )}
           {item.metric && (
-            <p className="mb-3 text-sm font-medium text-purple-400">{item.metric}</p>
+            <p className="mb-3 text-sm font-medium text-purple-300 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">{item.metric}</p>
           )}
           {roleYear && (
-            <p className="text-xs text-white/40">{roleYear}</p>
+            <p className="text-xs text-white/70 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">{roleYear}</p>
           )}
         </div>
 
-        <span className="mt-8 inline-flex w-fit items-center rounded-full bg-white px-6 py-3 text-sm md:text-base font-medium text-black transition-opacity group-hover:opacity-90">
+        <span className="featured-card-cta mt-8 inline-flex w-fit items-center rounded-full px-6 py-3 text-sm md:text-base font-medium text-black shadow-md transition-opacity group-hover:opacity-90">
           {item.draft ? 'Coming soon' : 'View project →'}
         </span>
       </div>
