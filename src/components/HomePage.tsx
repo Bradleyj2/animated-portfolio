@@ -212,7 +212,7 @@ const HomePage = () => {
         description="Multidisciplinary designer shaping accessible, human-centered digital experiences. Explore case studies in design, research, and interactive systems."
         ogImage="/og/home.png"
       />
-      <div 
+        <div 
         className="min-h-screen w-full homepage-main transition-colors duration-300" 
         style={{
           backgroundColor: `rgb(${Math.round(scrollProgress * 255)}, ${Math.round(scrollProgress * 255)}, ${Math.round(scrollProgress * 255)})`,
@@ -277,17 +277,13 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Divider visible on first screen heights (id="work" for anchor link from About) */}
-        <div id="work">
+        {/* Divider + work share one scroll-synced surface (no black slab mid-transition) */}
+        <div id="work" className="bg-transparent">
           <DividerLabel label="Selected Work" />
         </div>
 
-        {/* Project Grid - Rockstar Newswire Layout */}
         <motion.main 
-          className="w-full case-studies-section transition-colors duration-300"
-          style={{
-            backgroundColor: `rgb(${Math.round(scrollProgress * 255)}, ${Math.round(scrollProgress * 255)}, ${Math.round(scrollProgress * 255)})`
-          }}
+          className="w-full case-studies-section bg-transparent transition-colors duration-300"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

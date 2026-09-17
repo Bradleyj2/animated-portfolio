@@ -406,16 +406,18 @@ html.light-mode .homepage-main [style*="backgroundColor: '#000'"] {
   background-color: #ffffff !important;
 }
 
-/* DividerLabel light mode */
+/* DividerLabel light mode — track scroll bg, no solid white/black slabs */
 html.light-mode .homepage-main span.bg-black,
 html.light-mode span.bg-black,
-html.light-mode .homepage-main .bg-black,
-html.light-mode .divider-label-text {
+html.light-mode .homepage-main .bg-black {
   background-color: #ffffff !important;
 }
 
 html.light-mode .homepage-main span.text-white\/90,
-html.light-mode span.text-white\/90,
+html.light-mode span.text-white\/90 {
+  color: #000000 !important;
+}
+
 html.light-mode .divider-label-text {
   color: #000000 !important;
 }
@@ -426,28 +428,11 @@ html.light-mode .divider-line {
   border-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-/* DividerLabel container background in light mode */
 html.light-mode .homepage-main .divider-label-container,
-html.light-mode .divider-label-container {
-  background-color: #ffffff !important;
-}
-
-/* Ensure the entire area around DividerLabel is white in light mode */
-html.light-mode .homepage-main > * {
-  background-color: #ffffff !important;
-}
-
-html.light-mode .homepage-main div[class*="max-w-screen"] {
-  background-color: #ffffff !important;
-}
-
-/* Ensure DividerLabel container and all its children are white in light mode */
-html.light-mode .homepage-main div[class*="w-full"][class*="mx-auto"] {
-  background-color: #ffffff !important;
-}
-
-html.light-mode .homepage-main div[class*="flex"][class*="items-center"][class*="justify-center"] {
-  background-color: #ffffff !important;
+html.light-mode .divider-label-container,
+html.light-mode .homepage-main #work {
+  background-color: transparent !important;
+  background: transparent !important;
 }
 
 /* Navigation light mode */
@@ -667,10 +652,10 @@ html.light-mode body:has(.homepage-main) nav a[href="/contact"] button * {
   color: #ffffff !important;
 }
 
-/* Footer stays dark sitewide — do not wash to white in light-mode */
+/* Footer stays dark sitewide — pure black bar under charcoal Get in touch */
 html.light-mode footer.site-footer,
 html.light-mode .site-footer {
-  background-color: #0a0a0a !important;
+  background-color: #000000 !important;
   border-top-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -971,9 +956,16 @@ html, body {
   background: #000000 !important;
 }
 
-/* Ensure all main containers have consistent black background */
-.min-h-screen, .bg-black {
+/* Ensure all main containers have consistent black background
+   (exclude homepage — it scroll-interpolates dark → light) */
+.min-h-screen:not(.homepage-main),
+.bg-black:not(.homepage-main) {
   background: #000000 !important;
+}
+
+.homepage-main {
+  background-color: var(--scroll-bg-color, #000000) !important;
+  background: var(--scroll-bg-color, #000000) !important;
 }
 
 /* Remove any potential border or shadow effects that might create visual separation */
@@ -1274,69 +1266,87 @@ html.light-mode .homepage-main .featured-card-cta {
 
 /* Override any potential white backgrounds on homepage */
 body:has(.case-studies-section) {
-  background: #000000 !important;
+  background: var(--scroll-bg-color, #000000) !important;
 }
 
 html:has(.case-studies-section) {
-  background: #000000 !important;
+  background: var(--scroll-bg-color, #000000) !important;
 }
 
-/* Force full viewport black background for homepage */
+/* Force full viewport background for homepage — follow scroll interpolation */
 body:has(.homepage-main) {
-  background: #000000 !important;
+  background: var(--scroll-bg-color, #000000) !important;
   min-height: 100vh !important;
 }
 
 html:has(.homepage-main) {
-  background: #000000 !important;
+  background: var(--scroll-bg-color, #000000) !important;
   min-height: 100vh !important;
 }
 
-/* Ensure no white backgrounds anywhere on homepage (dark mode only) */
-html:not(.light-mode) .homepage-main,
-html:not(.light-mode) .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.custom-project-thumbnail *),
+/* Homepage scroll: parent carries --scroll-bg-color; children stay transparent
+   so mid-transition doesn't leave solid black slabs (e.g. Selected Work divider) */
+html:not(.light-mode) .homepage-main {
+  background: var(--scroll-bg-color, #000000) !important;
+  background-color: var(--scroll-bg-color, #000000) !important;
+}
+html:not(.light-mode) .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.custom-project-thumbnail *):not(.divider-label-text),
 html:not(.light-mode) .homepage-main > *:not(.featured-card-scrim) {
-  background: #000000 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Selected Work label sits on the scrolling page bg (masks the hairline) */
+.homepage-main .divider-label-text,
+html:not(.light-mode) .homepage-main .divider-label-text,
+html.light-mode .homepage-main .divider-label-text {
+  background-color: var(--scroll-bg-color, #000000) !important;
+  background: var(--scroll-bg-color, #000000) !important;
+}
+.homepage-main .divider-label-container,
+.homepage-main #work {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Light mode overrides for homepage black backgrounds */
 html.light-mode .case-studies-section {
-  background: #ffffff !important;
+  background: transparent !important;
 }
 
 html.light-mode .homepage-main {
-  background: #ffffff !important;
+  background: var(--scroll-bg-color, #ffffff) !important;
+  background-color: var(--scroll-bg-color, #ffffff) !important;
 }
 
 html.light-mode body:has(.case-studies-section) {
-  background: #ffffff !important;
+  background: var(--scroll-bg-color, #ffffff) !important;
 }
 
 html.light-mode html:has(.case-studies-section) {
-  background: #ffffff !important;
+  background: var(--scroll-bg-color, #ffffff) !important;
 }
 
 html.light-mode body:has(.homepage-main) {
-  background: #ffffff !important;
+  background: var(--scroll-bg-color, #ffffff) !important;
 }
 
 html.light-mode html:has(.homepage-main) {
-  background: #ffffff !important;
+  background: var(--scroll-bg-color, #ffffff) !important;
 }
 
-html.light-mode .homepage-main,
-html.light-mode .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.custom-project-thumbnail *):not(.work-row-media *),
+html.light-mode .homepage-main *:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.custom-project-thumbnail *):not(.work-row-media *):not(.divider-label-text),
 html.light-mode .homepage-main > *:not(.featured-card-scrim),
 html.light-mode .homepage-main section:not(:has(.featured-card-scrim)),
-html.light-mode .homepage-main div:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.work-row-media div):not(.custom-project-thumbnail div),
+html.light-mode .homepage-main div:not(.featured-card-scrim):not(.featured-card-cta):not(.work-row-cta):not(.work-row-media):not(.custom-project-thumbnail):not(.work-row-media div):not(.custom-project-thumbnail div):not(.divider-label-text):not(.divider-label-container),
 html.light-mode .homepage-main main,
 html.light-mode .homepage-main article {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 html.light-mode .homepage-main section {
-  background: #ffffff !important;
+  background: transparent !important;
 }
 
 /* FINAL: work-row media must win over light-mode white wipes above */
@@ -1417,8 +1427,8 @@ html.light-mode .get-in-touch-banner a:hover {
 body:has(.homepage-main) .site-footer,
 html.light-mode body:has(.homepage-main) .site-footer,
 html.light-mode .site-footer {
-  background-color: #0a0a0a !important;
-  background: #0a0a0a !important;
+  background-color: #000000 !important;
+  background: #000000 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: #ffffff !important;
   min-height: 3rem !important;
@@ -1457,8 +1467,8 @@ html.light-mode .site-footer .text-white\/50 {
 /* Footer must stay visible on homepage: solid dark bar (override transparent rule above) */
 body:has(.homepage-main) footer:not(.site-footer),
 .homepage-main footer:not(.site-footer) {
-  background-color: #0a0a0a !important;
-  background: #0a0a0a !important;
+  background-color: #000000 !important;
+  background: #000000 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   min-height: 3rem !important;
   display: block !important;
@@ -1476,8 +1486,8 @@ body:has(.homepage-main) footer:not(.site-footer) *,
 /* Homepage footer: always a visible dark bar (override light-mode white wash) */
 html.light-mode body:has(.homepage-main) footer:not(.site-footer),
 html.light-mode .homepage-main footer:not(.site-footer) {
-  background-color: #0a0a0a !important;
-  background: #0a0a0a !important;
+  background-color: #000000 !important;
+  background: #000000 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 html.light-mode body:has(.homepage-main) footer:not(.site-footer) *,
